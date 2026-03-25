@@ -9,9 +9,9 @@
     /* Soft water background */
     --secondary-blue: #9fd7e6;
     /* Navigation active/Hover color */
-    --tertiary-teal: #2a8da7;
+    --tertiary-teal: hwb(192 16% 35%);
     /* Primary action teal */
-    --dark-abyss: #1a2f3b;
+    --dark-abyss: #1d5d6f;
     /* Header/Footer background and main text */
     --white: #ffffff;
     --muted-text: #46606b;
