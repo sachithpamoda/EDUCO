@@ -2,8 +2,6 @@
 <html lang="en">
 
 <head>
-    /*thewnuja gona */
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaAction | SDG 06 - Clean Water & Sanitation</title>
@@ -17,20 +15,30 @@
             border-radius: 24px;
             padding: 5rem 2rem;
             margin: 1rem auto 2rem;
-            background: linear-gradient(135deg, rgba(26, 47, 59, 0.9), rgba(42, 141, 167, 0.8)),
-                url("hero-water.jpg") center/cover #288197 no-repeat;
-            /* Added fallback color */
+            background: linear-gradient(135deg, rgba(26, 47, 59, 0.92), rgba(42, 141, 167, 0.85)),
+                url("hero-water.jpg") center/cover #2a8da7 no-repeat;
             color: #ffffff;
+            /* Sets base text to white */
             box-shadow: 0 20px 45px rgba(26, 47, 59, 0.2);
+        }
+
+        /* Hero paragraph fix for clarity and white color */
+        .hero-content p {
+            color: #ffffff;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            /* Keep it bright but soft */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            /* Extra readability boost */
         }
 
         /* 2. Fix for the overlapping Gallery bug */
         .interactive-gallery {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            /* Adjusted min-width */
             gap: 2rem;
-            /* Clearer separation */
             margin: 2rem 0 4rem;
             width: 100%;
         }
@@ -46,21 +54,18 @@
             min-height: 280px;
             border-radius: 18px;
             background-color: var(--tertiary-teal);
-            /* Fallback color */
             background-image: linear-gradient(180deg, transparent, rgba(26, 47, 59, 0.95)), var(--tile-image);
             background-size: cover;
             background-position: center;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             overflow: hidden;
             z-index: 1;
-            /* Default layer */
         }
 
         .gallery-item:hover {
             transform: translateY(-10px);
             box-shadow: 0 15px 35px rgba(26, 47, 59, 0.4);
             z-index: 10;
-            /* Ensures hovered card is always on top */
         }
 
         /* 4. Formatting the text inside tiles */
@@ -76,7 +81,7 @@
             color: var(--dark-abyss) !important;
         }
 
-        /* Responsive grid adjustment */
+        /* Responsive grid adjustment for cards */
         .home-card-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -108,12 +113,12 @@
         <section class="hero">
             <div class="hero-content">
                 <p style="text-transform: uppercase; letter-spacing: 1.5px; font-weight: bold;">Human Rights First</p>
-                <h1 style="font-size: 2.5rem; margin: 1rem 0;">Clean water is not a luxury—it is a fundamental human
-                    right.</h1>
-                <p style="font-size: 1.1rem; opacity: 0.9;">
-                    AquaAction is built on the belief that every person deserves access to safe water and sanitation.
-                    Our mission is to empower students to take daily, realistic actions that protect
-                    this vital resource and support healthier communities.
+                <h1 style="font-size: 2.5rem; margin: 1rem 0; color: #ffffff;">Clean water is not a luxury—it is a
+                    fundamental human right.</h1>
+                <p>
+                    Everyone deserves safe water, plain and simple. AquaAction is a student-led mission
+                    designed to turn big global goals into small, everyday habits. Join us as we protect
+                    our most precious resource and build healthier communities together, one drop at a time.
                 </p>
                 <a href="content_ST1.html" class="btn"
                     style="margin-top: 2rem; background: var(--secondary-blue); color: var(--dark-abyss);">Join the
@@ -128,24 +133,24 @@
                     <img src="mission.jpg" alt="Local community members accessing clean water"
                         style="width:100%; height:200px; object-fit:cover;">
                     <h3>Global Responsibility</h3>
-                    <p>Upholding the human right to water means protecting water quality for everyone and reducing
-                        contamination so that no community is left behind.</p>
+                    <p>Upholding the human right to water means ensuring quality for everyone. Contamination prevention
+                        ensures no community is left behind.</p>
                 </article>
 
                 <article class="card">
                     <img src="relevance.jpg" alt="Student participating in a water workshop"
                         style="width:100%; height:200px; object-fit:cover;">
                     <h3>Student Perspective</h3>
-                    <p>As students, we are stewards. Smarter habits on campus today help build the awareness,
-                        responsibility, and practical skills needed for tomorrow's challenges.</p>
+                    <p>As students, we are stewards. Implementing smarter habits on campus today builds the expertise
+                        needed for tomorrow's challenges.</p>
                 </article>
 
                 <article class="card">
                     <img src="action.jpg" alt="Sustainable tap system"
                         style="width:100%; height:200px; object-fit:cover;">
                     <h3>Impact of Change</h3>
-                    <p>When we treat water as a right, our actions shift toward preservation. Small daily steps can
-                        lead to cleaner environments, safer sanitation, and measurable health improvements.</p>
+                    <p>When we treat water as a right, our actions shift toward preservation. Small steps lead to
+                        measurable health improvements.</p>
                 </article>
             </div>
         </section>
@@ -170,13 +175,13 @@
     </main>
 
     <footer>
-        <p>AquaAction: Protecting the human right to clean water and sanitation.</p>
+        <p>AquaAction: Protecting the Human Right to Water</p>
         <p>
             <a href="pageEditor_ST1.html">Page Editor</a> |
             <a href="validation_ST1.html">Validation Report</a> |
             <a href="#">Accessibility</a>
         </p>
-        <p>Student 1 | IIT ID: Your ID | Implementation Lead</p>
+        <p>Student 1 | IIT ID: [Your ID] | Implementation Lead</p>
     </footer>
 </body>
 
