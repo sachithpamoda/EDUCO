@@ -6,6 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AquaAction | SDG 06 - Clean Water & Sanitation</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 1. Hero layout and atmosphere */
+        .hero {
+            position: relative;
+            overflow: hidden;
+            border-radius: 24px;
+            padding: 5rem 2rem;
+            margin: 1rem auto 2rem;
+            background: linear-gradient(135deg, rgba(26, 47, 59, 0.92), rgba(42, 141, 167, 0.85)),
+                url("hero-water.jpg") center/cover #2a8da7 no-repeat;
+            color: #ffffff;
+            /* Sets base text to white */
+            box-shadow: 0 20px 45px rgba(26, 47, 59, 0.2);
+        }
+
+        /* Hero paragraph fix for clarity and white color */
+        .hero-content p {
+            color: #ffffff;
+            font-size: 1.15rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            opacity: 0.95;
+            /* Keep it bright but soft */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+            /* Extra readability boost */
+        }
+
+        /* 2. Fix for the overlapping Gallery bug */
+        .interactive-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0 4rem;
+            width: 100%;
+        }
+
+        /* 3. Hover interaction with Z-index fix */
+        .gallery-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            text-decoration: none;
+            color: #ffffff;
+            position: relative;
+            min-height: 280px;
+            border-radius: 18px;
+            background-color: var(--tertiary-teal);
+            background-image: linear-gradient(180deg, transparent, rgba(26, 47, 59, 0.95)), var(--tile-image);
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(26, 47, 59, 0.4);
+            z-index: 10;
+        }
+
+        /* 4. Formatting the text inside tiles */
+        .gallery-item span {
+            padding: 1.5rem;
+            background: rgba(26, 47, 59, 0.4);
+            backdrop-filter: blur(2px);
+        }
+
+        /* 5. Active link styling */
+        .nav-home {
+            background-color: var(--secondary-blue) !important;
+            color: var(--dark-abyss) !important;
+        }
+
+        /* Responsive grid adjustment for cards */
+        .home-card-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+    </style>
 </head>
 
 <body>
@@ -89,17 +172,17 @@
 
         <section aria-labelledby="focus-heading">
             <h2 id="focus-heading" style="text-align: center; margin-top: 4rem;">Explore our work</h2>
-            <div class="home-card-grid">
-                <a href="content_ST1.html" class="gallery-item" style="background-image: url('images/tile-conss.jpg');">
+            <div class="interactive-gallery">
+                <a href="content_ST1.html" class="gallery-item" style="--tile-image: url('tile-cons.jpg');">
                     <span><strong>Water Conservation (ST1)</strong><br>Habits to reduce waste in daily life.</span>
                 </a>
-                <a href="content_ST2.html" class="gallery-item" style="background-image: url('images/tile-san.jpeg');">
+                <a href="content_ST2.html" class="gallery-item" style="--tile-image: url('tile-san.jpg');">
                     <span><strong>Sanitation Systems (ST2)</strong><br>Hygiene and safety for all.</span>
                 </a>
-                <a href="content_ST3.html" class="gallery-item" style="background-image: url('images/tile-comm.jpeg');">
+                <a href="content_ST3.html" class="gallery-item" style="--tile-image: url('tile-comm.jpg');">
                     <span><strong>Community Action (ST3)</strong><br>Working together for change.</span>
                 </a>
-                <a href="content_ST4.html" class="gallery-item" style="background-image: url('images/tile-innn.png');">
+                <a href="content_ST4.html" class="gallery-item" style="--tile-image: url('tile-inn.jpg');">
                     <span><strong>Future Innovation (ST4)</strong><br>Smart technologies for water security.</span>
                 </a>
             </div>
