@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | User Profile</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="profile.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <section class="card profile-builder-card">
+            <div class="profile-builder-header">
+                <p class="profile-eyebrow">Student 4 Progressive Profile</p>
+                <h1>Progressive User Profile</h1>
+                <p class="profile-lead">
+                    Build your SDG 06 profile step by step using guided prompts. You can start, skip a step,
+                    or revisit any step later.
+                </p>
+            </div>
+
+            <section class="profile-progress-panel" aria-labelledby="progress-heading">
+                <div class="profile-progress-top">
+                    <h2 id="progress-heading">Profile Completion</h2>
+                    <p id="progress-text">0% completed • Step 0 of 3 completed</p>
+                </div>
+                <div class="progress-bar" aria-hidden="true">
+                    <div id="progress-fill" class="progress-bar-fill"></div>
+                </div>
+                <div class="step-chip-row">
+                    <span id="chip-step-1" class="step-chip">Step 1: Basics</span>
+                    <span id="chip-step-2" class="step-chip">Step 2: Interests</span>
+                    <span id="chip-step-3" class="step-chip">Step 3: Actions</span>
+                </div>
+            </section>
+
+            <section class="profile-controls-panel" aria-labelledby="controls-heading">
+                <h2 id="controls-heading">Build Controls</h2>
+                <div class="profile-controls">
+                    <button type="button" id="start-profile-btn" class="profile-action-btn primary-btn">Start
+                        Profile</button>
+                    <button type="button" id="step-1-btn" class="profile-action-btn">Step 1: Basics</button>
+                    <button type="button" id="step-2-btn" class="profile-action-btn">Step 2: Interests</button>
+                    <button type="button" id="step-3-btn" class="profile-action-btn">Step 3: Actions</button>
+                </div>
+                <p id="profile-status" class="profile-status">
+                    Status: Start the profile builder to answer prompts and reveal your profile.
+                </p>
+            </section>
+
+            <section id="profile-output-section" class="profile-output-section hidden-section"
+                aria-labelledby="output-heading">
+                <h2 id="output-heading">Your Profile (Updates Progressively)</h2>
+
+                <div id="profile-basics-card" class="profile-output-card hidden-section">
+                    <h3>Step 1: Basics</h3>
+                    <dl class="profile-output-list" id="profile-basics-list"></dl>
+                </div>
+
+                <div id="profile-interests-card" class="profile-output-card hidden-section">
+                    <h3>Step 2: Interests</h3>
+                    <dl class="profile-output-list" id="profile-interests-list"></dl>
+                </div>
+
+                <div id="profile-actions-card" class="profile-output-card hidden-section">
+                    <h3>Step 3: Actions</h3>
+                    <dl class="profile-output-list" id="profile-actions-list"></dl>
+                </div>
+            </section>
+
+            <section class="profile-confirmation-panel" aria-labelledby="confirmation-heading">
+                <h2 id="confirmation-heading">Confirmation</h2>
+                <p id="profile-confirmation-message">
+                    When all steps are completed, your final confirmation will appear here.
+                </p>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_STx.html">Page Editor</a> |
+            <a href="validation_STx.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Student Name | Student ID | Role: User Profile</p>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+
+</html>
