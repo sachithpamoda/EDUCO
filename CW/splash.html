@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Auto redirect to home after 4 seconds -->
+    <meta http-equiv="refresh" content="4;url=home.html">
+    <title>AquaAction | Welcome</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <style>
+        /* =====================================================
+           AQUAACTION — ADVANCED SPLASH SCREEN
+           Student 2: Sachith Pamoda Wattaranthenna
+           ID: 20241617 / W2182298
+           Features:
+           1. Animated canvas water particles & waves
+           2. Custom water-drop cursor
+           3. Staggered CSS animation reveals
+           4. CSS ripple ring animations
+           5. Film-grain texture overlay
+           6. Arc SVG loader (CSS animated)
+           7. JavaScript countdown timer
+           8. Skip intro button with sweep hover
+        ===================================================== */
+
+        :root {
+            --deep:  #0a1f2e;
+            --abyss: #1d5d6f;
+            --teal:  #2a8da7;
+            --sky:   #9fd7e6;
+            --foam:  #d8f0f7;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'DM Sans', 'Segoe UI', sans-serif;
+            background: var(--deep);
+            cursor: none;
+        }
+
+        /* 1. Custom cursor ring + dot */
+        .cursor {
+            position: fixed;
+            width: 20px; height: 20px;
+            border: 2px solid rgba(159,215,230,0.8);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%,-50%);
+            transition: transform 0.1s ease, background 0.2s;
+        }
+        .cursor-dot {
+            position: fixed;
+            width: 5px; height: 5px;
+            background: var(--sky);
+            border-radius: 50%;
+            pointer-events: none;
+            z-index: 9999;
+            transform: translate(-50%,-50%);
+        }
+
+        /* 2. Canvas sits behind everything */
+        #water-canvas {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+        }
+
+        /* 3. Gradient depth overlay */
+        .gradient-overlay {
+            position: fixed; inset: 0; z-index: 1;
+            background:
+                radial-gradient(ellipse at 15% 85%, rgba(42,141,167,0.28) 0%, transparent 50%),
+                radial-gradient(ellipse at 85% 15%, rgba(10,31,46,0.55) 0%, transparent 55%),
+                linear-gradient(180deg, rgba(10,31,46,0.45) 0%, rgba(10,31,46,0.1) 45%, rgba(10,31,46,0.65) 100%);
+            pointer-events: none;
+        }
+
+        /* 4. CSS ripple rings */
+        .ripple-wrap {
+            position: fixed; inset: 0; z-index: 2;
+            display: flex; align-items: center; justify-content: center;
+            pointer-events: none;
+        }
+        .ring {
+            position: absolute;
+            border-radius: 50%;
+            border: 1px solid rgba(159,215,230,0.15);
+            animation: ring-expand 7s ease-out infinite;
+        }
+        .ring:nth-child(1) { width:180px;  height:180px;  animation-delay:0s; }
+        .ring:nth-child(2) { width:380px;  height:380px;  animation-delay:1.4s; }
+        .ring:nth-child(3) { width:640px;  height:640px;  animation-delay:2.8s; }
+        .ring:nth-child(4) { width:960px;  height:960px;  animation-delay:4.2s; }
+        .ring:nth-child(5) { width:1300px; height:1300px; animation-delay:5.6s; }
+
+        @keyframes ring-expand {
+            0%   { opacity: 0.6; transform: scale(0.5); }
+            100% { opacity: 0;   transform: scale(1.1); }
+        }
+
+        /* 5. Grain texture */
+        .grain {
+            position: fixed; inset: -50%; z-index: 3;
+            width: 200%; height: 200%;
+            opacity: 0.04;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+            pointer-events: none;
+            animation: grain-flicker 0.4s steps(1) infinite;
+        }
+        @keyframes grain-flicker {
+            0%   { transform: translate(0,0); }
+            25%  { transform: translate(-3%,-2%); }
+            50%  { transform: translate(2%,3%); }
+            75%  { transform: translate(-1%,2%); }
+            100% { transform: translate(3%,-1%); }
+        }
+
+        /* 6. Main content */
+        .splash-wrap {
+            position: fixed; inset: 0; z-index: 10;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
+            text-align: center; padding: 2rem;
+            gap: 0;
+        }
+
+        /* 7. SDG pill */
+        .pill {
+            display: inline-flex; align-items: center; gap: 8px;
+            background: rgba(159,215,230,0.1);
+            border: 1px solid rgba(159,215,230,0.28);
+            color: var(--sky);
+            font-size: 0.7rem; font-weight: 600;
+            letter-spacing: 2.5px; text-transform: uppercase;
+            padding: 0.45rem 1.25rem; border-radius: 999px;
+            margin-bottom: 1.8rem;
+            opacity: 0;
+            animation: rise 0.9s ease 0.3s forwards;
+            backdrop-filter: blur(10px);
+        }
+        .pill-dot {
+            width: 7px; height: 7px;
+            background: var(--sky); border-radius: 50%;
+            animation: pulse-dot 1.6s ease-in-out infinite;
+        }
+        @keyframes pulse-dot {
+            0%,100% { opacity:1; transform:scale(1); }
+            50%      { opacity:0.2; transform:scale(0.6); }
+        }
+
+        /* 8. Logo row */
+        .logo-row {
+            display: flex; align-items: center; justify-content: center;
+            gap: 18px; margin-bottom: 1.4rem;
+            opacity: 0; animation: rise 0.9s ease 0.5s forwards;
+        }
+        .logo-row img {
+            height: 58px; width: auto;
+            filter: drop-shadow(0 0 24px rgba(159,215,230,0.45));
+        }
+        .site-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 3rem; font-weight: 900;
+            color: var(--white); line-height: 1; letter-spacing: -1.5px;
+            text-shadow: 0 0 50px rgba(159,215,230,0.25);
+        }
+        .site-title em { color: var(--sky); font-style: normal; }
+        .site-sub {
+            font-size: 0.68rem; color: rgba(159,215,230,0.65);
+            letter-spacing: 3.5px; text-transform: uppercase; margin-top: 4px;
+        }
+
+        /* 9. Thin divider */
+        .divider {
+            width: 90px; height: 1px;
+            background: linear-gradient(90deg, transparent, var(--sky), transparent);
+            margin: 1.4rem auto 1.6rem;
+            opacity: 0; animation: rise 0.8s ease 0.7s forwards;
+        }
+
+        /* 10. Tagline */
+        .tagline {
+            font-size: 1.05rem; color: rgba(255,255,255,0.75);
+            line-height: 1.75; max-width: 500px; font-weight: 300;
+            opacity: 0; animation: rise 0.9s ease 0.85s forwards;
+        }
+        .tagline b { color: var(--sky); font-weight: 600; }
+
+        /* 11. Team chips */
+        .team-row {
+            display: flex; flex-wrap: wrap; gap: 0.55rem;
+            justify-content: center;
+            margin: 1.8rem 0 1.6rem;
+            opacity: 0; animation: rise 0.8s ease 1s forwards;
+        }
+        .chip {
+            background: rgba(42,141,167,0.12);
+            border: 1px solid rgba(42,141,167,0.3);
+            color: rgba(255,255,255,0.75);
+            padding: 0.32rem 1rem; border-radius: 999px;
+            font-size: 0.8rem;
+        }
+        .chip.me {
+            background: rgba(42,141,167,0.32);
+            border-color: var(--sky);
+            color: var(--sky); font-weight: 600;
+        }
+
+        /* 12. Arc loader + countdown */
+        .loader-block {
+            display: flex; flex-direction: column; align-items: center; gap: 0.6rem;
+            margin-bottom: 1.8rem;
+            opacity: 0; animation: rise 0.8s ease 1.15s forwards;
+        }
+        .arc-wrap {
+            position: relative; width: 60px; height: 60px;
+        }
+        .arc-wrap svg {
+            width: 100%; height: 100%;
+            animation: spin-arc 1.5s linear infinite;
+            transform-origin: center;
+        }
+        @keyframes spin-arc {
+            to { transform: rotate(360deg); }
+        }
+        .arc-track { fill:none; stroke:rgba(159,215,230,0.12); stroke-width:3; }
+        .arc-active {
+            fill:none; stroke:var(--sky); stroke-width:3;
+            stroke-linecap:round;
+            stroke-dasharray: 55 115;
+            filter: drop-shadow(0 0 5px rgba(159,215,230,0.7));
+        }
+        .count-num {
+            position: absolute; inset: 0;
+            display: flex; align-items: center; justify-content: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.35rem; font-weight: 700; color: var(--sky);
+        }
+        .loader-label {
+            font-size: 0.68rem; color: rgba(255,255,255,0.38);
+            letter-spacing: 2.5px; text-transform: uppercase;
+        }
+
+        /* 13. Skip button */
+        .skip-btn {
+            position: relative; overflow: hidden;
+            display: inline-flex; align-items: center; gap: 8px;
+            padding: 0.72rem 2.1rem;
+            border: 1.5px solid rgba(159,215,230,0.32);
+            background: transparent; border-radius: 999px;
+            color: rgba(255,255,255,0.65);
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px;
+            cursor: pointer;
+            transition: color 0.35s ease, border-color 0.35s ease;
+            opacity: 0; animation: rise 0.8s ease 1.3s forwards;
+        }
+        .skip-btn::before {
+            content: "";
+            position: absolute; inset: 0;
+            background: linear-gradient(90deg, var(--teal), var(--sky));
+            transform: translateX(-102%);
+            transition: transform 0.42s cubic-bezier(0.4,0,0.2,1);
+            border-radius: 999px; z-index: 0;
+        }
+        .skip-btn:hover::before { transform: translateX(0); }
+        .skip-btn:hover { color: var(--deep); border-color: var(--sky); }
+        .skip-btn > * { position: relative; z-index: 1; }
+
+        /* 14. Corner watermark */
+        .corner {
+            position: fixed; bottom: 2rem; right: 2.5rem;
+            z-index: 20; text-align: right;
+            opacity: 0; animation: rise 0.8s ease 1.5s forwards;
+        }
+        .corner-num {
+            font-family: 'Playfair Display', serif;
+            font-size: 6rem; font-weight: 900; line-height: 1;
+            color: rgba(159,215,230,0.06); letter-spacing: -3px;
+        }
+        .corner-label {
+            font-size: 0.62rem; color: rgba(159,215,230,0.28);
+            letter-spacing: 2px; text-transform: uppercase;
+        }
+
+        /* 15. Bottom-left credit */
+        .btm-left {
+            position: fixed; bottom: 2rem; left: 2.5rem;
+            z-index: 20;
+            opacity: 0; animation: rise 0.8s ease 1.5s forwards;
+        }
+        .btm-left p {
+            font-size: 0.62rem; color: rgba(255,255,255,0.22);
+            letter-spacing: 1.5px; text-transform: uppercase;
+        }
+
+        /* Shared rise keyframe */
+        @keyframes rise {
+            from { opacity:0; transform:translateY(20px); }
+            to   { opacity:1; transform:translateY(0); }
+        }
+
+        /* Responsive */
+        @media (max-width:520px) {
+            .site-title { font-size:2.2rem; }
+            .tagline    { font-size:0.9rem; }
+            .corner-num { font-size:4rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Custom cursor -->
+    <div class="cursor"     id="cursor"     aria-hidden="true"></div>
+    <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+
+    <!-- Animated canvas background -->
+    <canvas id="water-canvas" aria-hidden="true"></canvas>
+
+    <!-- Overlays -->
+    <div class="gradient-overlay" aria-hidden="true"></div>
+    <div class="ripple-wrap"      aria-hidden="true">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+    </div>
+    <div class="grain" aria-hidden="true"></div>
+
+    <!-- ===== SPLASH CONTENT ===== -->
+    <main class="splash-wrap">
+
+        <!-- Badge -->
+        <div class="pill">
+            <span class="pill-dot"></span>
+            UN Sustainable Development Goal 6
+        </div>
+
+        <!-- Logo + Title -->
+        <div class="logo-row">
+            <img src="logo.png" alt="AquaAction logo">
+            <div>
+                <div class="site-title">Aqua<em>Action</em></div>
+                <div class="site-sub">Clean Water &amp; Sanitation</div>
+            </div>
+        </div>
+
+        <!-- Divider -->
+        <div class="divider" aria-hidden="true"></div>
+
+        <!-- Tagline -->
+        <p class="tagline">
+            A student-led mission making <b>clean water a right for all</b> —
+            turning global goals into everyday habits, one drop at a time.
+        </p>
+
+        <!-- Team -->
+        <div class="team-row" aria-label="Team members">
+            <span class="chip">Methum Thevjan</span>
+            <span class="chip me">Sachith Pamoda</span>
+            <span class="chip">Sasiru Insara</span>
+            <span class="chip">Thewnuja Rajasinghe</span>
+        </div>
+
+        <!-- Loader + Countdown -->
+        <div class="loader-block">
+            <div class="arc-wrap" role="progressbar" aria-label="Countdown loader" aria-valuenow="4" aria-valuemin="0" aria-valuemax="4">
+                <svg viewBox="0 0 60 60">
+                    <circle class="arc-track" cx="30" cy="30" r="26"/>
+                    <circle class="arc-active" cx="30" cy="30" r="26"/>
+                </svg>
+                <div class="count-num" id="count-num" aria-live="polite">4</div>
+            </div>
+            <p class="loader-label">Entering site</p>
+        </div>
+
+        <!-- Skip -->
+        <button class="skip-btn" onclick="skipIntro()" aria-label="Skip intro and go to home page">
+            <span>Skip Intro</span>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="2.5"
+                 stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <line x1="5" y1="12" x2="19" y2="12"/>
+                <polyline points="12 5 19 12 12 19"/>
+            </svg>
+        </button>
+
+    </main>
+
+    <!-- Corner SDG watermark -->
+    <div class="corner" aria-hidden="true">
+        <div class="corner-num">06</div>
+        <div class="corner-label">Clean Water</div>
+    </div>
+
+    <!-- Bottom left -->
+    <div class="btm-left" aria-hidden="true">
+        <p>University of Westminster · 2025 / 26</p>
+    </div>
+
+    <script>
+        /* =====================================================
+           SPLASH SCREEN — JAVASCRIPT
+           Student 2: Sachith Pamoda Wattaranthenna
+           W2182298 / 20241617
+        ===================================================== */
+
+        // ── CANVAS WATER ANIMATION ────────────────────────────
+        const canvas = document.getElementById('water-canvas');
+        const ctx    = canvas.getContext('2d');
+
+        function resize() {
+            canvas.width  = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        // Each particle = a floating bubble rising up the screen
+        function makeParticle(initial) {
+            return {
+                x:     Math.random() * canvas.width,
+                y:     initial ? Math.random() * canvas.height : canvas.height + 15,
+                r:     Math.random() * 3 + 0.6,
+                speed: Math.random() * 0.55 + 0.18,
+                drift: (Math.random() - 0.5) * 0.35,
+                alpha: Math.random() * 0.38 + 0.05,
+                wave:  Math.random() * Math.PI * 2,
+                wv:    Math.random() * 0.013 + 0.005
+            };
+        }
+
+        const PARTICLES = 120;
+        const pool = [];
+        for (let i = 0; i < PARTICLES; i++) pool.push(makeParticle(true));
+
+        let wOff = 0; // wave offset
+
+        function drawWave(yBase, amp, freq, color) {
+            ctx.beginPath();
+            ctx.moveTo(0, canvas.height);
+            for (let x = 0; x <= canvas.width; x += 2) {
+                const y = yBase
+                    + Math.sin(x * freq + wOff) * amp
+                    + Math.sin(x * freq * 0.5 + wOff * 1.4) * (amp * 0.35);
+                ctx.lineTo(x, y);
+            }
+            ctx.lineTo(canvas.width, canvas.height);
+            ctx.closePath();
+            ctx.fillStyle = color;
+            ctx.fill();
+        }
+
+        function frame() {
+            // Deep ocean background
+            ctx.fillStyle = '#0a1f2e';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Layered animated waves at bottom
+            const base = canvas.height * 0.7;
+            drawWave(base + 55, 24, 0.007, 'rgba(29,93,111,0.3)');
+            drawWave(base + 28, 19, 0.010, 'rgba(42,141,167,0.22)');
+            drawWave(base,      13, 0.014, 'rgba(159,215,230,0.11)');
+            wOff += 0.017;
+
+            // Particles
+            pool.forEach(function(p) {
+                p.wave += p.wv;
+                p.x    += Math.sin(p.wave) * 0.55 + p.drift;
+                p.y    -= p.speed;
+                if (p.y < -10) { Object.assign(p, makeParticle(false)); }
+
+                ctx.beginPath();
+                ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+                ctx.fillStyle = 'rgba(159,215,230,' + p.alpha + ')';
+                ctx.fill();
+            });
+
+            requestAnimationFrame(frame);
+        }
+        frame();
+
+        // ── CUSTOM CURSOR ─────────────────────────────────────
+        const cur    = document.getElementById('cursor');
+        const curDot = document.getElementById('cursor-dot');
+
+        document.addEventListener('mousemove', function(e) {
+            cur.style.left    = e.clientX + 'px';
+            cur.style.top     = e.clientY + 'px';
+            curDot.style.left = e.clientX + 'px';
+            curDot.style.top  = e.clientY + 'px';
+        });
+
+        document.querySelectorAll('button').forEach(function(el) {
+            el.addEventListener('mouseenter', function() {
+                cur.style.transform = 'translate(-50%,-50%) scale(2)';
+                cur.style.background = 'rgba(159,215,230,0.12)';
+            });
+            el.addEventListener('mouseleave', function() {
+                cur.style.transform = 'translate(-50%,-50%) scale(1)';
+                cur.style.background = 'transparent';
+            });
+        });
+
+        // ── COUNTDOWN TIMER ───────────────────────────────────
+        // Updates the number inside the arc loader every second
+        let sLeft = 4;
+        const numEl = document.getElementById('count-num');
+
+        const ticker = setInterval(function() {
+            sLeft--;
+            numEl.textContent = sLeft <= 0 ? '0' : sLeft;
+            if (sLeft <= 0) clearInterval(ticker);
+        }, 1000);
+
+        // ── SKIP INTRO ────────────────────────────────────────
+        // Stops countdown and redirects immediately to home page
+        function skipIntro() {
+            clearInterval(ticker);
+            window.location.href = 'home.html';
+        }
+    </script>
+
+</body>
+</html>
