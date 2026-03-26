@@ -4,12 +4,268 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaAction | SDG 06 - Clean Water & Sanitation</title>
+    <title>AquaAction | SDG 06 – Action Impact Simulator</title>
     <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* ===== AIS PAGE-SPECIFIC EMBEDDED CSS =====
+           Student 2 | SDG Action Impact Simulator (ais.html)
+           These styles apply ONLY to this page and do not override style.css
+        ===== */
+
+        /* 1. Active nav link for this page */
+        .nav-ais {
+            background-color: var(--secondary-blue) !important;
+            color: var(--dark-abyss) !important;
+        }
+
+        /* 2. Page background — changes via JavaScript based on impact level */
+        body {
+            transition: background 1s ease;
+        }
+
+        /* 3. Hero intro banner for the simulator */
+        .ais-hero {
+            background: linear-gradient(135deg, var(--dark-abyss), var(--tertiary-teal));
+            border-radius: 20px;
+            padding: 2.5rem 2rem;
+            margin-bottom: 2.5rem;
+            color: #ffffff;
+            text-align: center;
+        }
+
+        .ais-hero h1 {
+            color: #ffffff;
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ais-hero p {
+            opacity: 0.9;
+            font-size: 1.05rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* 4. Action cards grid — responsive columns */
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        /* 5. Individual action card styling */
+        .action-card {
+            background: #ffffff;
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 6px 20px rgba(26, 47, 59, 0.1);
+            border: 2px solid transparent;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* 6. Hover effect on unselected cards */
+        .action-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(26, 47, 59, 0.15);
+            border-color: var(--tertiary-teal);
+        }
+
+        /* 7. Selected card — distinct visual state */
+        .action-card.selected {
+            border-color: var(--tertiary-teal);
+            background: linear-gradient(135deg, #e8f7fa, #d0eef5);
+            box-shadow: 0 8px 24px rgba(42, 141, 167, 0.25);
+        }
+
+        /* Selected tick badge */
+        .action-card.selected::after {
+            content: "✓";
+            position: absolute;
+            top: 12px;
+            right: 14px;
+            background: var(--tertiary-teal);
+            color: #fff;
+            width: 26px;
+            height: 26px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.9rem;
+            font-weight: 700;
+        }
+
+        /* 8. Thumbnail image inside each card */
+        .action-card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 1rem;
+        }
+
+        /* 9. Card title */
+        .action-card h3 {
+            color: var(--dark-abyss);
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+        }
+
+        /* 10. Card description text */
+        .action-card p {
+            font-size: 0.88rem;
+            color: var(--muted-text, #46606b);
+            line-height: 1.5;
+            margin-bottom: 0.75rem;
+        }
+
+        /* 11. Impact points badge on each card */
+        .impact-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            background: var(--dark-abyss);
+            color: var(--secondary-blue);
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.3rem 0.8rem;
+            border-radius: 999px;
+        }
+
+        .action-card.selected .impact-badge {
+            background: var(--tertiary-teal);
+            color: #fff;
+        }
+
+        /* 12. Feedback panel styling */
+        .feedback-panel {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(26, 47, 59, 0.12);
+            border-top: 6px solid var(--tertiary-teal);
+            margin-bottom: 2rem;
+            transition: all 0.5s ease;
+        }
+
+        .feedback-panel h2 {
+            color: var(--tertiary-teal);
+            margin-bottom: 1rem;
+        }
+
+        /* 13. Score display */
+        .score-display {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            margin-bottom: 1.25rem;
+        }
+
+        .score-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: var(--dark-abyss);
+            line-height: 1;
+        }
+
+        .score-label {
+            font-size: 0.9rem;
+            color: var(--muted-text, #46606b);
+        }
+
+        .score-label strong {
+            display: block;
+            font-size: 1.3rem;
+            color: var(--tertiary-teal);
+        }
+
+        /* 14. Progress bar */
+        .progress-track {
+            background: #e4eff2;
+            border-radius: 999px;
+            height: 12px;
+            overflow: hidden;
+            margin-bottom: 1rem;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--tertiary-teal), var(--secondary-blue));
+            border-radius: 999px;
+            width: 0%;
+            transition: width 0.7s ease;
+        }
+
+        /* 15. Impact message text */
+        .impact-message {
+            font-size: 1rem;
+            color: var(--dark-abyss);
+            padding: 0.85rem 1.2rem;
+            background: var(--primary-light, #ecf3f5);
+            border-radius: 10px;
+            border-left: 4px solid var(--tertiary-teal);
+        }
+
+        /* 16. Reset button */
+        .reset-btn {
+            display: inline-block;
+            margin-top: 1.25rem;
+            padding: 0.7rem 1.8rem;
+            background: transparent;
+            border: 2px solid var(--tertiary-teal);
+            color: var(--tertiary-teal);
+            border-radius: 999px;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .reset-btn:hover {
+            background: var(--tertiary-teal);
+            color: #fff;
+        }
+
+        /* 17. Section heading style */
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--tertiary-teal);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        /* 18. Background overlay for impact levels (kept subtle so text stays readable) */
+        .bg-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            transition: opacity 1s ease;
+            pointer-events: none;
+        }
+
+        .bg-overlay.visible {
+            opacity: 0.08;
+        }
+    </style>
 </head>
 
 <body>
+    <!-- Background overlay (changes via JS) -->
+    <div class="bg-overlay" id="bg-overlay" aria-hidden="true"></div>
 
+    <!-- ===== SHARED HEADER (from template) ===== -->
     <header>
         <div class="logo-container">
             <a href="home.html" class="logo-link">
@@ -26,7 +282,7 @@
                 <ul>
                     <li><a href="home.html">Home</a></li>
                     <li><a href="gallery.html">Gallery</a></li>
-                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="ais.html" class="nav-ais">Simulator</a></li>
                     <li><a href="feedback.html">Support</a></li>
                     <li><a href="team.html">Team</a></li>
                     <li><a href="sitemap.html">Sitemap</a></li>
@@ -35,33 +291,321 @@
 
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
     </header>
 
+    <!-- ===== MAIN CONTENT ===== -->
     <main>
-        <h1>[Page Title]</h1>
-        <p>This is where each student adds their unique page content.</p>
 
-        <article class="card">
-            <h3>Example Section</h3>
-            <p>Your content goes here...</p>
-        </article>
+        <!-- Hero intro -->
+        <section class="ais-hero" aria-labelledby="ais-title">
+            <h1 id="ais-title">💧 SDG Action Impact Simulator</h1>
+            <p>Choose the water-related actions you already take (or plan to take). See how your choices add up
+                and discover your real-world impact on SDG Goal 6.</p>
+        </section>
+
+        <!-- Instructions -->
+        <p class="section-label">Step 1 — Pick your actions</p>
+        <p style="margin-bottom:1.5rem; color: var(--muted-text, #46606b);">Click on any card to select or
+            deselect it. Your impact score updates live.</p>
+
+        <!-- ===== ACTION CARDS (6 required) ===== -->
+        <!--
+            Impact point thresholds (defined here in code):
+            Low:    1  – 5  points  → "Aware" level
+            Medium: 6  – 12 points  → "Active" level
+            High:   13+    points   → "Champion" level
+            Maximum possible score: 20 points (all 6 cards selected)
+        -->
+        <section aria-labelledby="cards-heading">
+            <h2 id="cards-heading" class="sr-only">Action Cards</h2>
+            <div class="action-grid" id="action-grid">
+
+                <!-- Card 1 -->
+                <article class="action-card"
+                    data-points="2"
+                    data-id="1"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Turn off the tap — 2 impact points">
+                    <img src="images/tile-conss.jpg" alt="A person turning off a running tap to save water">
+                    <h3>Turn Off the Tap</h3>
+                    <p>While brushing teeth or washing up, turn off the tap. Saves up to 6 litres per minute —
+                        a simple habit with measurable results.</p>
+                    <span class="impact-badge">⚡ 2 pts</span>
+                </article>
+
+                <!-- Card 2 -->
+                <article class="action-card"
+                    data-points="3"
+                    data-id="2"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Fix leaks at home — 3 impact points">
+                    <img src="images/tile-san.jpeg" alt="A dripping tap being repaired to prevent water waste">
+                    <h3>Fix Leaks at Home</h3>
+                    <p>A single dripping tap wastes over 5,000 litres a year. Reporting or fixing leaks protects
+                        clean water resources and reduces household bills.</p>
+                    <span class="impact-badge">⚡ 3 pts</span>
+                </article>
+
+                <!-- Card 3 -->
+                <article class="action-card"
+                    data-points="4"
+                    data-id="3"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Collect rainwater — 4 impact points">
+                    <img src="images/tile-comm.jpeg" alt="A rain barrel collecting water from a roof">
+                    <h3>Collect Rainwater</h3>
+                    <p>Use a rain barrel or container to collect rainwater for watering plants or cleaning. Reduces
+                        demand on treated water supplies.</p>
+                    <span class="impact-badge">⚡ 4 pts</span>
+                </article>
+
+                <!-- Card 4 -->
+                <article class="action-card"
+                    data-points="3"
+                    data-id="4"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Take shorter showers — 3 impact points">
+                    <img src="images/tile-innn.png" alt="A shower timer on a wall showing time saving">
+                    <h3>Shorter Showers</h3>
+                    <p>Cutting your shower by just 2 minutes saves around 20 litres. Installing a shower timer
+                        is a small step with big community-wide results.</p>
+                    <span class="impact-badge">⚡ 3 pts</span>
+                </article>
+
+                <!-- Card 5 -->
+                <article class="action-card"
+                    data-points="4"
+                    data-id="5"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Use water-efficient appliances — 4 impact points">
+                    <img src="images/missionn.jpg" alt="A water-efficient washing machine with an eco rating label">
+                    <h3>Use Efficient Appliances</h3>
+                    <p>Run dishwashers and washing machines only when full. Choose appliances with a high water
+                        efficiency rating to save hundreds of litres monthly.</p>
+                    <span class="impact-badge">⚡ 4 pts</span>
+                </article>
+
+                <!-- Card 6 -->
+                <article class="action-card"
+                    data-points="4"
+                    data-id="6"
+                    tabindex="0"
+                    role="checkbox"
+                    aria-checked="false"
+                    aria-label="Spread water awareness — 4 impact points">
+                    <img src="images/relevance.png" alt="A student presenting water facts to their class">
+                    <h3>Spread Awareness</h3>
+                    <p>Share water-saving tips with friends, family, or on campus. Collective awareness drives
+                        community change and supports SDG 6 globally.</p>
+                    <span class="impact-badge">⚡ 4 pts</span>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- ===== FEEDBACK PANEL ===== -->
+        <section class="feedback-panel" id="feedback-panel" aria-labelledby="feedback-heading" aria-live="polite">
+            <p class="section-label">Step 2 — Your impact score</p>
+            <h2 id="feedback-heading">Your Water Impact</h2>
+
+            <div class="score-display">
+                <span class="score-number" id="score-number">0</span>
+                <div class="score-label">
+                    / 20 points
+                    <strong id="impact-level">No actions selected yet</strong>
+                </div>
+            </div>
+
+            <!-- Progress bar -->
+            <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Impact score progress">
+                <div class="progress-fill" id="progress-fill"></div>
+            </div>
+
+            <!-- Dynamic message -->
+            <p class="impact-message" id="impact-message">
+                Select one or more actions above to calculate your personal water impact score.
+            </p>
+
+            <!-- Reset button -->
+            <button class="reset-btn" onclick="resetAll()" aria-label="Reset all selected actions">
+                ↺ Reset All
+            </button>
+        </section>
+
     </main>
 
+    <!-- ===== SHARED FOOTER (from template) ===== -->
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
         <p>
-            <a href="pageEditor_STx.html">Page Editor</a> |
-            <a href="validation_STx.html">Validation Report</a> |
+            <a href="pageEditor_ST2.html">Page Editor</a> |
+            <a href="validation_ST2.html">Validation Report</a> |
             <a href="#">Accessibility Compliance</a>
         </p>
-        <p>Student Name | Student ID | Role: [Your Role]</p>
+        <p>Sachith Pamoda Wattaranthenna | 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator</p>
     </footer>
 
+    <script>
+        // ===== SDG ACTION IMPACT SIMULATOR — JAVASCRIPT =====
+        // Student 2 | ais.html
+        //
+        // Impact thresholds:
+        //   Low    : 1  – 5  pts  → Aware
+        //   Medium : 6  – 12 pts  → Active
+        //   High   : 13+    pts   → Champion
+        //   Max possible score: 20 pts
+
+        // Background images for each impact level (swap filenames to match your assets)
+        const BACKGROUNDS = {
+            low:    'images/bg-low.jpg',    // A dry/arid landscape image
+            medium: 'images/bg-medium.jpg', // A flowing stream / river image
+            high:   'images/bg-high.jpg'    // A clean waterfall / thriving community image
+        };
+
+        // Track selected card IDs
+        let selectedCards = new Set();
+
+        // ---- Helper: calculate total score from selected cards ----
+        function calcScore() {
+            let total = 0;
+            selectedCards.forEach(function (id) {
+                const card = document.querySelector('.action-card[data-id="' + id + '"]');
+                if (card) total += parseInt(card.dataset.points, 10);
+            });
+            return total;
+        }
+
+        // ---- Helper: determine impact level from score ----
+        function getLevel(score) {
+            if (score === 0)  return 'none';
+            if (score <= 5)   return 'low';
+            if (score <= 12)  return 'medium';
+            return 'high';
+        }
+
+        // ---- Helper: get descriptive message for each level ----
+        function getMessage(level, score) {
+            const messages = {
+                none:   'Select one or more actions above to calculate your personal water impact score.',
+                low:    'Great start! You\'re becoming aware of water issues. Every action counts — try adding a few more to boost your impact.',
+                medium: 'You\'re an Active Water Advocate! Your habits are making a real difference. Keep going to reach Champion level.',
+                high:   '🏆 Water Champion! Your commitment to SDG 6 is exceptional. Share your actions and inspire others to join the mission!'
+            };
+            return messages[level];
+        }
+
+        // ---- Helper: get level label for display ----
+        function getLevelLabel(level) {
+            const labels = {
+                none:   'No actions selected yet',
+                low:    '💧 Aware',
+                medium: '🌊 Active Advocate',
+                high:   '🏆 Water Champion'
+            };
+            return labels[level];
+        }
+
+        // ---- Update the feedback panel with current score ----
+        function updateFeedback() {
+            const score   = calcScore();
+            const level   = getLevel(score);
+            const maxScore = 20;
+            const pct      = Math.round((score / maxScore) * 100);
+
+            // Update score number
+            document.getElementById('score-number').textContent = score;
+
+            // Update level label
+            document.getElementById('impact-level').textContent = getLevelLabel(level);
+
+            // Update progress bar (aria + width)
+            const fill = document.getElementById('progress-fill');
+            fill.style.width = pct + '%';
+            document.querySelector('.progress-track').setAttribute('aria-valuenow', pct);
+
+            // Update message
+            document.getElementById('impact-message').textContent = getMessage(level, score);
+
+            // Update background based on impact level
+            updateBackground(level);
+        }
+
+        // ---- Change page background image based on impact level ----
+        function updateBackground(level) {
+            const overlay = document.getElementById('bg-overlay');
+
+            if (level === 'none') {
+                overlay.classList.remove('visible');
+                overlay.style.backgroundImage = '';
+                return;
+            }
+
+            overlay.style.backgroundImage = 'url("' + BACKGROUNDS[level] + '")';
+            overlay.classList.add('visible');
+        }
+
+        // ---- Toggle card selection ----
+        function toggleCard(card) {
+            const id = card.dataset.id;
+
+            if (selectedCards.has(id)) {
+                // Deselect
+                selectedCards.delete(id);
+                card.classList.remove('selected');
+                card.setAttribute('aria-checked', 'false');
+            } else {
+                // Select
+                selectedCards.add(id);
+                card.classList.add('selected');
+                card.setAttribute('aria-checked', 'true');
+            }
+
+            updateFeedback();
+        }
+
+        // ---- Reset all cards ----
+        function resetAll() {
+            selectedCards.clear();
+            document.querySelectorAll('.action-card').forEach(function (card) {
+                card.classList.remove('selected');
+                card.setAttribute('aria-checked', 'false');
+            });
+            updateFeedback();
+        }
+
+        // ---- Attach event listeners to all action cards ----
+        document.querySelectorAll('.action-card').forEach(function (card) {
+            // Click handler
+            card.addEventListener('click', function () {
+                toggleCard(card);
+            });
+
+            // Keyboard handler — allow Enter/Space to toggle (accessibility)
+            card.addEventListener('keydown', function (e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleCard(card);
+                }
+            });
+        });
+
+        // Initialise feedback on page load
+        updateFeedback();
+    </script>
 </body>
 
 </html>
