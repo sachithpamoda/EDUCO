@@ -58,6 +58,21 @@
             stroke-width: 4;
             outline: none;
         }
+
+        /* Prevent unexpected magnification of header/footer elements */
+        header, footer {
+            font-size: 16px !important;
+            zoom: 1 !important;
+        }
+        header .logo-text h2 {
+            font-size: 24px !important;
+        }
+        header .logo-text p {
+            font-size: 12px !important;
+        }
+        nav a {
+            font-size: 16px !important;
+        }
     </style>
 </head>
 
@@ -325,26 +340,25 @@
                     <text x="900" y="955" class="node-text">Accessibility</text>
                 </a>
 
-                <!-- Horizontal drop for Splash and Home -->
-                <line x1="675" y1="30" x2="720" y2="30" class="branch-line" />
-                <line x1="720" y1="30" x2="720" y2="70" class="branch-line" />
-                <line x1="720" y1="70" x2="750" y2="70" class="branch-line" />
-                <line x1="720" y1="70" x2="720" y2="120" class="branch-line" />
-                <line x1="720" y1="120" x2="750" y2="120" class="branch-line" />
-                <line x1="720" y1="120" x2="720" y2="170" class="branch-line" />
-                <line x1="720" y1="170" x2="750" y2="170" class="branch-line" />
+                <!-- Horizontal drop for Home Page -->
+                <line x1="700" y1="120" x2="790" y2="120" class="branch-line" />
+                <line x1="790" y1="120" x2="790" y2="85" class="branch-line" />
+                <line x1="790" y1="85" x2="820" y2="85" class="branch-line" />
+                <line x1="790" y1="120" x2="820" y2="120" class="branch-line" />
+                <line x1="790" y1="120" x2="790" y2="155" class="branch-line" />
+                <line x1="790" y1="155" x2="820" y2="155" class="branch-line" />
                 
-                <a href="#" class="sitemap-link">
-                    <rect x="750" y="50" width="130" height="30" rx="5" class="node-box" />
-                    <text x="815" y="70" class="node-text">Page Editor</text>
+                <a href="pageEditor_ST1.html" class="sitemap-link">
+                    <rect x="820" y="70" width="130" height="30" rx="5" class="node-box" />
+                    <text x="885" y="90" class="node-text">Page Editor</text>
+                </a>
+                <a href="validation_ST1.html" class="sitemap-link">
+                    <rect x="820" y="105" width="130" height="30" rx="5" class="node-box" />
+                    <text x="885" y="125" class="node-text">Validation</text>
                 </a>
                 <a href="#" class="sitemap-link">
-                    <rect x="750" y="100" width="130" height="30" rx="5" class="node-box" />
-                    <text x="815" y="120" class="node-text">Validation</text>
-                </a>
-                <a href="#" class="sitemap-link">
-                    <rect x="750" y="150" width="130" height="30" rx="5" class="node-box" />
-                    <text x="815" y="170" class="node-text">Accessibility</text>
+                    <rect x="820" y="140" width="130" height="30" rx="5" class="node-box" />
+                    <text x="885" y="160" class="node-text">Accessibility</text>
                 </a>
 </svg>
 
