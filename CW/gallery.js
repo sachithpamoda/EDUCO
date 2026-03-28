@@ -6,7 +6,7 @@
 const data = [
     {
         t: "Rainwater Harvesting",
-        d: "Capturing roof runoff to provide sustainable local water sources. This reduces reliance on municipal systems.",
+        d: "A multi-stage harvesting system that captures roof runoff and utilizes sand filtration to provide a sustainable water source for daily household activities.",
         i: "images/full1.jpg"
     },
     {
