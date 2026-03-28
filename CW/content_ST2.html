@@ -10,9 +10,6 @@
     <style>
         /* =====================================================
            CONTENT PAGE — ST2: Sanitation Systems
-           Student 2: Sachith Pamoda Wattaranthenna
-           ID: 20241617 / W2182298
-           Page-specific embedded CSS — does not override style.css
         ===================================================== */
 
         /* 1. Active nav indicator for this content page */
@@ -77,11 +74,11 @@
             display: flex;
             align-items: flex-end;
             background:
-                linear-gradient(135deg, rgba(26,47,59,0.9), rgba(42,141,167,0.8)),
+                linear-gradient(135deg, rgba(26, 47, 59, 0.9), rgba(42, 141, 167, 0.8)),
                 url('tile-san.jpg') center / cover no-repeat;
             color: var(--white);
             padding: 3rem 2.5rem;
-            box-shadow: 0 16px 40px rgba(26,47,59,0.2);
+            box-shadow: 0 16px 40px rgba(26, 47, 59, 0.2);
         }
 
         .content-hero-text h1 {
@@ -93,7 +90,7 @@
 
         .content-hero-text p {
             font-size: 1rem;
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             max-width: 580px;
             line-height: 1.7;
         }
@@ -114,7 +111,8 @@
         /* 4. Content sections — each has a consistent layout */
         .content-section {
             margin-bottom: 3.5rem;
-            scroll-margin-top: 90px; /* offset for sticky header */
+            scroll-margin-top: 90px;
+            /* offset for sticky header */
         }
 
         .content-section h2 {
@@ -142,7 +140,7 @@
             margin: 1.5rem 0;
             border-radius: 14px;
             overflow: hidden;
-            box-shadow: 0 8px 24px rgba(26,47,59,0.12);
+            box-shadow: 0 8px 24px rgba(26, 47, 59, 0.12);
         }
 
         .content-img-wrap img {
@@ -176,8 +174,13 @@
         }
 
         @media (max-width: 720px) {
-            .split-row { grid-template-columns: 1fr; }
-            .content-hero-text h1 { font-size: 1.7rem; }
+            .split-row {
+                grid-template-columns: 1fr;
+            }
+
+            .content-hero-text h1 {
+                font-size: 1.7rem;
+            }
         }
 
         /* 7. Stat cards row */
@@ -276,7 +279,7 @@
             align-items: center;
             justify-content: center;
             text-decoration: none;
-            box-shadow: 0 6px 20px rgba(42,141,167,0.4);
+            box-shadow: 0 6px 20px rgba(42, 141, 167, 0.4);
             font-size: 1.2rem;
             transition: var(--transition);
             border: 2px solid transparent;
@@ -317,7 +320,8 @@
             </nav>
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
@@ -332,7 +336,7 @@
                 <span class="hero-badge">SDG 06 · Student 2</span>
                 <h1>Sanitation Systems</h1>
                 <p>Understanding how safe sanitation protects communities, prevents disease,
-                   and upholds the dignity and rights of every person on earth.</p>
+                    and upholds the dignity and rights of every person on earth.</p>
             </div>
         </div>
 
@@ -356,35 +360,36 @@
             <h2 id="s1-heading">1. What Is Sanitation?</h2>
 
             <p>Sanitation refers to the systems and facilities that safely manage human waste and maintain
-               cleanliness in living environments. It is one of the most fundamental contributors to human
-               health, dignity, and community well-being. A proper sanitation system ensures that faeces,
-               urine, and wastewater are collected, transported, treated, and disposed of in a way that
-               protects people and the environment from contamination.</p>
+                cleanliness in living environments. It is one of the most fundamental contributors to human
+                health, dignity, and community well-being. A proper sanitation system ensures that faeces,
+                urine, and wastewater are collected, transported, treated, and disposed of in a way that
+                protects people and the environment from contamination.</p>
 
             <p>The United Nations recognises access to safe sanitation as a <strong>basic human right</strong>,
-               yet billions of people worldwide still lack even the most basic facilities. Without sanitation,
-               communities face devastating cycles of illness, missed education, and economic hardship that
-               are extremely difficult to break.</p>
+                yet billions of people worldwide still lack even the most basic facilities. Without sanitation,
+                communities face devastating cycles of illness, missed education, and economic hardship that
+                are extremely difficult to break.</p>
 
             <div class="callout">
                 <p><strong>SDG Target 6.2:</strong> By 2030, achieve access to adequate and equitable sanitation
-                and hygiene for all, and end open defecation, paying special attention to the needs of women,
-                girls, and people in vulnerable situations.</p>
+                    and hygiene for all, and end open defecation, paying special attention to the needs of women,
+                    girls, and people in vulnerable situations.</p>
             </div>
 
             <div class="split-row">
                 <div class="content-img-wrap">
-                    <img src="tile-san.jpg" alt="A clean modern sanitation facility showing proper hygiene infrastructure">
+                    <img src="tile-san.jpg"
+                        alt="A clean modern sanitation facility showing proper hygiene infrastructure">
                     <div class="img-caption">Modern sanitation infrastructure protects public health</div>
                 </div>
                 <div>
                     <h3>Why Sanitation Matters</h3>
                     <p>Sanitation is directly linked to the prevention of waterborne diseases such as cholera,
-                       typhoid, and dysentery — illnesses that kill hundreds of thousands of people every year,
-                       the majority of whom are children under five.</p>
+                        typhoid, and dysentery — illnesses that kill hundreds of thousands of people every year,
+                        the majority of whom are children under five.</p>
                     <p>Beyond health, sanitation enables children — especially girls — to attend school
-                       safely. It protects the privacy and dignity of women and girls. It also supports
-                       economic productivity, as healthy communities work and learn more effectively.</p>
+                        safely. It protects the privacy and dignity of women and girls. It also supports
+                        economic productivity, as healthy communities work and learn more effectively.</p>
                     <ul class="action-list">
                         <li>Safe sanitation prevents the spread of deadly waterborne diseases</li>
                         <li>Proper facilities allow girls to attend school through puberty</li>
@@ -402,10 +407,10 @@
             <h2 id="s2-heading">2. The Global Sanitation Crisis</h2>
 
             <p>Despite enormous progress over recent decades, the global sanitation crisis remains one of
-               the most pressing public health challenges of our time. Hundreds of millions of people still
-               practise open defecation — defecating in fields, bodies of water, or other open spaces —
-               because they have no access to toilets or latrines. This contaminates water sources and
-               spreads disease on a massive scale.</p>
+                the most pressing public health challenges of our time. Hundreds of millions of people still
+                practise open defecation — defecating in fields, bodies of water, or other open spaces —
+                because they have no access to toilets or latrines. This contaminates water sources and
+                spreads disease on a massive scale.</p>
 
             <!-- Global statistics -->
             <div class="stat-row" role="region" aria-label="Global sanitation statistics">
@@ -428,24 +433,26 @@
             </div>
 
             <div class="content-img-wrap">
-                <img src="images/lack water.jpg" alt="Community members in a developing region without access to sanitation facilities">
+                <img src="images/lack water.jpg"
+                    alt="Community members in a developing region without access to sanitation facilities">
                 <div class="img-caption">Millions of communities worldwide lack access to basic sanitation</div>
             </div>
 
             <h3>Who Is Most Affected?</h3>
             <p>The sanitation crisis is not evenly distributed. The burden falls most heavily on communities
-               in Sub-Saharan Africa and South Asia, where rapid urbanisation has outpaced infrastructure
-               development. In informal urban settlements, overcrowding makes sanitation especially
-               difficult to provide and maintain.</p>
+                in Sub-Saharan Africa and South Asia, where rapid urbanisation has outpaced infrastructure
+                development. In informal urban settlements, overcrowding makes sanitation especially
+                difficult to provide and maintain.</p>
 
             <p>Women and girls face particular risks. Without private toilet facilities, many are forced
-               to wait until darkness falls before they can defecate safely, exposing them to harassment
-               and assault. Menstrual hygiene management is also a significant barrier to girls' education
-               when schools lack proper sanitation facilities.</p>
+                to wait until darkness falls before they can defecate safely, exposing them to harassment
+                and assault. Menstrual hygiene management is also a significant barrier to girls' education
+                when schools lack proper sanitation facilities.</p>
 
             <div class="callout">
-                <p>Every <strong>£1 invested in sanitation</strong> generates up to <strong>£5 in economic returns</strong>
-                through reduced healthcare costs, increased productivity, and improved quality of life.</p>
+                <p>Every <strong>£1 invested in sanitation</strong> generates up to <strong>£5 in economic
+                        returns</strong>
+                    through reduced healthcare costs, increased productivity, and improved quality of life.</p>
             </div>
         </section>
 
@@ -456,40 +463,41 @@
             <h2 id="s3-heading">3. Types of Sanitation Systems</h2>
 
             <p>Sanitation is not a single solution — it is a spectrum of systems designed to suit different
-               environments, population densities, and levels of infrastructure development. Understanding
-               the range of available systems helps communities and policymakers make informed choices
-               about which approaches best fit their context.</p>
+                environments, population densities, and levels of infrastructure development. Understanding
+                the range of available systems helps communities and policymakers make informed choices
+                about which approaches best fit their context.</p>
 
             <div class="split-row">
                 <div>
                     <h3>Basic Sanitation</h3>
                     <p>Basic sanitation includes simple pit latrines and vault toilets. Although they do not
-                       connect to sewer systems, they provide an enormous improvement over open defecation
-                       by containing waste and reducing contact with pathogens. These systems are especially
-                       relevant for rural communities in low-income regions.</p>
+                        connect to sewer systems, they provide an enormous improvement over open defecation
+                        by containing waste and reducing contact with pathogens. These systems are especially
+                        relevant for rural communities in low-income regions.</p>
 
                     <h3>Improved Sanitation</h3>
                     <p>Improved sanitation facilities include ventilated improved pit latrines (VIP latrines),
-                       pour-flush toilets, and composting toilets. These designs reduce odour, limit fly
-                       breeding, and manage waste more hygienically than basic pit latrines.</p>
+                        pour-flush toilets, and composting toilets. These designs reduce odour, limit fly
+                        breeding, and manage waste more hygienically than basic pit latrines.</p>
 
                     <h3>Safely Managed Sanitation</h3>
                     <p>Safely managed sanitation — the gold standard — involves the use of flush or pour-flush
-                       toilets connected to sewers, septic systems, or other treatment facilities where
-                       waste is treated and disposed of safely. This is the system used in most high-income
-                       urban areas and is the target for SDG 6.2.</p>
+                        toilets connected to sewers, septic systems, or other treatment facilities where
+                        waste is treated and disposed of safely. This is the system used in most high-income
+                        urban areas and is the target for SDG 6.2.</p>
                 </div>
                 <div class="content-img-wrap">
-                    <img src="figure_2C.jpg" alt="Diagram showing different levels of sanitation systems from basic to safely managed">
+                    <img src="figure_2C.jpg"
+                        alt="Diagram showing different levels of sanitation systems from basic to safely managed">
                     <div class="img-caption">The sanitation ladder: from open defecation to safely managed systems</div>
                 </div>
             </div>
 
             <h3>Wastewater Treatment</h3>
             <p>Beyond toilets, a complete sanitation system requires effective wastewater treatment.
-               Untreated sewage discharged into rivers and oceans is one of the leading causes of water
-               pollution globally. Modern treatment plants remove pathogens, nutrients, and chemical
-               pollutants before water is returned to the environment — or even reused safely.</p>
+                Untreated sewage discharged into rivers and oceans is one of the leading causes of water
+                pollution globally. Modern treatment plants remove pathogens, nutrients, and chemical
+                pollutants before water is returned to the environment — or even reused safely.</p>
 
             <ul class="action-list">
                 <li>Pit latrines provide basic containment in areas without pipe networks</li>
@@ -506,32 +514,34 @@
             <h2 id="s4-heading">4. Hygiene &amp; Health</h2>
 
             <p>Sanitation and hygiene are inseparable. Having a toilet is only part of the solution — the
-               behaviours and habits surrounding its use are equally important. Handwashing with soap at
-               critical moments (after using the toilet, before eating, before preparing food) is one of
-               the single most cost-effective public health interventions known to science.</p>
+                behaviours and habits surrounding its use are equally important. Handwashing with soap at
+                critical moments (after using the toilet, before eating, before preparing food) is one of
+                the single most cost-effective public health interventions known to science.</p>
 
             <div class="content-img-wrap">
                 <img src="action.jpg" alt="A person washing hands with soap and clean water at a hand-washing station">
-                <div class="img-caption">Handwashing with soap is one of the most effective disease-prevention habits</div>
+                <div class="img-caption">Handwashing with soap is one of the most effective disease-prevention habits
+                </div>
             </div>
 
             <h3>The WASH Framework</h3>
             <p>WASH stands for <strong>Water, Sanitation, and Hygiene</strong> — a framework used globally
-               by governments, NGOs, and the UN to address these three interconnected issues together.
-               The WASH approach recognises that providing water infrastructure alone is insufficient if
-               sanitation facilities and hygiene education are not also in place.</p>
+                by governments, NGOs, and the UN to address these three interconnected issues together.
+                The WASH approach recognises that providing water infrastructure alone is insufficient if
+                sanitation facilities and hygiene education are not also in place.</p>
 
             <h3>School WASH</h3>
             <p>Schools are a critical site for WASH investment. When schools have functioning toilets,
-               clean handwashing facilities, and hygiene education built into their curriculum, children
-               develop lifelong habits that protect their own health and the health of their communities.
-               Research shows that school WASH programmes also significantly reduce absenteeism,
-               particularly among girls during menstruation.</p>
+                clean handwashing facilities, and hygiene education built into their curriculum, children
+                develop lifelong habits that protect their own health and the health of their communities.
+                Research shows that school WASH programmes also significantly reduce absenteeism,
+                particularly among girls during menstruation.</p>
 
             <div class="callout">
                 <p>Handwashing with soap can reduce the risk of diarrhoeal diseases by up to
-                <strong>40%</strong> and respiratory infections by up to <strong>23%</strong> — making it
-                one of the most powerful and affordable health interventions available.</p>
+                    <strong>40%</strong> and respiratory infections by up to <strong>23%</strong> — making it
+                    one of the most powerful and affordable health interventions available.
+                </p>
             </div>
 
             <h3>Hygiene Behaviours That Make a Difference</h3>
@@ -551,13 +561,14 @@
             <h2 id="s5-heading">5. What Can Students Do?</h2>
 
             <p>As students at the University of Westminster, we are in a uniquely powerful position to
-               contribute to SDG 6. Our campus, our communities, and our daily habits all offer
-               opportunities to make a meaningful difference. Sanitation is not just a problem in
-               distant countries — it is a local responsibility too.</p>
+                contribute to SDG 6. Our campus, our communities, and our daily habits all offer
+                opportunities to make a meaningful difference. Sanitation is not just a problem in
+                distant countries — it is a local responsibility too.</p>
 
             <div class="split-row">
                 <div class="content-img-wrap">
-                    <img src="tile-comm.jpg" alt="Students organising a community clean-up and sanitation awareness event">
+                    <img src="tile-comm.jpg"
+                        alt="Students organising a community clean-up and sanitation awareness event">
                     <div class="img-caption">Students organising community sanitation awareness campaigns</div>
                 </div>
                 <div>
@@ -582,8 +593,8 @@
 
             <div class="callout">
                 <p>Student-led advocacy has driven real policy change. <strong>Your voice matters</strong> —
-                write to your local council, sign petitions, and use social media to highlight the
-                importance of sanitation as a human right.</p>
+                    write to your local council, sign petitions, and use social media to highlight the
+                    importance of sanitation as a human right.</p>
             </div>
         </section>
 
@@ -594,27 +605,27 @@
             <h2 id="s6-heading">6. Innovations &amp; The Future of Sanitation</h2>
 
             <p>Technology and innovation are opening new possibilities for sanitation in contexts where
-               traditional infrastructure is difficult or too costly to build. From solar-powered treatment
-               systems to container-based sanitation models, innovators around the world are developing
-               solutions that can be deployed rapidly and at scale.</p>
+                traditional infrastructure is difficult or too costly to build. From solar-powered treatment
+                systems to container-based sanitation models, innovators around the world are developing
+                solutions that can be deployed rapidly and at scale.</p>
 
             <h3>Reinvented Toilet Initiative</h3>
             <p>The Bill &amp; Melinda Gates Foundation's "Reinvent the Toilet" challenge has produced
-               designs that process human waste without requiring piped water, sewer connections, or
-               external power. These self-contained units convert waste into safe by-products like
-               clean water and fertiliser — revolutionising what is possible in off-grid communities.</p>
+                designs that process human waste without requiring piped water, sewer connections, or
+                external power. These self-contained units convert waste into safe by-products like
+                clean water and fertiliser — revolutionising what is possible in off-grid communities.</p>
 
             <h3>Container-Based Sanitation</h3>
             <p>In dense urban informal settlements where it is impossible to install underground sewers,
-               container-based sanitation (CBS) services collect waste in sealed containers that are
-               regularly collected and treated at off-site facilities. This model has been successfully
-               deployed in Ghana, Haiti, and Bangladesh, serving thousands of households.</p>
+                container-based sanitation (CBS) services collect waste in sealed containers that are
+                regularly collected and treated at off-site facilities. This model has been successfully
+                deployed in Ghana, Haiti, and Bangladesh, serving thousands of households.</p>
 
             <h3>Biogas from Waste</h3>
             <p>Human waste is increasingly being recognised as a resource. Biogas digesters convert
-               organic waste into methane gas that can be used for cooking and electricity generation,
-               while the remaining digestate is a nutrient-rich fertiliser. This circular approach
-               turns a public health problem into a clean energy solution.</p>
+                organic waste into methane gas that can be used for cooking and electricity generation,
+                while the remaining digestate is a nutrient-rich fertiliser. This circular approach
+                turns a public health problem into a clean energy solution.</p>
 
             <ul class="action-list">
                 <li>Solar-powered treatment units work in off-grid and remote locations</li>
@@ -626,8 +637,8 @@
 
             <div class="callout">
                 <p>Innovation alone is not enough — <strong>political will, community engagement, and sustained
-                funding</strong> are equally essential. The technology exists to end the sanitation crisis;
-                what is needed now is the collective commitment to deploy it.</p>
+                        funding</strong> are equally essential. The technology exists to end the sanitation crisis;
+                    what is needed now is the collective commitment to deploy it.</p>
             </div>
         </section>
 
@@ -648,4 +659,5 @@
     </footer>
 
 </body>
+
 </html>

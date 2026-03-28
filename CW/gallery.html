@@ -11,6 +11,7 @@
 
 <body>
 
+    <!--  GLOBAL HEADER: Contains the branding logo, navigation links, and user profile icon -->
     <header>
         <div class="logo-container">
             <a href="home.html" class="logo-link">
@@ -43,6 +44,7 @@
         </div>
     </header>
 
+    <!--  MAIN GALLERY SECTION: The grid container holding all the interactive image thumbnails -->
     <main>
         <h1>Innovation Gallery</h1>
         <div class="gallery-grid">
@@ -85,11 +87,14 @@
         </div>
     </main>
 
+    <!--  INTERACTIVE MODAL (POP-UP): This structure stays hidden in the background until a user clicks on one of the gallery cards above -->
     <div class="modal-overlay" id="gallery-modal">
         <div class="modal-content">
             <div class="modal-header"><button class="modal-close-btn" onclick="closeModal()">&times;</button></div>
             <div class="modal-body">
-                <div class="modal-img-container"><img id="modal-img" src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt=""></div>
+                <div class="modal-img-container"><img id="modal-img"
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="">
+                </div>
                 <div class="modal-info-container">
                     <h2 id="modal-title">&nbsp;</h2>
                     <p id="modal-desc"></p>
@@ -98,6 +103,7 @@
         </div>
     </div>
 
+    <!--  ACCESSIBILITY CONTROL: Floating Action Button (FAB) that allows users to toggle global text scaling for better readability -->
     <button class="text-size-fab" onclick="toggleGlobalTextSize()" title="Toggle Text Size">
         <svg viewBox="0 0 24 24">
             <path
@@ -106,6 +112,7 @@
         </svg>
     </button>
 
+    <!--  GLOBAL FOOTER: Contains project info, relevant student roles, and required development links (Page Editor, Validation, etc.) -->
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
         <p>
@@ -116,6 +123,7 @@
         <p>Student Name | Student ID | Role: [Your Role]</p>
     </footer>
 
+    <!--  EXTERNAL SCRIPTS: Loads the interactive Javascript logic that controls the pop-up modal interactions and accessibility scripts -->
     <script src="gallery.js"></script>
 </body>
 
