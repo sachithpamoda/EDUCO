@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | Future Innovation (ST4)</title>
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* =====================================================
+           CONTENT PAGE — ST4: Future Innovation
+           Student 4
+           Page-specific embedded CSS — does not override style.css
+        ===================================================== */
+
+        /* 1. Internal nav menu at the top of the page */
+        .internal-nav {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 1.5rem 2rem;
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 2.5rem;
+            border-left: 5px solid var(--tertiary-teal);
+        }
+
+        .internal-nav h2 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--tertiary-teal);
+            margin-bottom: 1rem;
+        }
+
+        .internal-nav ol {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            padding: 0;
+        }
+
+        .internal-nav ol li a {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-light);
+            color: var(--dark-abyss);
+            text-decoration: none;
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border: 1px solid transparent;
+            transition: var(--transition);
+        }
+
+        .internal-nav ol li a:hover {
+            background: var(--tertiary-teal);
+            color: var(--white);
+            border-color: var(--tertiary-teal);
+            transform: translateY(-2px);
+        }
+
+        /* 2. Hero banner specific to this content page */
+        .content-hero {
+            position: relative;
+            border-radius: 20px;
+            overflow: hidden;
+            margin-bottom: 3rem;
+            min-height: 320px;
+            display: flex;
+            align-items: flex-end;
+            background:
+                linear-gradient(135deg, rgba(26, 47, 59, 0.9), rgba(42, 141, 167, 0.8)),
+                url('images/placeholder_hero.jpg') center / cover no-repeat;
+            color: var(--white);
+            padding: 3rem 2.5rem;
+            box-shadow: 0 16px 40px rgba(26, 47, 59, 0.2);
+        }
+
+        .content-hero-text h1 {
+            font-size: 2.4rem;
+            color: var(--white);
+            margin-bottom: 0.6rem;
+            line-height: 1.1;
+        }
+
+        .content-hero-text p {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 580px;
+            line-height: 1.7;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: var(--secondary-blue);
+            color: var(--dark-abyss);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 0.35rem 1rem;
+            border-radius: 999px;
+            margin-bottom: 1rem;
+        }
+
+        /* 3. Content sections — each has a consistent layout */
+        .content-section {
+            margin-bottom: 3.5rem;
+            scroll-margin-top: 90px;
+        }
+
+        .content-section h2 {
+            font-size: 1.6rem;
+            color: var(--tertiary-teal);
+            margin-bottom: 0.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary-light);
+        }
+
+        .content-section h3 {
+            font-size: 1.15rem;
+            color: var(--dark-abyss);
+            margin: 1.5rem 0 0.5rem;
+        }
+
+        .content-section p {
+            color: var(--dark-abyss);
+            line-height: 1.8;
+            margin-bottom: 1rem;
+        }
+
+        /* 4. Image styling with captions */
+        .content-img-wrap {
+            margin: 1.5rem 0;
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(26, 47, 59, 0.12);
+        }
+
+        .content-img-wrap img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        .content-img-wrap.img-natural img {
+            height: auto;
+            object-fit: unset;
+        }
+
+        .content-img-wrap:hover img {
+            transform: scale(1.03);
+        }
+
+        .img-caption {
+            background: var(--primary-light);
+            padding: 0.6rem 1rem;
+            font-size: 0.8rem;
+            color: var(--dark-abyss);
+            opacity: 0.8;
+            font-style: italic;
+        }
+
+        /* 5. Two-column image + text layout */
+        .split-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+            margin: 1.5rem 0;
+        }
+
+        @media (max-width: 720px) {
+            .split-row {
+                grid-template-columns: 1fr;
+            }
+
+            .content-hero-text h1 {
+                font-size: 1.7rem;
+            }
+        }
+
+        /* 6. Stat cards row */
+        .stat-row {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+
+        .stat-card {
+            background: var(--white);
+            border-radius: 14px;
+            padding: 1.5rem 1.2rem;
+            text-align: center;
+            box-shadow: var(--shadow-soft);
+            border-top: 4px solid var(--tertiary-teal);
+        }
+
+        .stat-num {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--tertiary-teal);
+            line-height: 1;
+            margin-bottom: 0.3rem;
+        }
+
+        .stat-desc {
+            font-size: 0.82rem;
+            color: var(--dark-abyss);
+            line-height: 1.4;
+        }
+
+        /* 7. Highlight / callout box */
+        .callout {
+            background: linear-gradient(135deg, #e8f7fa, #d0eef5);
+            border-left: 5px solid var(--tertiary-teal);
+            border-radius: 0 12px 12px 0;
+            padding: 1.25rem 1.5rem;
+            margin: 1.5rem 0;
+        }
+
+        .callout p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--dark-abyss);
+            font-style: italic;
+        }
+
+        .callout strong {
+            color: var(--tertiary-teal);
+            font-style: normal;
+        }
+
+        /* 8. Action list items */
+        .action-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.7rem 0;
+            border-bottom: 1px solid var(--primary-light);
+            font-size: 0.95rem;
+            color: var(--dark-abyss);
+            line-height: 1.6;
+        }
+
+        .action-list li:last-child {
+            border-bottom: none;
+        }
+
+        .action-list li::before {
+            content: "💧";
+            font-size: 1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* 9. Go to Top button — fixed, CSS only */
+        .go-top {
+            position: fixed;
+            bottom: 2.2rem;
+            right: 2.2rem;
+            z-index: 500;
+            width: 48px;
+            height: 48px;
+            background: var(--tertiary-teal);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 6px 20px rgba(42, 141, 167, 0.4);
+            font-size: 1.2rem;
+            transition: var(--transition);
+            border: 2px solid transparent;
+        }
+
+        .go-top:hover {
+            background: var(--dark-abyss);
+            border-color: var(--secondary-blue);
+            transform: translateY(-4px);
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER (shared template) ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <!-- ===== MAIN CONTENT ===== -->
+    <main id="top">
+
+        <!-- Hero Banner -->
+        <div class="content-hero" role="banner">
+            <div class="content-hero-text">
+                <span class="hero-badge">SDG 06 · Student 4</span>
+                <h1>Future Innovation</h1>
+                <p>Smart technologies are revolutionizing water security. Discover how big data, AI,
+                    and next-generation infrastructure are being deployed to protect global freshwater reserves.</p>
+            </div>
+        </div>
+
+        <!-- ── INTERNAL NAVIGATION MENU ── -->
+        <nav class="internal-nav" aria-label="Page sections">
+            <h2>📋 Contents — Jump to a section</h2>
+            <ol>
+                <li><a href="#water-innovation">What is Water Tech?</a></li>
+                <li><a href="#smart-grids">Smart Water Grids</a></li>
+                <li><a href="#purification">Next-Gen Purification</a></li>
+                <li><a href="#ai-data">AI & Big Data</a></li>
+                <li><a href="#agriculture">Precision Agriculture</a></li>
+            </ol>
+        </nav>
+
+        <!-- ══════════════════════════════════════
+             SECTION 1 — WHAT IS WATER INNOVATION?
+        ══════════════════════════════════════ -->
+        <section class="content-section card" id="water-innovation" aria-labelledby="s1-heading">
+            <h2 id="s1-heading">1. What is Water Tech?</h2>
+
+            <p>Technological innovation is rapidly shifting how humans interact with and manage water. In the face
+                of severe climate shifts and surging population demands, traditional water management systems
+                are no longer enough to guarantee water security. We are now entering an era where digital
+                technologies converge with hardware engineering to create hyper-efficient, highly responsive
+                water networks.</p>
+
+            <div class="callout">
+                <p><strong>SDG Target 6.a:</strong> By 2030, expand international cooperation and capacity-building
+                    support to developing countries in water- and sanitation-related activities and programmes,
+                    including
+                    water harvesting, desalination, water efficiency, wastewater treatment, recycling and reuse
+                    technologies.</p>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             SECTION 2 — SMART WATER GRIDS
+        ══════════════════════════════════════ -->
+        <section class="content-section card" id="smart-grids" aria-labelledby="s2-heading">
+            <h2 id="s2-heading">2. Smart Water Grids</h2>
+
+            <p>Similar to electric grids, Smart Water Grids embed digital intelligence into our water supply
+                infrastructure. Using thousands of connected IoT (Internet of Things) sensors, utility companies
+                can monitor local water flow, pipe pressure, and quality in real time.</p>
+
+            <p>These advanced grids drastically reduce "Non-Revenue Water"—water that is pumped but lost to
+                unnoticed leaks before it reaches homes. In many older cities, up to 30% of treated water is
+                lost to underground pipe cracks. Smart sensors can pinpoint a leak's location instantly,
+                allowing utilities to repair the pipe before massive water loss occurs.</p>
+
+            <!-- Image 1 of 2 -->
+            <div class="content-img-wrap img-natural">
+                <img src="images/st4_img1.jpg"
+                    alt="IoT sensors and digital data mapping over water infrastructure">
+                <div class="img-caption">IoT sensors form the backbone of a smart municipal water grid.</div>
+            </div>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             SECTION 3 — NEXT-GEN PURIFICATION
+        ══════════════════════════════════════ -->
+        <section class="content-section card" id="purification" aria-labelledby="s3-heading">
+            <h2 id="s3-heading">3. Next-Gen Purification & Desalination</h2>
+
+            <p>Desalination—turning seawater into fresh water—has historically been incredibly expensive and
+                terribly energy-intensive. However, the future is looking towards Solar Desalination and
+                Advanced Nanomaterials like graphene.</p>
+
+            <!-- Global statistics -->
+            <div class="stat-row" role="region" aria-label="Innovation impact statistics">
+                <div class="stat-card">
+                    <div class="stat-num">30%</div>
+                    <div class="stat-desc">Less energy required by next-gen reverse osmosis plants</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">1.5M</div>
+                    <div class="stat-desc">Data points processed daily by a typical smart municipal grid</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-num">20%</div>
+                    <div class="stat-desc">Water savings achieved globally through precision agriculture</div>
+                </div>
+            </div>
+
+            <p>Graphene-oxide membrane filters are able to trap salt particles at the molecular level,
+                drastically decreasing the electrical pressure needed to push water through the filter. Paired
+                with renewable solar energy, coastal cities facing extreme drought can secure drought-proof
+                water supplies sustainably.</p>
+        </section>
+
+        <!-- ══════════════════════════════════════
+             SECTION 4 — AI & BIG DATA
+        ══════════════════════════════════════ -->
+        <section class="content-section card" id="ai-data" aria-labelledby="s4-heading">
+            <h2 id="s4-heading">4. AI & Big Data</h2>
+
+            <p>Artificial Intelligence models are increasingly fed decades of climate, consumption, and geographic
+                data to accurately predict where future water shortages will strike before they happen. These
+                predictive models guide governments on where to build new reservoirs and when to issue drought
+                warnings.</p>
+
+            <!-- Image 2 of 2 -->
+            <div class="split-row">
+                <div class="content-img-wrap">
+                    <img src="images/st4_img2.jpg"
+                        alt="Precision agriculture technology assisting crop hydration">
+                    <div class="img-caption">AI helps farmers determine the exact amount of water each crop needs to
+                        survive.</div>
+                </div>
+                <div>
+                    <h3 id="agriculture">Precision Agriculture</h3>
+                    <p>Since agriculture consumes 70% of the world's freshwater, agricultural innovation is
+                        where the greatest water savings can be achieved. Precision agriculture replaces traditional
+                        "flood" watering with hyper-targeted systems.</p>
+                    <p>By using soil-moisture sensors, AI weather forecasts, and satellite imagery, automated
+                        drip-irrigation feeds a highly accurate amount of water directly to the plant's roots,
+                        down to the milliliter. This eliminates evaporation waste completely.</p>
+                    <ul class="action-list">
+                        <li>Drones mapped with infrared sensors detect dehydrated crop zones</li>
+                        <li>Automated root-drip lines reduce agricultural water usage by up to 50%</li>
+                        <li>Hydroponic vertical farming recycles 95% of its internal water supply</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== GO TO TOP BUTTON (CSS only, no JavaScript) ===== -->
+    <a href="#top" class="go-top" aria-label="Go back to top of page" title="Back to top">↑</a>
+
+    <!-- ===== SHARED FOOTER (template) ===== -->
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST4.html">Page Editor</a> |
+            <a href="validation_ST4.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Student 4 Name | ST4 ID | Role: Future Innovation Content Page</p>
+    </footer>
+
+</body>
+
+</html>
