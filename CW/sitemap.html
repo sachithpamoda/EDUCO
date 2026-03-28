@@ -12,10 +12,12 @@
         .sitemap-container {
             text-align: center;
             padding: 40px 20px;
+            overflow-x: auto;
         }
 
         .sitemap-svg {
             width: 100%;
+            min-width: 1000px;
             height: auto;
             max-width: 1200px;
             display: block;
@@ -58,21 +60,6 @@
             stroke-width: 4;
             outline: none;
         }
-
-        /* Prevent unexpected magnification of header/footer elements */
-        header, footer {
-            font-size: 16px !important;
-            zoom: 1 !important;
-        }
-        header .logo-text h2 {
-            font-size: 24px !important;
-        }
-        header .logo-text p {
-            font-size: 12px !important;
-        }
-        nav a {
-            font-size: 16px !important;
-        }
     </style>
 </head>
 
@@ -103,7 +90,8 @@
 
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
@@ -112,9 +100,11 @@
     <main>
         <div class="sitemap-container">
             <h1>Website Visual Sitemap</h1>
-            <p>Interactive guide to AquaAction's structure. Navigation items are primary branches with sub-content below.</p>
+            <p>Interactive guide to AquaAction's structure. Navigation items are primary branches with sub-content
+                below.</p>
 
-            <svg viewBox="0 0 1200 1050" xmlns="http://www.w3.org/2000/svg" class="sitemap-svg" aria-label="Interactive Sitemap">
+            <svg viewBox="0 0 1200 1050" xmlns="http://www.w3.org/2000/svg" class="sitemap-svg"
+                aria-label="Interactive Sitemap">
                 <g class="branches">
                     <line x1="600" y1="50" x2="600" y2="100" class="branch-line" />
                     <line x1="150" y1="180" x2="1050" y2="180" class="branch-line" />
@@ -135,36 +125,36 @@
                 </g>
 
                 <g class="branches">
-                <line x1="150" y1="270" x2="150" y2="300" class="branch-line" />
-                <line x1="150" y1="340" x2="150" y2="370" class="branch-line" />
-                <line x1="150" y1="410" x2="150" y2="440" class="branch-line" />
-                <line x1="330" y1="270" x2="330" y2="300" class="branch-line" />
-                <line x1="330" y1="340" x2="330" y2="370" class="branch-line" />
-                <line x1="330" y1="410" x2="330" y2="440" class="branch-line" />
-                <line x1="510" y1="270" x2="510" y2="300" class="branch-line" />
-                <line x1="510" y1="340" x2="510" y2="370" class="branch-line" />
-                <line x1="510" y1="410" x2="510" y2="440" class="branch-line" />
-                <line x1="690" y1="270" x2="690" y2="300" class="branch-line" />
-                <line x1="690" y1="340" x2="690" y2="370" class="branch-line" />
-                <line x1="690" y1="410" x2="690" y2="440" class="branch-line" />
-                <line x1="870" y1="270" x2="870" y2="300" class="branch-line" />
-                <line x1="870" y1="340" x2="870" y2="370" class="branch-line" />
-                <line x1="870" y1="410" x2="870" y2="440" class="branch-line" />
-                <line x1="1050" y1="270" x2="1050" y2="300" class="branch-line" />
-                <line x1="1050" y1="340" x2="1050" y2="370" class="branch-line" />
-                <line x1="1050" y1="410" x2="1050" y2="440" class="branch-line" />
-                <line x1="300" y1="760" x2="300" y2="790" class="branch-line" />
-                <line x1="300" y1="830" x2="300" y2="860" class="branch-line" />
-                <line x1="300" y1="900" x2="300" y2="930" class="branch-line" />
-                <line x1="500" y1="760" x2="500" y2="790" class="branch-line" />
-                <line x1="500" y1="830" x2="500" y2="860" class="branch-line" />
-                <line x1="500" y1="900" x2="500" y2="930" class="branch-line" />
-                <line x1="700" y1="760" x2="700" y2="790" class="branch-line" />
-                <line x1="700" y1="830" x2="700" y2="860" class="branch-line" />
-                <line x1="700" y1="900" x2="700" y2="930" class="branch-line" />
-                <line x1="900" y1="760" x2="900" y2="790" class="branch-line" />
-                <line x1="900" y1="830" x2="900" y2="860" class="branch-line" />
-                <line x1="900" y1="900" x2="900" y2="930" class="branch-line" />
+                    <line x1="150" y1="270" x2="150" y2="300" class="branch-line" />
+                    <line x1="150" y1="340" x2="150" y2="370" class="branch-line" />
+                    <line x1="150" y1="410" x2="150" y2="440" class="branch-line" />
+                    <line x1="330" y1="270" x2="330" y2="300" class="branch-line" />
+                    <line x1="330" y1="340" x2="330" y2="370" class="branch-line" />
+                    <line x1="330" y1="410" x2="330" y2="440" class="branch-line" />
+                    <line x1="510" y1="270" x2="510" y2="300" class="branch-line" />
+                    <line x1="510" y1="340" x2="510" y2="370" class="branch-line" />
+                    <line x1="510" y1="410" x2="510" y2="440" class="branch-line" />
+                    <line x1="690" y1="270" x2="690" y2="300" class="branch-line" />
+                    <line x1="690" y1="340" x2="690" y2="370" class="branch-line" />
+                    <line x1="690" y1="410" x2="690" y2="440" class="branch-line" />
+                    <line x1="870" y1="270" x2="870" y2="300" class="branch-line" />
+                    <line x1="870" y1="340" x2="870" y2="370" class="branch-line" />
+                    <line x1="870" y1="410" x2="870" y2="440" class="branch-line" />
+                    <line x1="1050" y1="270" x2="1050" y2="300" class="branch-line" />
+                    <line x1="1050" y1="340" x2="1050" y2="370" class="branch-line" />
+                    <line x1="1050" y1="410" x2="1050" y2="440" class="branch-line" />
+                    <line x1="300" y1="760" x2="300" y2="790" class="branch-line" />
+                    <line x1="300" y1="830" x2="300" y2="860" class="branch-line" />
+                    <line x1="300" y1="900" x2="300" y2="930" class="branch-line" />
+                    <line x1="500" y1="760" x2="500" y2="790" class="branch-line" />
+                    <line x1="500" y1="830" x2="500" y2="860" class="branch-line" />
+                    <line x1="500" y1="900" x2="500" y2="930" class="branch-line" />
+                    <line x1="700" y1="760" x2="700" y2="790" class="branch-line" />
+                    <line x1="700" y1="830" x2="700" y2="860" class="branch-line" />
+                    <line x1="700" y1="900" x2="700" y2="930" class="branch-line" />
+                    <line x1="900" y1="760" x2="900" y2="790" class="branch-line" />
+                    <line x1="900" y1="830" x2="900" y2="860" class="branch-line" />
+                    <line x1="900" y1="900" x2="900" y2="930" class="branch-line" />
                 </g>
 
                 <a href="splash.html" class="sitemap-link">
@@ -172,7 +162,8 @@
                     <text x="600" y="35" class="node-text">Splash Screen</text>
                 </a>
                 <a href="home.html" class="sitemap-link">
-                    <rect x="500" y="100" width="200" height="40" rx="8" class="node-box" style="fill: #d1e7ff; font-weight: bold;" />
+                    <rect x="500" y="100" width="200" height="40" rx="8" class="node-box"
+                        style="fill: #d1e7ff; font-weight: bold;" />
                     <text x="600" y="125" class="node-text">Home Page</text>
                 </a>
                 <a href="gallery.html" class="sitemap-link">
@@ -347,7 +338,7 @@
                 <line x1="790" y1="120" x2="820" y2="120" class="branch-line" />
                 <line x1="790" y1="120" x2="790" y2="155" class="branch-line" />
                 <line x1="790" y1="155" x2="820" y2="155" class="branch-line" />
-                
+
                 <a href="pageEditor_ST1.html" class="sitemap-link">
                     <rect x="820" y="70" width="130" height="30" rx="5" class="node-box" />
                     <text x="885" y="90" class="node-text">Page Editor</text>
@@ -360,7 +351,7 @@
                     <rect x="820" y="140" width="130" height="30" rx="5" class="node-box" />
                     <text x="885" y="160" class="node-text">Accessibility</text>
                 </a>
-</svg>
+            </svg>
 
 
         </div>
