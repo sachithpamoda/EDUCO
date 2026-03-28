@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | Meet the Team</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           PAGE-SPECIFIC EMBEDDED CSS — team.html
+           Student 3: Sasiru Insara Rajapaksha | 2181982
+           Engagement & Team Lead
+           Scoped to this page only. Does NOT override Global CSS.
+        ===================================================== */
+
+        /* --- 1. Page intro paragraph --- */
+        .team-intro {
+            text-align: center;
+            max-width: 640px;
+            margin: 0 auto 3rem auto;
+            color: var(--muted-text);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        /* --- 2. Team grid — 4 equal columns, centred --- */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 2rem;
+            justify-items: center;
+        }
+
+        /* --- 3. Member block — full card container, keyboard-focusable --- */
+        .member-block {
+            position: relative;
+            width: 100%;
+            max-width: 240px;
+            cursor: pointer;
+            outline: none;
+            border-radius: 20px;
+        }
+
+        /* --- 4. Keyboard focus ring (accessibility) --- */
+        .member-block:focus {
+            box-shadow: 0 0 0 4px var(--secondary-blue);
+            border-radius: 20px;
+        }
+
+        /* --- 5. Square thumbnail with smooth transitions --- */
+        .member-thumb {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 4px solid transparent;
+            box-shadow: 0 8px 22px rgba(26, 47, 59, 0.14);
+            transition: transform 0.3s ease, border-color 0.3s ease,
+                        box-shadow 0.3s ease, opacity 0.3s ease;
+            position: relative;
+        }
+
+        .member-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            display: block;
+            transition: transform 0.4s ease;
+        }
+
+        /* --- 6. Hover / focus: lift, teal border, slight dim --- */
+        .member-block:hover .member-thumb,
+        .member-block:focus .member-thumb {
+            transform: translateY(-6px) scale(1.03);
+            border-color: var(--secondary-blue);
+            box-shadow: 0 18px 36px rgba(26, 47, 59, 0.22);
+            opacity: 0.92;
+        }
+
+        .member-block:hover .member-thumb img,
+        .member-block:focus .member-thumb img {
+            transform: scale(1.07);
+        }
+
+        /* --- 7. Name & role label below thumbnail --- */
+        .member-label {
+            text-align: center;
+            margin-top: 0.8rem;
+        }
+
+        .member-label strong {
+            display: block;
+            font-size: 1rem;
+            color: var(--dark-abyss);
+        }
+
+        .member-label span {
+            font-size: 0.82rem;
+            color: var(--muted-text);
+        }
+
+        /* --- 8. Expandable details panel (CSS-only reveal, no JS needed) --- */
+        .member-details {
+            max-height: 0;
+            overflow: hidden;
+            opacity: 0;
+            transition: max-height 0.45s ease, opacity 0.35s ease, margin-top 0.3s ease;
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 6px 20px rgba(26, 47, 59, 0.12);
+            border-left: 5px solid var(--tertiary-teal);
+            margin-top: 0;
+        }
+
+        /* Reveal on hover or keyboard focus of parent block */
+        .member-block:hover .member-details,
+        .member-block:focus .member-details {
+            max-height: 380px;
+            opacity: 1;
+            margin-top: 0.8rem;
+        }
+
+        .member-details-inner { padding: 1.2rem 1.4rem; }
+
+        .member-details h3 {
+            font-size: 1rem;
+            color: var(--tertiary-teal);
+            margin-bottom: 0.3rem;
+        }
+
+        .role-badge {
+            display: inline-block;
+            background: var(--secondary-blue);
+            color: var(--dark-abyss);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 0.25rem 0.75rem;
+            border-radius: 999px;
+            margin-bottom: 0.7rem;
+        }
+
+        .member-details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 0.6rem 0;
+        }
+
+        .member-details ul li {
+            font-size: 0.82rem;
+            color: var(--muted-text);
+            padding: 0.2rem 0;
+            border-bottom: 1px dashed #d8eef3;
+        }
+
+        .member-details ul li:last-child { border-bottom: none; }
+
+        .member-summary {
+            font-size: 0.83rem;
+            color: var(--dark-abyss);
+            font-style: italic;
+            margin-top: 0.5rem;
+        }
+
+        /* Responsive breakpoints */
+        @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr 1fr; } }
+        @media (max-width: 400px) { .team-grid { grid-template-columns: 1fr; } }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV — Shared Template (DO NOT MODIFY) ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html" class="active">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <h1>Meet the Team</h1>
+
+        <div class="team-intro">
+            <p>We are four students united by a commitment to SDG 06 — Clean Water &amp; Sanitation.
+               Hover over each member to discover their role and contributions to AquaAction.</p>
+        </div>
+
+        <!--
+            team-grid: 4 members
+            tabindex="0"     → keyboard accessible
+            :hover/:focus    → CSS-only expand of details panel (no JS required per spec §4.7)
+            role="listitem"  → semantic list for screen readers
+        -->
+        <div class="team-grid" role="list">
+
+            <!-- ===== MEMBER 1: Implementation Lead ===== -->
+            <div class="member-block" tabindex="0" role="listitem"
+                 aria-label="Student 1 – Template & Home Page Lead. Hover or press Tab then Enter to see details.">
+                <div class="member-thumb">
+                    <!--
+                        Male portrait — unsplash photo-1507003211169-0a1dd7228f2d
+                        (man in a grey shirt, neutral background)
+                    -->
+                    <img
+                        src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&auto=format"
+                        alt="Portrait of Student 1, Template and Home Page Lead">
+                </div>
+                <div class="member-label">
+                    <strong>Student 1</strong>
+                    <span>Template &amp; Home Page Lead</span>
+                </div>
+                <div class="member-details" aria-hidden="true">
+                    <div class="member-details-inner">
+                        <h3>Student One</h3>
+                        <span class="role-badge">Template &amp; Home Page Lead</span>
+                        <ul>
+                            <li>🎨 Global CSS &amp; Shared HTML Template</li>
+                            <li>🏠 Home Page (home.html)</li>
+                            <li>🖼️ Gallery Page (gallery.html)</li>
+                            <li>📝 Content Page (content_ST1.html)</li>
+                        </ul>
+                        <p class="member-summary">"Established the visual identity of AquaAction — the template, colour palette, and gallery that gives the whole site its look and feel."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== MEMBER 2: Splash Screen & Simulator Lead ===== -->
+            <div class="member-block" tabindex="0" role="listitem"
+                 aria-label="Student 2 – Splash Screen and Simulator Lead. Hover or press Tab then Enter to see details.">
+                <div class="member-thumb">
+                    <!--
+                        Male portrait — unsplash photo-1472099645785-5658abf4ff4e
+                        (man with short hair, smiling, dark background)
+                    -->
+                    <img
+                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop&auto=format"
+                        alt="Portrait of Student 2, Splash Screen and Simulator Lead">
+                </div>
+                <div class="member-label">
+                    <strong>Student 2</strong>
+                    <span>Splash Screen &amp; Simulator Lead</span>
+                </div>
+                <div class="member-details" aria-hidden="true">
+                    <div class="member-details-inner">
+                        <h3>Student Two</h3>
+                        <span class="role-badge">Splash Screen &amp; Simulator Lead</span>
+                        <ul>
+                            <li>💧 Splash Screen (splash.html)</li>
+                            <li>⚙️ Action Impact Simulator (ais.html)</li>
+                            <li>📝 Content Page (content_ST2.html)</li>
+                        </ul>
+                        <p class="member-summary">"Built the immersive splash entry and the water-saving simulator — the two most interactive experiences on the site."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== MEMBER 3: Feedback & Team Lead (Sasiru) ===== -->
+            <div class="member-block" tabindex="0" role="listitem"
+                 aria-label="Sasiru Insara Rajapaksha – Feedback and Team Lead. Hover or press Tab then Enter to see details.">
+                <div class="member-thumb">
+                    <!--
+                        Male portrait — unsplash photo-1539571696357-5a69c17a67c6
+                        (young man in casual clothing, warm background)
+                    -->
+                    <img
+                        src="https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=400&h=400&fit=crop&auto=format"
+                        alt="Portrait of Sasiru Insara Rajapaksha, Feedback and Team Lead">
+                </div>
+                <div class="member-label">
+                    <strong>Sasiru Insara Rajapaksha</strong>
+                    <span>Feedback &amp; Team Lead</span>
+                </div>
+                <div class="member-details" aria-hidden="true">
+                    <div class="member-details-inner">
+                        <h3>Sasiru Insara Rajapaksha</h3>
+                        <span class="role-badge">Feedback &amp; Team Lead</span>
+                        <ul>
+                            <li>📬 Feedback &amp; Directory (feedback.html)</li>
+                            <li>👥 Team Page (team.html)</li>
+                            <li>📝 Content Page (content_ST3.html)</li>
+                        </ul>
+                        <p class="member-summary">"Designed the community engagement layer of AquaAction — connecting users with real programmes and presenting the team behind the project."</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== MEMBER 4: Profile & Sitemap Lead ===== -->
+            <div class="member-block" tabindex="0" role="listitem"
+                 aria-label="Student 4 – User Profile and Sitemap Lead. Hover or press Tab then Enter to see details.">
+                <div class="member-thumb">
+                    <!--
+                        Male portrait — unsplash photo-1500648767791-00dcc994a43e
+                        (man in a light blue shirt, arms crossed)
+                    -->
+                    <img
+                        src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&h=400&fit=crop&auto=format"
+                        alt="Portrait of Student 4, User Profile and Sitemap Lead">
+                </div>
+                <div class="member-label">
+                    <strong>Student 4</strong>
+                    <span>User Profile &amp; Sitemap Lead</span>
+                </div>
+                <div class="member-details" aria-hidden="true">
+                    <div class="member-details-inner">
+                        <h3>Student Four</h3>
+                        <span class="role-badge">User Profile &amp; Sitemap Lead</span>
+                        <ul>
+                            <li>👤 User Profile (profile.html)</li>
+                            <li>🗺️ SVG Sitemap (sitemap.html)</li>
+                            <li>📝 Content Page (content_ST4.html)</li>
+                        </ul>
+                        <p class="member-summary">"Created the personalised user journey and the interactive SVG sitemap that gives AquaAction its clear, navigable structure."</p>
+                    </div>
+                </div>
+            </div>
+
+        </div><!-- /team-grid -->
+    </main>
+
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST3.html">Page Editor</a> |
+            <a href="validation_ST3.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Sasiru Insara Rajapaksha | 2181982 | Role: Feedback &amp; Team Lead</p>
+    </footer>
+
+    <!--
+        IMPLEMENTATION NOTE (team.html):
+        The hover/expand interaction is fully CSS-driven using :hover and :focus
+        on .member-block, as permitted by spec §4.7 §3.2.
+        tabindex="0" ensures keyboard users can reach each card via Tab and
+        trigger the :focus reveal — no JavaScript required for this page.
+    -->
+
+</body>
+</html>

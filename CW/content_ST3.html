@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | Community Action for Clean Water</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           PAGE-SPECIFIC EMBEDDED CSS - content_ST3.html
+           Student 3: Engagement & Team Lead
+           Topic: Community Action for SDG 06
+           These styles are scoped to this content page only
+           and do not override Global CSS variables or rules.
+        ===================================================== */
+
+        /* --- 1. Internal Navigation Menu (side / top anchor links) --- */
+        .internal-nav {
+            background: #fff;
+            border-radius: 14px;
+            padding: 1.2rem 1.6rem;
+            box-shadow: 0 4px 16px rgba(26, 47, 59, 0.09);
+            border-left: 5px solid var(--secondary-blue);
+            margin-bottom: 2.5rem;
+        }
+
+        .internal-nav h2 {
+            font-size: 1rem;
+            margin-bottom: 0.8rem;
+            color: var(--dark-abyss);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .internal-nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .internal-nav ul li a {
+            display: inline-block;
+            padding: 0.4rem 1rem;
+            background: var(--primary-light);
+            color: var(--dark-abyss);
+            border-radius: 999px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-decoration: none;
+            transition: background-color 0.25s, color 0.25s;
+            border: 2px solid transparent;
+        }
+
+        .internal-nav ul li a:hover,
+        .internal-nav ul li a:focus {
+            background: var(--tertiary-teal);
+            color: #fff;
+        }
+
+        /* --- 2. Content Sections --- */
+        .content-section {
+            margin-bottom: 3rem;
+            scroll-margin-top: 90px; /* offset for sticky header */
+        }
+
+        .content-section h2 {
+            font-size: 1.6rem;
+            color: var(--tertiary-teal);
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--secondary-blue);
+            padding-bottom: 0.5rem;
+        }
+
+        .content-section h3 {
+            font-size: 1.15rem;
+            color: var(--dark-abyss);
+            margin: 1.2rem 0 0.5rem;
+        }
+
+        .content-section p {
+            color: var(--muted-text);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        /* --- 3. Content Images --- */
+        .content-img {
+            width: 100%;
+            max-height: 340px;
+            object-fit: cover;
+            border-radius: 14px;
+            margin: 1.2rem 0;
+            box-shadow: 0 6px 20px rgba(26, 47, 59, 0.14);
+            border: 3px solid var(--secondary-blue);
+        }
+
+        .img-caption {
+            font-size: 0.8rem;
+            color: var(--muted-text);
+            text-align: center;
+            font-style: italic;
+            margin-top: -0.6rem;
+            margin-bottom: 1.2rem;
+        }
+
+        /* --- 4. Two-column image layout for variety --- */
+        .img-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem;
+            margin: 1.2rem 0;
+        }
+
+        .img-row img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 12px;
+            box-shadow: 0 4px 14px rgba(26, 47, 59, 0.12);
+            border: 2px solid var(--secondary-blue);
+        }
+
+        /* --- 5. Highlight / Callout Box --- */
+        .highlight-box {
+            background: linear-gradient(135deg, #e0f5fb, #f7fbfc);
+            border-left: 6px solid var(--tertiary-teal);
+            border-radius: 12px;
+            padding: 1.2rem 1.5rem;
+            margin: 1.5rem 0;
+            color: var(--dark-abyss);
+        }
+
+        .highlight-box strong {
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.4rem;
+            color: var(--tertiary-teal);
+        }
+
+        /* --- 6. Action Steps List --- */
+        .action-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.65rem 0;
+            border-bottom: 1px dashed #c8dde4;
+            color: var(--muted-text);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+
+        .action-list li:last-child {
+            border-bottom: none;
+        }
+
+        .action-list li::before {
+            content: "💧";
+            font-size: 1.1rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        /* --- 7. "Go to Top" Fixed Button --- */
+        .go-top-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--tertiary-teal);
+            color: #fff;
+            border-radius: 50%;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 14px rgba(26, 47, 59, 0.25);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            z-index: 999;
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+
+        .go-top-btn:hover,
+        .go-top-btn:focus {
+            background-color: var(--dark-abyss);
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .img-row {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Anchor target for "Go to Top" button -->
+    <span id="top"></span>
+
+    <!-- ===================== HEADER / NAV (Shared Template - DO NOT MODIFY) ===================== -->
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+    <!-- ========================================================================================== -->
+
+    <main>
+        <h1>Community Action for Clean Water</h1>
+        <p style="color: var(--muted-text); margin-bottom: 2rem; font-size: 1.05rem;">
+            Individuals and communities hold immense power in the fight for SDG 06. This page explores how
+            grassroots action, student initiatives, and local collaboration can protect water resources for everyone.
+        </p>
+
+        <!-- ========== INTERNAL NAVIGATION MENU ========== -->
+        <nav class="internal-nav" aria-label="Page sections">
+            <h2>On This Page</h2>
+            <ul>
+                <li><a href="#why-community">Why Community?</a></li>
+                <li><a href="#student-actions">Student Actions</a></li>
+                <li><a href="#local-impact">Local Impact</a></li>
+                <li><a href="#global-connections">Global Connections</a></li>
+                <li><a href="#get-started">How to Get Started</a></li>
+            </ul>
+        </nav>
+
+        <!-- ========== SECTION 1: WHY COMMUNITY? ========== -->
+        <section class="content-section" id="why-community" aria-labelledby="h-why-community">
+            <h2 id="h-why-community">Why Community Action Matters</h2>
+
+            <p>
+                Government policy and international treaties set the framework for water security, but it is
+                communities — students, neighbours, local organisations — who translate those goals into
+                everyday reality. When a community monitors its local river, organises a clean-up, or builds
+                a shared grey-water recycling system, it creates change that no top-down policy alone can achieve.
+            </p>
+
+            <img class="content-img"
+                src="https://images.unsplash.com/photo-1469521669194-babb45599def?w=800&q=80"
+                alt="A community group gathered around a river, organising a clean-up event">
+            <p class="img-caption">Community volunteers organise a riverbank restoration in partnership with local schools.</p>
+
+            <div class="highlight-box">
+                <strong>Did You Know?</strong>
+                According to UN-Water, community-managed water schemes serve over 800 million people in
+                rural areas globally. When communities take ownership, systems are maintained longer and
+                serve more people effectively.
+            </div>
+
+            <h3>The Three Pillars of Community Water Action</h3>
+            <ul class="action-list">
+                <li><strong>Awareness</strong> — Educating neighbours, schools, and local businesses about water scarcity and personal water footprints.</li>
+                <li><strong>Advocacy</strong> — Pressuring local councils and institutions to invest in water infrastructure and reduce pollution.</li>
+                <li><strong>Action</strong> — Directly participating in clean-ups, monitoring schemes, and conservation projects that produce measurable results.</li>
+            </ul>
+        </section>
+
+        <!-- ========== SECTION 2: STUDENT ACTIONS ========== -->
+        <section class="content-section" id="student-actions" aria-labelledby="h-student-actions">
+            <h2 id="h-student-actions">What Students Can Do Right Now</h2>
+
+            <p>
+                As students, we often underestimate the scale of our influence. Universities are large consumers
+                of water, and student campaigns have historically driven significant institutional change. Here
+                are concrete actions any student can take starting today:
+            </p>
+
+            <ul class="action-list">
+                <li>Run a campus water audit — count taps, measure flush cycles, and estimate daily usage in halls.</li>
+                <li>Organise a "Blue Day" awareness event in your student union to showcase SDG 06 facts.</li>
+                <li>Pressure your university to install water refill stations and phase out single-use plastic bottles.</li>
+                <li>Start a social media challenge around water-saving habits (e.g. 3-minute shower challenge).</li>
+                <li>Partner with a local NGO to fundraise for water access projects in underserved communities.</li>
+                <li>Create informative posters or digital content about reducing water waste in student accommodation.</li>
+            </ul>
+
+            <div class="img-row">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?w=500&q=80"
+                    alt="Students on a university campus discussing a sustainability project">
+                <img src="https://images.unsplash.com/photo-1531206715517-5c0ba140b2b8?w=500&q=80"
+                    alt="Student volunteer writing on a whiteboard during a planning session">
+            </div>
+
+            <p class="img-caption">Student-led sustainability groups are driving real change on campuses worldwide.</p>
+
+            <div class="highlight-box">
+                <strong>Case Study: Westminster Water Week</strong>
+                In 2024, a student-led initiative at a UK university reduced campus water consumption by 18%
+                over one academic term through awareness campaigns, leaky tap reporting schemes, and
+                voluntary behaviour pledges. Similar results are achievable at any institution.
+            </div>
+        </section>
+
+        <!-- ========== SECTION 3: LOCAL IMPACT ========== -->
+        <section class="content-section" id="local-impact" aria-labelledby="h-local-impact">
+            <h2 id="h-local-impact">Local Impact: Small Actions, Big Results</h2>
+
+            <p>
+                Water crises are not only a problem in distant countries. Urban rivers across Europe carry
+                microplastics and agricultural run-off. Ageing pipe infrastructure in cities loses up to 30%
+                of treated water to leaks before it ever reaches a tap. Local community action directly
+                addresses these issues.
+            </p>
+
+            <img class="content-img"
+                src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&q=80"
+                alt="Volunteers in high-visibility vests collecting litter and plastic from a local urban river">
+            <p class="img-caption">Volunteer-led river clean-ups remove hundreds of kilograms of waste annually from urban waterways.</p>
+
+            <h3>Proven Community Strategies</h3>
+            <ul class="action-list">
+                <li><strong>Water Monitoring Networks</strong> — Citizen science groups test local river water quality monthly and report findings to environmental agencies.</li>
+                <li><strong>Rainwater Harvesting</strong> — Community allotments and schools install low-cost rain barrels, reducing demand on mains water for irrigation.</li>
+                <li><strong>Grey-Water Reuse Systems</strong> — Neighbourhood cooperatives share guidelines and DIY kits for recycling bathroom and laundry water for gardens.</li>
+                <li><strong>Leak Reporting Campaigns</strong> — Simple local campaigns encouraging residents to report suspected pipe leaks have saved millions of litres in pilot boroughs.</li>
+            </ul>
+        </section>
+
+        <!-- ========== SECTION 4: GLOBAL CONNECTIONS ========== -->
+        <section class="content-section" id="global-connections" aria-labelledby="h-global-connections">
+            <h2 id="h-global-connections">Connecting Local Action to a Global Movement</h2>
+
+            <p>
+                Every drop saved locally contributes to the global SDG 06 target. When thousands of communities
+                adopt water-conscious practices simultaneously, the cumulative effect is transformational. Digital
+                platforms now allow local groups to share data, strategies, and success stories across borders,
+                turning isolated efforts into a coordinated global campaign.
+            </p>
+
+            <div class="img-row">
+                <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=500&q=80"
+                    alt="Clean drinking water being poured into a glass in a developing community">
+                <img src="https://images.unsplash.com/photo-1559825481-12a05cc00344?w=500&q=80"
+                    alt="A rural rainwater harvesting system serving a community in a low-income area">
+            </div>
+            <p class="img-caption">Access to safe water transforms lives — communities in both developed and developing nations benefit from collective water stewardship.</p>
+
+            <div class="highlight-box">
+                <strong>The Ripple Effect</strong>
+                Research by WaterAid found that every £1 invested in community water projects generates
+                up to £8 in economic benefit through improved health, reduced time collecting water,
+                and increased productivity — particularly for women and children.
+            </div>
+        </section>
+
+        <!-- ========== SECTION 5: HOW TO GET STARTED ========== -->
+        <section class="content-section" id="get-started" aria-labelledby="h-get-started">
+            <h2 id="h-get-started">How to Get Started in Your Community</h2>
+
+            <p>
+                You do not need a large budget or formal organisation to make a start. The most impactful
+                community water initiatives began with a single conversation, a shared concern, and a
+                willingness to act.
+            </p>
+
+            <ul class="action-list">
+                <li><strong>Identify your local waterway</strong> — Find the nearest river, stream, or reservoir and learn who manages it. Contact them to ask how you can help.</li>
+                <li><strong>Connect with existing groups</strong> — Search for local environmental groups, student sustainability societies, or national campaigns like the Rivers Trust.</li>
+                <li><strong>Use the AquaAction Simulator</strong> — Our <a href="ais.html" style="color: var(--tertiary-teal); font-weight: 700;">Action Impact Simulator</a> helps you calculate the real-world water savings of actions you are already considering.</li>
+                <li><strong>Submit your initiative</strong> — Share your project via our <a href="feedback.html" style="color: var(--tertiary-teal); font-weight: 700;">Feedback &amp; Directory page</a> so others can learn from and join your efforts.</li>
+                <li><strong>Document and share</strong> — Record your impact with photos, data, and stories. Sharing results motivates others and attracts further support.</li>
+            </ul>
+
+            <div class="highlight-box">
+                <strong>Remember:</strong>
+                SDG 06 is not just a target for governments — it is a call to every one of us. Clean water
+                is a human right, and protecting it is a human responsibility. Start local. Think global.
+                Act now.
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===================== GO TO TOP BUTTON (HTML + CSS only, no JavaScript required) ===================== -->
+    <a href="#top" class="go-top-btn" aria-label="Go back to top of page" title="Back to top">↑</a>
+
+    <!-- ===================== FOOTER (Shared Template - Update student details) ===================== -->
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST3.html">Page Editor</a> |
+            <a href="validation_ST3.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Student 3 Name | Student 3 ID | Role: Engagement &amp; Team Lead</p>
+    </footer>
+
+</body>
+</html>

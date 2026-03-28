@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | Wetland Guardians</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           PAGE-SPECIFIC EMBEDDED CSS — wetland-guardians.html
+           Student 3: Sasiru Insara Rajapaksha | 2181982
+           Programme detail page — scoped styles only.
+        ===================================================== */
+
+        /* 1. Hero banner */
+        .prog-hero {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 24px rgba(26,47,59,0.15);
+            border: 3px solid var(--secondary-blue);
+            display: block;
+        }
+
+        /* 2. Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--tertiary-teal);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--dark-abyss); }
+
+        /* 3. Content sections */
+        .prog-section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 90px;
+        }
+        .prog-section h2 {
+            font-size: 1.35rem;
+            color: var(--tertiary-teal);
+            border-bottom: 3px solid var(--secondary-blue);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+        .prog-section p {
+            color: var(--muted-text);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 4. Action list */
+        .action-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            padding: 0.55rem 0;
+            border-bottom: 1px dashed #c8dde4;
+            color: var(--muted-text);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+        .action-list li:last-child { border-bottom: none; }
+        .action-list li::before { content: "💧"; flex-shrink: 0; }
+
+        /* 5. Highlight callout */
+        .callout {
+            background: linear-gradient(135deg,#e0f5fb,#f7fbfc);
+            border-left: 5px solid var(--tertiary-teal);
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
+            margin: 1.4rem 0;
+            color: var(--dark-abyss);
+        }
+        .callout strong { display: block; color: var(--tertiary-teal); margin-bottom: 0.35rem; }
+
+        /* 6. CTA button */
+        .join-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.85rem 2.2rem;
+            background-color: var(--tertiary-teal);
+            color: #fff;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .join-btn:hover { background-color: var(--dark-abyss); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV — Shared Template (DO NOT MODIFY) ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html" class="active">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <a href="feedback.html" class="back-link" aria-label="Back to Program Directory">← Back to Directory</a>
+
+        <img class="prog-hero"
+             src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1200&h=640&fit=crop&auto=format"
+             alt="A tranquil wetland landscape at golden hour with reeds, open water, and a distant tree line">
+
+        <h1>Wetland Guardians</h1>
+        <p style="color:var(--muted-text);margin-bottom:2rem;font-size:1.05rem;">Wetlands are nature's own water filtration system — yet we have lost over 35% of the world's wetlands since 1970. Wetland Guardians works to protect, monitor, and restore these vital ecosystems before they disappear entirely.</p>
+
+        
+        <section class="prog-section" aria-labelledby="about">
+            <h2 id="about">About the Programme</h2>
+            <p>Wetland Guardians trains volunteers as citizen scientists who regularly survey designated wetland sites, recording water quality, plant species diversity, and wildlife populations. Data is submitted to the national wetland monitoring database used by conservation bodies and policymakers.</p>
+           <p>Restoration teams also carry out practical habitat work — removing invasive plant species, planting native reeds, and repairing sluice gates that control water levels.</p>
+        </section>
+        <section class="prog-section" aria-labelledby="impact">
+            <h2 id="impact">Conservation Impact</h2>
+            <div class="callout"><strong>3 wetland sites restored, 120 hectares protected</strong>Volunteer-led monitoring has contributed to the designation of two new Sites of Special Scientific Interest (SSSIs) in the region.</div>
+           <ul class="action-list">
+             <li>7 active monitoring sites surveyed monthly</li>
+             <li>3 degraded wetlands partially restored since 2020</li>
+             <li>22 rare or protected species recorded by volunteer teams</li>
+             <li>Water quality data used in two peer-reviewed research papers</li>
+           </ul>
+        </section>
+        <section class="prog-section" aria-labelledby="howto">
+            <h2 id="howto">How to Join</h2>
+            <p>Wetland monitoring requires no prior scientific knowledge — full training is provided. Restoration work sessions take place on the first Saturday of each month and welcome all fitness levels.</p>
+           <ul class="action-list">
+             <li>Register via the Feedback form (select "Wetland Guardians")</li>
+             <li>Complete the free online wetland ecology introductory module (1.5 hours)</li>
+             <li>Join your nearest monthly monitoring or restoration session</li>
+             <li>Submit survey data via the Wetland Guardians app after each visit</li>
+           </ul>
+        </section>
+
+        <a href="feedback.html#form-heading" class="join-btn">Get Involved — Submit Your Interest</a>
+    </main>
+
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST3.html">Page Editor</a> |
+            <a href="validation_ST3.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Sasiru Insara Rajapaksha | 2181982 | Role: Feedback &amp; Team Lead</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AquaAction | Smart Irrigation Network</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* =====================================================
+           PAGE-SPECIFIC EMBEDDED CSS — smart-irrigation.html
+           Student 3: Sasiru Insara Rajapaksha | 2181982
+           Programme detail page — scoped styles only.
+        ===================================================== */
+
+        /* 1. Hero banner */
+        .prog-hero {
+            width: 100%;
+            height: 320px;
+            object-fit: cover;
+            border-radius: 18px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 24px rgba(26,47,59,0.15);
+            border: 3px solid var(--secondary-blue);
+            display: block;
+        }
+
+        /* 2. Back link */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            color: var(--tertiary-teal);
+            font-weight: 700;
+            text-decoration: none;
+            margin-bottom: 1.5rem;
+            font-size: 0.92rem;
+            transition: color 0.2s;
+        }
+        .back-link:hover { color: var(--dark-abyss); }
+
+        /* 3. Content sections */
+        .prog-section {
+            margin-bottom: 2.5rem;
+            scroll-margin-top: 90px;
+        }
+        .prog-section h2 {
+            font-size: 1.35rem;
+            color: var(--tertiary-teal);
+            border-bottom: 3px solid var(--secondary-blue);
+            padding-bottom: 0.4rem;
+            margin-bottom: 1rem;
+        }
+        .prog-section p {
+            color: var(--muted-text);
+            line-height: 1.8;
+            margin-bottom: 0.8rem;
+        }
+
+        /* 4. Action list */
+        .action-list {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0;
+        }
+        .action-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.65rem;
+            padding: 0.55rem 0;
+            border-bottom: 1px dashed #c8dde4;
+            color: var(--muted-text);
+            font-size: 0.93rem;
+            line-height: 1.6;
+        }
+        .action-list li:last-child { border-bottom: none; }
+        .action-list li::before { content: "💧"; flex-shrink: 0; }
+
+        /* 5. Highlight callout */
+        .callout {
+            background: linear-gradient(135deg,#e0f5fb,#f7fbfc);
+            border-left: 5px solid var(--tertiary-teal);
+            border-radius: 12px;
+            padding: 1.1rem 1.4rem;
+            margin: 1.4rem 0;
+            color: var(--dark-abyss);
+        }
+        .callout strong { display: block; color: var(--tertiary-teal); margin-bottom: 0.35rem; }
+
+        /* 6. CTA button */
+        .join-btn {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.85rem 2.2rem;
+            background-color: var(--tertiary-teal);
+            color: #fff;
+            border-radius: 999px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        .join-btn:hover { background-color: var(--dark-abyss); transform: translateY(-2px); }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== HEADER / NAV — Shared Template (DO NOT MODIFY) ===== -->
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html" class="active">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <a href="feedback.html" class="back-link" aria-label="Back to Program Directory">← Back to Directory</a>
+
+        <img class="prog-hero"
+             src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1200&h=640&fit=crop&auto=format"
+             alt="Close-up of black drip irrigation pipes running through rows of green leafy crops in a sunlit field">
+
+        <h1>Smart Irrigation Network</h1>
+        <p style="color:var(--muted-text);margin-bottom:2rem;font-size:1.05rem;">Agriculture accounts for 70% of global freshwater withdrawals. The Smart Irrigation Network helps farmers and growers cut that figure dramatically by adopting sensor-based drip irrigation — saving water, reducing costs, and improving yields.</p>
+
+        
+        <section class="prog-section" aria-labelledby="about">
+            <h2 id="about">About the Programme</h2>
+            <p>The Smart Irrigation Network provides subsidised access to soil moisture sensors, drip irrigation kits, and remote monitoring apps to smallholder farmers and community growing projects. Agronomists and engineering students work together to design bespoke systems suited to each site's soil type, crop, and water source.</p>
+           <p>Participating farms have recorded water savings of 30–50% compared to traditional overhead sprinkler systems, without any reduction in crop yield.</p>
+        </section>
+        <section class="prog-section" aria-labelledby="impact">
+            <h2 id="impact">Proven Results</h2>
+            <div class="callout"><strong>40% average water saving per participating farm</strong>Across 35 participating sites, the Smart Irrigation Network has saved an estimated 18 million litres of water in the 2025 growing season alone.</div>
+           <ul class="action-list">
+             <li>35 farms and community gardens currently enrolled</li>
+             <li>18 million litres saved in 2025 growing season</li>
+             <li>Average crop yield improvement of 12% due to more consistent watering</li>
+             <li>Partnership with two agricultural colleges to train the next generation</li>
+           </ul>
+        </section>
+        <section class="prog-section" aria-labelledby="howto">
+            <h2 id="howto">How to Support the Network</h2>
+            <p>Engineering, computer science, and agriculture students can join as technical volunteers, helping with sensor installation, app troubleshooting, and data analysis. Fundraising support is also always welcome to subsidise kit costs for low-income growers.</p>
+           <ul class="action-list">
+             <li>Apply as a technical volunteer via the Feedback form</li>
+             <li>Help install and calibrate soil moisture sensors on-site</li>
+             <li>Analyse farm water data to identify optimisation opportunities</li>
+             <li>Fundraise to sponsor a sensor kit for a community growing project</li>
+           </ul>
+        </section>
+
+        <a href="feedback.html#form-heading" class="join-btn">Get Involved — Submit Your Interest</a>
+    </main>
+
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST3.html">Page Editor</a> |
+            <a href="validation_ST3.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>Sasiru Insara Rajapaksha | 2181982 | Role: Feedback &amp; Team Lead</p>
+    </footer>
+
+</body>
+</html>
