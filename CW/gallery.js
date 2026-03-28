@@ -11,27 +11,27 @@ const data = [
     },
     {
         t: "Clay Filtration",
-        d: "Using porous ceramic and natural charcoal to remove pathogens and provide safe drinking water to communities.",
+        d: "A gravity-fed purification system utilizing a porous ceramic pot for micro-filtration. This method removes sediment and harmful pathogens from raw water, storing the clean result in a protected receptacle.",
         i: "images/full2.jpg"
     },
     {
         t: "Smart Irrigation",
-        d: "AI-driven sensors that monitor soil moisture and optimize water delivery for agriculture, saving up to 40% more water.",
+        d: "Precision agricultural technology that utilizes soil moisture sensors and automated controllers to deliver water only when plants need it, significantly reducing evaporation and runoff waste.",
         i: "images/full3.jpg"
     },
     {
         t: "Clean Sanitation",
-        d: "Advanced biodigester treatment that prevents groundwater contamination and converts waste into energy.",
+        d: "Advanced waste management systems designed to prevent groundwater contamination, ensuring that local water sources remain pure and safe for human consumption.",
         i: "images/full4.jpg"
     },
     {
         t: "Solar Desalination",
-        d: "Converting seawater into fresh drinking water using zero-emission solar thermal energy.",
+        d: "An integrated solar thermal and photovoltaic system that extracts fresh water from seawater. It utilizes renewable energy for both thermal storage and mechanical pumping to produce potable municipal water.",
         i: "images/full5.jpg"
     },
     {
         t: "Wastewater Recovery",
-        d: "Recycling greywater from sinks and showers to reuse it for toilets and industrial cooling systems.",
+        d: "A specialized Membrane Bioreactor (MBR) system that treats domestic wastewater through anoxic and oxic biological stages. This process purifies water to a high standard, allowing it to be safely reused for toilet flushing and non-potable needs.",
         i: "images/full6.jpg"
     }
 ];
