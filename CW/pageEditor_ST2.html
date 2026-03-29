@@ -1,215 +1,462 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Page Editor Student - provide your student name</title>
-
-    <link rel="stylesheet" href="pageEditor_validator.css"> <!-- External CSS link -->
-    
-
+    <title>Page Editor — Sachith Pamoda Wattaranthenna | ST2</title>
+    <link rel="stylesheet" href="pageEditor_validator.css">
 </head>
 <body>
-    
-    <!-- Update the header and the footer to be consistent with the rest of the pages you implemented -->
 
+    <!-- ===== HEADER ===== -->
     <header id="top">
-        <h1>Replace this header with your teams' website header</h1>
+        <h1>AquaAction | Page Editor — Student 2</h1>
     </header>
 
+    <!-- Student name banner -->
     <section class="stud">
-        <h2>Sachith Pamoda, EDUCO, student role</h2>
+        <h2>Sachith Pamoda Wattaranthenna &nbsp;|&nbsp; 20241617 / W2182298 &nbsp;|&nbsp; Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page (ST2)</h2>
     </section>
 
     <div class="container">
-        <!-- Main content area -->
+
+        <!-- ===== MAIN CONTENT ===== -->
         <main>
 
-            <!-- Update those first three sections for the pages you were responsible to implement -->
-
+            <!-- ══════════════════════════════════════
+                 SECTION 1 — SPLASH SCREEN
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="home">Home page</h2>
-                    <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
-                    
-                    <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
-                    
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#splashVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                <h2 id="splash">Splash Screen</h2>
 
-                    <h3>Link to the page</h3>
-                        <p><a href="splash.html">Include a link to the actual page you describe.</a></p>
+                <h3>Technical Description</h3>
+                <p>The Splash Screen (<code>splash.html</code>) serves as the first point of interaction for
+                users visiting the AquaAction website. It does not use the shared HTML template since it is
+                designed as a standalone full-screen experience, but it strictly follows the agreed colour
+                palette and typography to ensure visual consistency with the rest of the site.</p>
+
+                <p><strong>HTML Structure:</strong> The page uses a <code>&lt;canvas&gt;</code> element as the
+                animated background layer, positioned fixed behind all other content using
+                <code>z-index: 0</code>. Layered <code>&lt;div&gt;</code> elements sit above the canvas to
+                create the gradient overlay, ripple rings, and grain texture effects. The main content
+                is wrapped in a <code>&lt;main&gt;</code> element with <code>position: fixed</code> and
+                flexbox centering to keep everything perfectly centred on any screen size. A
+                <code>&lt;button&gt;</code> element handles the skip interaction, and
+                <code>&lt;meta http-equiv="refresh" content="4;url=home.html"&gt;</code> provides the
+                automatic 4-second redirect as required by the specification.</p>
+
+                <p><strong>CSS Techniques:</strong> The page makes extensive use of CSS custom properties
+                (variables) that mirror the global <code>style.css</code> palette — ensuring colour
+                consistency without importing the global file. Key animations include
+                <code>@keyframes ring-expand</code> for the five concentric ripple rings,
+                <code>@keyframes spin-arc</code> for the SVG arc loader rotation, and
+                <code>@keyframes rise</code> for the staggered fade-up reveal of each content block using
+                <code>animation-delay</code>. The skip button uses a CSS sweep hover effect achieved with
+                a <code>::before</code> pseudo-element that translates from <code>translateX(-102%)</code>
+                to <code>translateX(0)</code> on hover, creating a smooth colour fill animation without
+                JavaScript. <code>backdrop-filter: blur()</code> is used on the SDG pill badge to create
+                a frosted glass appearance.</p>
+
+                <p><strong>JavaScript:</strong> Three JavaScript functions handle the interactive behaviour.
+                The canvas animation loop uses <code>requestAnimationFrame</code> to continuously draw
+                120 floating particle objects and three layered sine waves at the bottom of the screen,
+                simulating a water environment. A custom cursor is implemented by tracking
+                <code>mousemove</code> events and updating the <code>left</code> and <code>top</code>
+                CSS properties of two fixed <code>&lt;div&gt;</code> elements. The countdown timer uses
+                <code>setInterval</code> to decrement a variable every 1000ms and update the number
+                displayed inside the SVG arc loader. The <code>skipIntro()</code> function calls
+                <code>clearInterval()</code> to cancel the timer and immediately redirects the user
+                using <code>window.location.href</code>.</p>
+
+                <h3>Accessibility</h3>
+                <p>All decorative elements (canvas, ripple rings, grain overlay, corner watermark) include
+                <code>aria-hidden="true"</code> to prevent screen readers from announcing them. The
+                <code>&lt;main&gt;</code> element uses a descriptive <code>aria-label</code>. The countdown
+                area uses <code>aria-live="polite"</code> so screen readers announce number changes without
+                interrupting the user. The skip button includes a descriptive <code>aria-label</code>
+                attribute. The logo image includes meaningful <code>alt</code> text. The team member
+                section uses <code>aria-label="Team members"</code> on its container. The SVG arc loader
+                uses <code>role="progressbar"</code> with <code>aria-valuenow</code>,
+                <code>aria-valuemin</code>, and <code>aria-valuemax</code> attributes.</p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST2.html#splashVal">View HTML validation result for Splash Screen</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="splash.html" target="_blank">Open Splash Screen (splash.html)</a></p>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 SECTION 2 — ACTION IMPACT SIMULATOR
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="gallery">Gallery Page</h2>
-                    <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                <h2 id="ais">Action Impact Simulator</h2>
 
-                    <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                <h3>Technical Description</h3>
+                <p>The Action Impact Simulator (<code>ais.html</code>) is a fully interactive JavaScript-driven
+                page that allows users to select water-related actions and receive dynamic feedback on their
+                combined environmental impact. It uses the shared HTML template including the header, nav,
+                and footer, and links to the global <code>style.css</code> with additional page-specific
+                embedded CSS in a <code>&lt;style&gt;</code> block.</p>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#volunteerVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                <p><strong>HTML Structure:</strong> The page uses semantic HTML5 elements throughout. The
+                simulator intro is wrapped in a <code>&lt;section&gt;</code> with
+                <code>aria-labelledby</code>. The six action cards are <code>&lt;article&gt;</code>
+                elements inside a CSS Grid container (<code>.action-grid</code>). Each card uses
+                <code>data-points</code> and <code>data-id</code> custom data attributes to store impact
+                values that JavaScript reads at runtime. The feedback panel is a separate
+                <code>&lt;section&gt;</code> with <code>aria-live="polite"</code> so screen readers
+                announce score updates automatically. A progress bar uses the
+                <code>role="progressbar"</code> ARIA role with live <code>aria-valuenow</code>
+                updates.</p>
 
-                        
-                    <h3>Link to the page</h3>
-                        <p><a href="volunteer.html">Include a link to the actual page you describe.</a></p>
+                <p><strong>CSS Techniques:</strong> The action card grid uses
+                <code>grid-template-columns: repeat(auto-fit, minmax(280px, 1fr))</code> for a fully
+                responsive layout that adjusts columns automatically. Selected cards use a distinct visual
+                state — a teal gradient background, coloured border, and a CSS <code>::after</code>
+                pseudo-element tick badge — all toggled by adding/removing the <code>.selected</code>
+                class via JavaScript. The progress bar fill uses a CSS
+                <code>linear-gradient</code> and <code>transition: width 0.7s ease</code> for a smooth
+                animated fill effect. The page background overlay uses
+                <code>transition: opacity 1s ease</code> to smoothly cross-fade between the three impact
+                level background images.</p>
+
+                <p><strong>JavaScript:</strong> A <code>Set</code> object (<code>selectedCards</code>)
+                tracks which card IDs are currently selected, ensuring no duplicate entries. The
+                <code>calcScore()</code> function iterates over the Set and reads each card's
+                <code>data-points</code> attribute to compute the total. The <code>getLevel()</code>
+                function applies defined thresholds (Low: 1–5pts, Medium: 6–12pts, High: 13+pts) to
+                return the current impact level. The <code>updateFeedback()</code> function updates the
+                score number, level label, progress bar width, message text, and background image
+                simultaneously. Event listeners are attached to all cards for both
+                <code>click</code> and <code>keydown</code> events (Enter/Space) to support keyboard
+                interaction. The <code>resetAll()</code> function clears the Set, removes all
+                <code>.selected</code> classes, and resets the feedback panel.</p>
+
+                <p><strong>Images used in the AIS page:</strong></p>
+                <ul>
+                    <li>Turn Off the Tap — sourced from Penn State University blog
+                        (<a href="https://sites.psu.edu/marabelleolivia/2021/03/25/why-should-we-turn-off-the-tap-water-when-brushing-our-teeth/" target="_blank">sites.psu.edu</a>)</li>
+                    <li>Fix Leaks — sourced from DSPG Australia plumbing guide
+                        (<a href="https://www.dspg.com.au/how-to-fix-a-leaking-tap" target="_blank">dspg.com.au</a>)</li>
+                    <li>Collect Rainwater — sourced from Mother Earth News gardening guide
+                        (<a href="https://www.motherearthnews.com/organic-gardening/how-to-ensure-your-rain-barrel-has-enough-water-pressure-zbcz1801/" target="_blank">motherearthnews.com</a>)</li>
+                    <li>Shorter Showers — sourced from Shower Timer Australia
+                        (<a href="https://www.showertimer.com.au/" target="_blank">showertimer.com.au</a>)</li>
+                    <li>Efficient Appliances — sourced from Haier India blog
+                        (<a href="https://shop.haierindia.com//blog/water-conservation-with-smart-washing/" target="_blank">haierindia.com</a>)</li>
+                    <li>Spread Awareness — sourced from Twinkl educational resources
+                        (<a href="https://www.twinkl.jp/resource/t2-p-033-water-usage-and-solutions-powerpoint" target="_blank">twinkl.jp</a>)</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p>Each action card uses <code>role="checkbox"</code> and
+                <code>aria-checked="true/false"</code> which updates dynamically via JavaScript when a
+                card is selected or deselected, providing full screen reader support for the selection
+                state. Cards include <code>tabindex="0"</code> so keyboard users can Tab to each card
+                and activate it with Enter or Space. All images include descriptive
+                <code>alt</code> text. The feedback panel uses <code>aria-live="polite"</code> and the
+                progress bar uses <code>role="progressbar"</code> with live ARIA value attributes. The
+                active navigation link uses a distinct visual class (<code>.nav-ais</code>) so the
+                current page is clearly indicated.</p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST2.html#aisVal">View HTML validation result for Action Impact Simulator</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="ais.html" target="_blank">Open Action Impact Simulator (ais.html)</a></p>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 SECTION 3 — CONTENT PAGE ST2
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="content">Content Page</h2>
-                    <h3>Technical Description</h3>
-                        <p>Explain the HTML and CSS techniques used to implement this page. Justify the logic and purpose of the key tags and styling choices focusing on functionality and design without copying large code sections. Explain the purpose of key HTML tags and CSS properties. Specify key HTML tags and CSS properties used to create structure and styling.</p> 
+                <h2 id="content">Sanitation Systems Content Page</h2>
 
-                    <h3>Accessibility</h3>
-                        <p>Explain how you used to addressed accessibility in this particular page you implemented.</p>
+                <h3>Technical Description</h3>
+                <p>The Sanitation Systems content page (<code>content_ST2.html</code>) is Student 2's
+                individual content page exploring SDG 6 Target 6.2 — safe sanitation for all. It uses
+                the shared HTML template with header, navigation bar, main content area, and footer,
+                and links to the global <code>style.css</code>. Page-specific styles are defined in
+                an embedded <code>&lt;style&gt;</code> block and do not override global styles.</p>
 
-                    <h3>Link to the validation page</h3> <!-- Update the path to link the Page Editor with the splash page -->
-                        <p><a href="validation_ST0.html#contentVal">Include a link to the validation page</a>, use the marker to jump to the corresponding section of the validation page.</p> <!-- Update the path to link the Page Editor with the validation page and make it jump to the marker that contains a snapshot for the splash page -->
+                <p><strong>HTML Structure:</strong> The page is divided into six clearly defined
+                <code>&lt;section&gt;</code> elements, each with a unique <code>id</code> attribute
+                used as anchor targets for internal navigation. Headings follow a strict hierarchy —
+                one <code>&lt;h1&gt;</code> in the hero banner, <code>&lt;h2&gt;</code> for each
+                section, and <code>&lt;h3&gt;</code> for subsections. An internal navigation menu
+                near the top uses an <code>&lt;ol&gt;</code> list of anchor links
+                (<code>href="#section-id"</code>) allowing users to jump directly to any section.
+                <code>scroll-margin-top: 90px</code> is applied to each section to prevent content
+                hiding beneath the sticky header when navigating. A fixed "Go to Top" button is
+                implemented using <code>position: fixed</code> in CSS with an anchor link to
+                <code>href="#top"</code> — no JavaScript required.</p>
 
-                        
-                    <h3>Link to the page</h3>
-                        <p><a href="content.html">Include a link to the actual page you describe.</a></p>
+                <p><strong>CSS Techniques:</strong> A two-column split layout for image-and-text pairs
+                uses <code>display: grid; grid-template-columns: 1fr 1fr</code> with a
+                <code>@media (max-width: 720px)</code> breakpoint that collapses it to a single column
+                on smaller screens. The stat cards section uses
+                <code>repeat(auto-fit, minmax(180px, 1fr))</code> to create a responsive four-column
+                row. Image wrappers use <code>overflow: hidden</code> and a CSS
+                <code>transform: scale(1.03)</code> on hover to create a subtle zoom effect. The
+                content hero banner uses a layered <code>background</code> shorthand combining a
+                <code>linear-gradient</code> overlay with a <code>url()</code> background image for
+                text readability over the photo. The callout boxes use a
+                <code>border-left: 5px solid</code> design pattern combined with a soft gradient
+                background to visually distinguish key facts from body text.</p>
+
+                <p><strong>Images used in the Content Page:</strong></p>
+                <ul>
+                    <li>Section 2 — Global Crisis: UN News photo showing lack of water access
+                        (<a href="https://news.un.org/en/story/2019/06/1040701" target="_blank">news.un.org</a>)</li>
+                    <li>Section 3 — Sanitation Systems diagram: ResearchGate sanitation ladder figure
+                        (<a href="https://www.researchgate.net/figure/Different-management-levels-of-sanitation-facilities-The-figure-1-shows-the-range-of_fig1_46419726" target="_blank">researchgate.net</a>)</li>
+                    <li>Section 1 &amp; Hero — Modern sanitation system: JC France Industrie
+                        (<a href="https://www.jcfranceindustrie.fr/en/qu-est-ce-que-l-assainissement/" target="_blank">jcfranceindustrie.fr</a>)</li>
+                    <li>Section 5 — Student action: Brainware University World Water Day outreach event
+                        (<a href="https://www.brainwareuniversity.ac.in/event-archive/world-water-day-outreach-id644.php" target="_blank">brainwareuniversity.ac.in</a>)</li>
+                </ul>
+
+                <h3>Accessibility</h3>
+                <p>The internal navigation menu uses <code>aria-label="Page sections"</code> to
+                distinguish it from the main navigation. Each content section uses
+                <code>aria-labelledby</code> pointing to its heading ID. All four images include
+                descriptive <code>alt</code> text that explains the content of the image for screen
+                reader users rather than simply naming the file. The stat cards section uses
+                <code>role="region"</code> with an <code>aria-label</code>. The fixed Go to Top button
+                includes a descriptive <code>aria-label</code> and <code>title</code> attribute.
+                The hero banner uses <code>role="banner"</code>. Colour contrast between body text
+                and backgrounds meets WCAG AA standards throughout, using the dark abyss colour
+                (<code>#1d5d6f</code>) on light backgrounds.</p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST2.html#contentVal">View HTML validation result for Content Page ST2</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="content_ST2.html" target="_blank">Open Sanitation Systems Content Page (content_ST2.html)</a></p>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 CHALLENGES & LESSONS LEARNED
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="challenge"> Challenges and Lessons Learned</h2>
-                    <p>Detail any challenges encountered during the implementation process and explain how they were resolved. Reflect on the lessons learned from overcoming these challenges.</p> 
+                <h2 id="challenge">Challenges and Lessons Learned</h2>
+
+                <p><strong>Challenge 1 — Canvas animation performance:</strong> The initial canvas
+                particle animation caused frame drops on lower-powered devices because the particle
+                pool was too large. This was resolved by reducing the particle count to 120 and
+                optimising the draw loop to avoid unnecessary recalculations inside the animation
+                frame. This taught me the importance of performance-aware JavaScript when using
+                <code>requestAnimationFrame</code>.</p>
+
+                <p><strong>Challenge 2 — Meta refresh and JavaScript timer sync:</strong> The
+                <code>&lt;meta http-equiv="refresh"&gt;</code> tag and the JavaScript countdown timer
+                needed to stay in sync. Early testing showed the meta refresh would fire slightly
+                before the countdown reached zero due to browser timing differences. The solution
+                was to set the meta refresh to exactly 4 seconds while the JavaScript timer also
+                starts from 4, accepting that a very small discrepancy is unavoidable and does not
+                affect user experience.</p>
+
+                <p><strong>Challenge 3 — AIS card selection on mobile:</strong> Touch events on mobile
+                devices did not always register on the action cards because of the CSS
+                <code>transition</code> on transform. Adding <code>touch-action: manipulation</code>
+                to the card styles resolved the delay on iOS and Android browsers.</p>
+
+                <p><strong>Challenge 4 — Internal navigation hiding under sticky header:</strong>
+                On the content page, clicking internal nav links caused sections to scroll into
+                position but the heading would be hidden behind the sticky header. This was resolved
+                by adding <code>scroll-margin-top: 90px</code> to each section, which offsets the
+                scroll position correctly without requiring JavaScript scroll handling.</p>
+
+                <p><strong>Lessons Learned:</strong> Working on this project developed my understanding
+                of the relationship between HTML structure, CSS layout, and JavaScript interaction. I
+                learned that accessibility is not an afterthought but must be designed in from the
+                start — using semantic HTML and ARIA attributes together. I also learned the value
+                of a shared CSS file for maintaining visual consistency across a multi-page website
+                built collaboratively.</p>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 COMPLIANCE
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="compliance"> Compliance</h2>
-                    <p>Discuss how the pages you have created are compliant with Janet regulations governing web page publication. This includes demonstrating your understanding and application of these regulations. Be realistic and truthful. <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">See the lecture notes for more details on compliance.</a></p> 
+                <h2 id="compliance">Compliance</h2>
 
-                    
+                <p>All pages I implemented comply with JANET regulations governing web page publication.
+                JANET (Joint Academic NETwork) sets acceptable use policies for web content published
+                on university networks, and the following measures were taken to ensure compliance:</p>
+
+                <p><strong>Appropriate and ethical content:</strong> All content on the Splash Screen,
+                AIS, and Content Page is original, factual, and directly relevant to SDG 6 — Clean
+                Water and Sanitation. No content promotes hate speech, discrimination, or illegal
+                activity. Text descriptions are accurate and responsibly written.</p>
+
+                <p><strong>Responsible use of external resources:</strong> All images sourced externally
+                are either from public domain sources, government/UN educational resources, or
+                royalty-free platforms. Every external resource is properly referenced in the
+                References section below. No copyrighted text was reproduced from the UN SDGs
+                website or any other source.</p>
+
+                <p><strong>Intellectual property:</strong> No proprietary code libraries, templates, or
+                frameworks were downloaded from the internet for use in these pages. All HTML, CSS,
+                and JavaScript was written originally by the student. The Google Fonts API is used
+                for the Playfair Display and DM Sans typefaces on the Splash Screen, which are
+                licensed under the SIL Open Font Licence and are free for educational use.</p>
+
+                <p><strong>Accessibility compliance:</strong> All pages were designed with WCAG 2.1
+                accessibility guidelines in mind, including semantic HTML structure, descriptive alt
+                text for images, ARIA roles and labels, keyboard navigability, and adequate colour
+                contrast ratios. See the Accessibility section of each page description above for
+                specific details.</p>
+
+                <p>For further details on JANET compliance regulations, see:
+                <a href="https://intranet.ecs.westminster.ac.uk/modules/4COSC011W/compliance.html" target="_blank">
+                Lecture notes on compliance.</a></p>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 GROUP MEETINGS TABLE
+            ══════════════════════════════════════ -->
             <section>
-                <h2 id="compliance"> Group Meetings and Individual Contribution Log</h2>
-                    <p>Include a Group Meetings and Contribution Log that documents your engagement with group work.</p> 
-                    Requirements:
-                        <ul> 
-                            <li>A minimum of six (6) group meetings must be recorded.</li>
-                            <li>Each student must provide their own account of the meetings.</li>
-                            <li>The log must focus on individual contribution, not just group activity.</li>
-                        </ul>
-                        <p>Feel free to follow the example table structure below:</p>
+                <h2 id="group">Group Meetings and Individual Contribution Log</h2>
+                <p>The following table documents my individual engagement and contributions across
+                a minimum of six group meetings held during the development of the AquaAction website.</p>
 
-                        <table >
-    
-                            <thead>
-                                <tr>
-                                    <th colspan="6">Group Meetings and Contribution Log</th>
-                                </tr>
-                                <tr>
-                                    <th>Meeting</th>
-                                    <th>Date &amp; Time</th>
-                                    <th>Format</th>
-                                    <th>Objective</th>
-                                    <th>Attended</th>
-                                    <th>Your Individual Contribution</th>
-                                </tr>
-                            </thead>
-                        
-                            <tbody>
-                                <tr>
-                                    <td>1</td>
-                                    <td>3 Feb 2026</td>
-                                    <td>Face-to-face</td>
-                                    <td>Agree SDG and assign roles</td>
-                                    <td>Yes</td>
-                                    <td>I agreed to take responsibility for the Home Page and template.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>2</td>
-                                    <td>17 Feb 2026</td>
-                                    <td>Online</td>
-                                    <td>Review Home Page design</td>
-                                    <td>Yes</td>
-                                    <td>I suggested the colour palette and card-based layout.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>3</td>
-                                    <td>03 Mar 2026</td>
-                                    <td>Hybrid</td>
-                                    <td>Progress review</td>
-                                    <td>No</td>
-                                    <td>I reviewed meeting notes and followed up with tasks.</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>4</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>5</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                                <tr>
-                                    <td>6</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                    <td>&nbsp;</td>
-                                </tr>
-                        
-                            </tbody>
-                        
-                        </table>
-                    
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>22 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Set up the shared GitHub repository and agree on folder structure and file naming conventions</td>
+                            <td>Yes</td>
+                            <td>I joined the online session and helped set up the GitHub repository. I ensured the agreed file naming structure (splash.html, ais.html etc.) was correctly applied to my assigned files.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>23 Mar 2026</td>
+                            <td>Face-to-face (University)</td>
+                            <td>Collaborate on building the shared HTML template and global CSS file</td>
+                            <td>Yes</td>
+                            <td>I worked alongside all team members to help build and test the shared template. I contributed feedback on the navigation bar layout and confirmed the template worked correctly with my assigned pages.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>24 Mar 2026</td>
+                            <td>Face-to-face (University)</td>
+                            <td>Individual page development — Splash Screen implementation</td>
+                            <td>Yes</td>
+                            <td>I built the initial version of the Splash Screen (splash.html), implementing the canvas water animation, CSS ripple rings, countdown timer, and skip intro button. I shared progress with the team for feedback.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>25 Mar 2026</td>
+                            <td>Face-to-face (University)</td>
+                            <td>Revise Splash Screen and build the Action Impact Simulator</td>
+                            <td>Yes</td>
+                            <td>I revised the Splash Screen based on team feedback, improving the visual design. I then built the AIS page (ais.html) with six action cards, impact scoring logic, progress bar, and dynamic background changes.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>26 Mar 2026</td>
+                            <td>Face-to-face (University)</td>
+                            <td>Build the Content Page (ST2) — Sanitation Systems</td>
+                            <td>Yes</td>
+                            <td>I built the full content_ST2.html page with six structured sections, internal navigation menu, stat cards, split image-text layouts, and a fixed Go to Top button using CSS only.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>27 Mar 2026</td>
+                            <td>Face-to-face (University)</td>
+                            <td>Source and integrate images, gather all reference links</td>
+                            <td>Yes</td>
+                            <td>I sourced all images for my pages from iStockPhoto, UN News, ResearchGate, and Brainware University. I recorded all reference links ready for the Page Editor and ensured every image had correct alt text.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>28 Mar 2026</td>
+                            <td>Face-to-face (Member 4's residence)</td>
+                            <td>Complete Page Editor, Validation Page, final testing and submission preparation</td>
+                            <td>Yes</td>
+                            <td>I completed pageEditor_ST2.html with full technical descriptions, accessibility notes, compliance section and references. I validated all my pages using the W3C validator and prepared validation screenshots for the Validation Page.</td>
+                        </tr>
+                    </tbody>
+                </table>
             </section>
 
+            <!-- ══════════════════════════════════════
+                 REFERENCES
+            ══════════════════════════════════════ -->
             <section>
                 <h2 id="ref">References</h2>
-                <p>Provide links to resources you used following a consistent format (e.g., APA, MLA, or a simplified style). For example:<br><br>
-                    <ul class="ref">
-                        <li>iStock (2025) <i>iStock.</i> Available at: <a href="#">https://www.istockphoto.com/</a> (Last accessed: 11 Feb 2025).</li>
-                        <li>Duckett, J., 2011. HTML and CSS: Design and Build Websites,<i>John Willey&Sons. Inc. Indianappolis.</i></li>
-                    </ul>
+                <ul class="ref">
+
+                    <li>Brainware University (2026) <i>World Water Day Outreach Event.</i> Available at: <a href="https://www.brainwareuniversity.ac.in/event-archive/world-water-day-outreach-id644.php" target="_blank">https://www.brainwareuniversity.ac.in/event-archive/world-water-day-outreach-id644.php</a> (Last accessed: 28 Mar 2026).</li>
+
+                    <li>United Nations News (2019) <i>UN News — Clean Water Story.</i> Available at: <a href="https://news.un.org/en/story/2019/06/1040701" target="_blank">https://news.un.org/en/story/2019/06/1040701</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>ResearchGate (n.d.) <i>Different Management Levels of Sanitation Facilities.</i> Available at: <a href="https://www.researchgate.net/figure/Different-management-levels-of-sanitation-facilities-The-figure-1-shows-the-range-of_fig1_46419726" target="_blank">https://www.researchgate.net/figure/Different-management-levels-of-sanitation-facilities</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>JC France Industrie (n.d.) <i>What is Sanitation?</i> Available at: <a href="https://www.jcfranceindustrie.fr/en/qu-est-ce-que-l-assainissement/" target="_blank">https://www.jcfranceindustrie.fr/en/qu-est-ce-que-l-assainissement/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Marabelle, O. (2021) <i>Why Should We Turn Off the Tap Water When Brushing Our Teeth?</i> Available at: <a href="https://sites.psu.edu/marabelleolivia/2021/03/25/why-should-we-turn-off-the-tap-water-when-brushing-our-teeth/" target="_blank">https://sites.psu.edu/marabelleolivia/2021/03/25/why-should-we-turn-off-the-tap-water-when-brushing-our-teeth/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>DSPG Australia (n.d.) <i>How to Fix a Leaking Tap.</i> Available at: <a href="https://www.dspg.com.au/how-to-fix-a-leaking-tap" target="_blank">https://www.dspg.com.au/how-to-fix-a-leaking-tap</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Mother Earth News (2018) <i>How to Ensure Your Rain Barrel Has Enough Water Pressure.</i> Available at: <a href="https://www.motherearthnews.com/organic-gardening/how-to-ensure-your-rain-barrel-has-enough-water-pressure-zbcz1801/" target="_blank">https://www.motherearthnews.com/organic-gardening/how-to-ensure-your-rain-barrel-has-enough-water-pressure-zbcz1801/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Shower Timer Australia (n.d.) <i>Shower Timer.</i> Available at: <a href="https://www.showertimer.com.au/" target="_blank">https://www.showertimer.com.au/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Haier India (n.d.) <i>Water Conservation with Smart Washing.</i> Available at: <a href="https://shop.haierindia.com/blog/water-conservation-with-smart-washing/" target="_blank">https://shop.haierindia.com/blog/water-conservation-with-smart-washing/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Twinkl (n.d.) <i>Water Usage and Solutions Powerpoint.</i> Available at: <a href="https://www.twinkl.jp/resource/t2-p-033-water-usage-and-solutions-powerpoint" target="_blank">https://www.twinkl.jp/resource/t2-p-033-water-usage-and-solutions-powerpoint</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Google Fonts (n.d.) <i>Google Fonts.</i> Available at: <a href="https://fonts.google.com" target="_blank">https://fonts.google.com</a> (Last accessed: 26 Mar 2026).</li>
+
+                    <li>Duckett, J. (2011) <i>HTML and CSS: Design and Build Websites,</i> John Wiley &amp; Sons Inc., Indianapolis.</li>
+
+                    <li>iStock (2025) <i>iStock.</i> Available at: <a href="https://www.istockphoto.com/" target="_blank">https://www.istockphoto.com/</a> (Last accessed: 27 Mar 2026).</li>
+
+                </ul>
             </section>
 
             <p class="top"><a href="#top">Go top</a></p>
+
         </main>
 
-        <!-- Sidebar area -->
+        <!-- ===== SIDEBAR ===== -->
         <aside>
             <h3>Core pages developed:</h3>
-
-        <!-- Customize this to the role you undertook. Keep only the list items you were responsible to develop, delete the rest -->
             <ul class="top-level-ul">
-                <!-- Keep only the list items you were responsible to develop, delete the rest and update the links to the corresponding markers -->
-               
-                <li>Student 2</li>
-                <ul> 
-                    <li><a href="#">Splash Screen</a></li>
-                    <li><a href="#">Action Impact Simulator</a></li>
-                    <li><a href="#">Content</a></li>
+                <li>Student 2 — Sachith Pamoda</li>
+                <ul>
+                    <li><a href="#splash">Splash Screen</a></li>
+                    <li><a href="#ais">Action Impact Simulator</a></li>
+                    <li><a href="#content">Sanitation Systems Content Page</a></li>
                 </ul>
-                
                 <li><a href="#challenge">Challenges and Lessons Learned</a></li>
                 <li><a href="#compliance">Compliance</a></li>
-                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#group">Group Meetings Log</a></li>
                 <li><a href="#ref">References</a></li>
             </ul>
         </aside>
+
     </div>
 
+    <!-- ===== FOOTER ===== -->
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
         <p>
@@ -217,7 +464,8 @@
             <a href="validation_ST2.html">Validation Report</a> |
             <a href="#">Accessibility Compliance</a>
         </p>
-        <p>Sachith Pamoda Wattaranthenna | 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator</p>
+        <p>Sachith Pamoda Wattaranthenna | 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page ST2</p>
     </footer>
+
 </body>
 </html>

@@ -401,7 +401,7 @@
                         <div class="program-card-body">
                             <h3>River Clean-Up Brigade</h3>
                             <p>Join local volunteers every weekend to remove plastic and pollutants from urban waterways.</p>
-                            <span class="card-cta">Get Involved →</span>
+                            <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
@@ -415,7 +415,7 @@
                         <div class="program-card-body">
                             <h3>Campus Water Audit</h3>
                             <p>A student-led initiative measuring water usage on campus and proposing practical reductions.</p>
-                            <span class="card-cta">Join Now →</span>
+                            <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
@@ -443,7 +443,7 @@
                         <div class="program-card-body">
                             <h3>Blue Schools Initiative</h3>
                             <p>Educate children in underserved communities about sanitation, hygiene, and safe water practices.</p>
-                            <span class="card-cta">Support Us →</span>
+                            <span class="card-cta">Fit Out More →</span>
                         </div>
                     </article>
 
@@ -457,7 +457,7 @@
                         <div class="program-card-body">
                             <h3>Wetland Guardians</h3>
                             <p>Protect and restore natural wetlands that filter water and provide crucial ecosystems for wildlife.</p>
-                            <span class="card-cta">Volunteer →</span>
+                            <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
@@ -494,34 +494,36 @@
             </div>
 
             <div class="reviews-grid">
-                <article class="review-card">
-                    <h4>Life-Changing Experience</h4>
-                    <p>Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways...</p>
-                    <a href="#" class="see-more-link">See more</a>
-                    <div class="review-meta">
-                        <span>Priya Nair — 12 Feb 2026</span>
-                        <span class="review-rating">9/10</span>
-                    </div>
-                </article>
-                <article class="review-card">
-                    <h4>Highly Recommend Campus Audit</h4>
-                    <p>I never realised how much water our university wastes. The audit gave real data and the university acted on it...</p>
-                    <a href="#" class="see-more-link">See more</a>
-                    <div class="review-meta">
-                        <span>James Okafor — 05 Mar 2026</span>
-                        <span class="review-rating">8/10</span>
-                    </div>
-                </article>
-                <article class="review-card">
-                    <h4>Blue Schools Changed Everything</h4>
-                    <p>Teaching kids about clean water in rural areas was the most rewarding thing I've done as a student volunteer...</p>
-                    <a href="#" class="see-more-link">See more</a>
-                    <div class="review-meta">
-                        <span>Amara Diallo — 19 Mar 2026</span>
-                        <span class="review-rating">10/10</span>
-                    </div>
-                </article>
-            </div>
+    <article class="review-card">
+        <h4>Life-Changing Experience</h4>
+        <p>Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways...</p>
+        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(0)">See more</a>
+        <div class="review-meta">
+            <span>Priya Nair — 12 Feb 2026</span>
+            <span class="review-rating">9/10</span>
+        </div>
+    </article>
+
+    <article class="review-card">
+        <h4>Highly Recommend Campus Audit</h4>
+        <p>I never realised how much water our university wastes. The audit gave real data and the university acted on it...</p>
+        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(1)">See more</a>
+        <div class="review-meta">
+            <span>James Okafor — 05 Mar 2026</span>
+            <span class="review-rating">8/10</span>
+        </div>
+    </article>
+
+    <article class="review-card">
+        <h4>Blue Schools Changed Everything</h4>
+        <p>Teaching kids about clean water in rural areas was the most rewarding thing I've done as a student volunteer...</p>
+        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(2)">See more</a>
+        <div class="review-meta">
+            <span>Amara Diallo — 19 Mar 2026</span>
+            <span class="review-rating">10/10</span>
+        </div>
+    </article>
+</div>
         </section>
 
         <!-- ======================================================
@@ -619,24 +621,21 @@
          PROGRAMME MODAL — identical structure to gallery modal
          Populated dynamically by openProgramModal(index)
     ====================================================== -->
-    <div class="prog-modal-overlay" id="prog-modal" role="dialog" aria-modal="true" aria-labelledby="prog-modal-title">
-        <div class="prog-modal-content">
-            <div class="prog-modal-header">
-                <button class="prog-modal-close" onclick="closeProgramModal()" aria-label="Close programme details">&times;</button>
-            </div>
-            <div class="prog-modal-body">
-                <div class="prog-modal-img-wrap">
-                    <img id="prog-modal-img" class="prog-modal-img" src="" alt="">
-                </div>
-                <div class="prog-modal-info">
-                    <span id="prog-modal-tag"  class="prog-modal-tag"></span>
-                    <h2  id="prog-modal-title"></h2>
-                    <p   id="prog-modal-desc"></p>
-                    <p   id="prog-modal-detail" style="font-size:0.88rem;opacity:0.8;"></p>
-                </div>
+    <div class="prog-modal-overlay" id="review-modal" role="dialog" aria-modal="true">
+    <div class="prog-modal-content">
+        <div class="prog-modal-header">
+            <button class="prog-modal-close" onclick="closeReviewModal()">&times;</button>
+        </div>
+        <div class="prog-modal-info">
+            <h2 id="rev-modal-title" style="color: var(--secondary-blue); margin-bottom: 10px;"></h2>
+            <p id="rev-modal-fulltext" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; color: white;"></p>
+            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
+                <span id="rev-modal-author" style="font-weight: bold; color: var(--tertiary-teal);"></span><br>
+                <span id="rev-modal-date" style="opacity: 0.7; font-size: 0.85rem; color: white;"></span>
             </div>
         </div>
     </div>
+</div>
 
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
@@ -798,6 +797,44 @@
         document.getElementById('programme').addEventListener('change', () =>
             setError('programme', 'programmeError', false)
         );
+        // --- 1. FULL DATA FOR THE REVIEW POPUPS ---
+const reviewData = [
+    {
+        title: "Life-Changing Experience",
+        text: "Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways. We spent the morning removing over 50kg of waste! It's hard work but incredibly rewarding to see the immediate difference in the water clarity.",
+        author: "Priya Nair",
+        date: "12 Feb 2026"
+    },
+    {
+        title: "Highly Recommend Campus Audit",
+        text: "I never realised how much water our university wastes daily. The audit gave us real data on leaky faucets and inefficient flush systems. After our report, the administration replaced 40% of the old hardware. Seeing policy change based on our data was amazing!",
+        author: "James Okafor",
+        date: "05 Mar 2026"
+    },
+    {
+        title: "Blue Schools Changed Everything",
+        text: "Teaching kids about clean water in rural areas was the most rewarding thing I've done. The curriculum is so engaging, and the kids were genuinely excited to learn about hygiene. It’s not just about education; it's about building long-term healthy habits.",
+        author: "Amara Diallo",
+        date: "19 Mar 2026"
+    }
+];
+
+// --- 2. FUNCTION TO OPEN THE REVIEW MODAL ---
+function openReviewModal(index) {
+    const review = reviewData[index];
+    document.getElementById('rev-modal-title').innerText = review.title;
+    document.getElementById('rev-modal-fulltext').innerText = review.text;
+    document.getElementById('rev-modal-author').innerText = "Review by: " + review.author;
+    document.getElementById('rev-modal-date').innerText = "Posted on: " + review.date;
+    
+    // Shows the modal by adding the 'open' class
+    document.getElementById('review-modal').classList.add('open');
+}
+
+// --- 3. FUNCTION TO CLOSE THE REVIEW MODAL ---
+function closeReviewModal() {
+    document.getElementById('review-modal').classList.remove('open');
+}
     </script>
 
 </body>
