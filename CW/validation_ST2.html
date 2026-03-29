@@ -4,110 +4,120 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Validation Page — Sachith Pamoda Wattaranthenna | ST2</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="pageEditor_validator.css">
 </head>
-<body>
+<body class="validation-page">
 
-    <!-- ===== HEADER ===== -->
     <header id="top">
-        <h1>AquaAction | Validation Report — Student 2</h1>
+        <a href="home.html" class="logo-link">
+            <img src="image/logo.png" alt="AquaAction logo" class="logo-img">
+            <div class="logo-text">
+                <h2>AquaAction</h2>
+                <p>Securing Every Drop for Everyone</p>
+            </div>
+        </a>
+
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="volunteer.html">Volunteer</a></li>
+                    <li><a href="table.html">Table</a></li>
+                    <li><a href="feedback.html">Feedback</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="profile.html">Profile</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <!-- Student banner -->
     <section class="stud">
-        <h2>Sachith Pamoda Wattaranthenna &nbsp;|&nbsp; 20241617 / W2182298 &nbsp;|&nbsp; Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page (ST2)</h2>
+        <h2>
+            Sachith Pamoda Wattaranthenna | 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page (ST2)
+        </h2>
     </section>
 
     <div class="container">
 
-        <!-- ===== MAIN CONTENT ===== -->
-        <main>
+        <aside>
+            <h3>Core pages validated:</h3>
+            <ul class="top-level-ul">
+                <li>Student 2 — Sachith Pamoda</li>
+                <li><a href="#splashVal">Splash Screen</a></li>
+                <li><a href="#aisVal">Action Impact Simulator</a></li>
+                <li><a href="#contentVal">Sanitation Systems Content Page</a></li>
+            </ul>
+        </aside>
 
-            <!-- ══════════════════════════════════════
-                 SECTION 1 — SPLASH SCREEN VALIDATION
-            ══════════════════════════════════════ -->
+        <main>
             <section>
                 <h2 id="splashVal">Splash Screen — Validation Report</h2>
 
-                <p>The Splash Screen (<code>splash.html</code>) was validated using the W3C HTML Markup
-                Validation Service. The page passed with <strong>no errors</strong>. Two minor warnings
-                were present relating to the use of the <code>aria-label</code> attribute on a
-                <code>&lt;div&gt;</code> element, which was resolved by adding <code>role="group"</code>
-                to the element. The meta refresh attribute spacing warning was resolved by adding a space
-                after the semicolon in <code>content="4; url=home.html"</code>. After corrections,
-                the page validated successfully with no errors and no warnings.</p>
+                <p>
+                    The Splash Screen (<code>splash.html</code>) was validated using the W3C HTML Markup
+                    Validation Service. The page passed with <strong>no errors</strong>. Two minor warnings
+                    were present relating to the use of the <code>aria-label</code> attribute on a
+                    <code>&lt;div&gt;</code> element, which was resolved by adding <code>role="group"</code>
+                    to the element. The meta refresh attribute spacing warning was resolved by adding a space
+                    after the semicolon in <code>content="4; url=home.html"</code>. After corrections,
+                    the page validated successfully with no errors and no warnings.
+                </p>
 
-                <!-- Replace screenshot filename with your actual screenshot name -->
-                <img src="validationSnapshots/validation_splash.png" alt="W3C validation result for splash.html showing no errors">
+                <img src="validationSnapshots/validation_splash.png"
+                     alt="W3C validation result for splash.html showing no errors">
 
                 <h3>Back to Page Editor</h3>
                 <p><a href="pageEditor_ST2.html#splash">Back to Splash Screen section in Page Editor</a></p>
             </section>
 
-            <!-- ══════════════════════════════════════
-                 SECTION 2 — AIS VALIDATION
-            ══════════════════════════════════════ -->
             <section>
                 <h2 id="aisVal">Action Impact Simulator — Validation Report</h2>
 
-                <p>The Action Impact Simulator (<code>ais.html</code>) was validated using the W3C HTML
-                Markup Validation Service. The page passed with <strong>no errors</strong>. During
-                development, one warning was identified relating to the use of
-                <code>aria-live="polite"</code> on a <code>&lt;section&gt;</code> element — this was
-                acceptable as warnings do not prevent successful validation. All six action cards use
-                valid <code>data-*</code> attributes which are fully supported in HTML5. The embedded
-                <code>&lt;style&gt;</code> block was checked to ensure no conflicts with the global
-                <code>style.css</code> file. The page validated successfully with no errors.</p>
+                <p>
+                    The Action Impact Simulator (<code>ais.html</code>) was validated using the W3C HTML
+                    Markup Validation Service. The page passed with <strong>no errors</strong>. During
+                    development, one warning was identified relating to the use of
+                    <code>aria-live="polite"</code> on a <code>&lt;section&gt;</code> element — this was
+                    acceptable as warnings do not prevent successful validation. All six action cards use
+                    valid <code>data-*</code> attributes which are fully supported in HTML5. The embedded
+                    <code>&lt;style&gt;</code> block was checked to ensure no conflicts with the global
+                    <code>style.css</code> file. The page validated successfully with no errors.
+                </p>
 
-                <!-- Replace screenshot filename with your actual screenshot name -->
-                <img src="validationSnapshots/validation_ais.png" alt="W3C validation result for ais.html showing no errors">
+                <img src="validationSnapshots/validation_ais.png"
+                     alt="W3C validation result for ais.html showing no errors">
 
                 <h3>Back to Page Editor</h3>
                 <p><a href="pageEditor_ST2.html#ais">Back to Action Impact Simulator section in Page Editor</a></p>
             </section>
 
-            <!-- ══════════════════════════════════════
-                 SECTION 3 — CONTENT PAGE VALIDATION
-            ══════════════════════════════════════ -->
             <section>
                 <h2 id="contentVal">Sanitation Systems Content Page — Validation Report</h2>
 
-                <p>The Sanitation Systems Content Page (<code>content_ST2.html</code>) was validated
-                using the W3C HTML Markup Validation Service. The page passed with
-                <strong>no errors</strong>. The heading hierarchy was carefully checked to ensure one
-                <code>&lt;h1&gt;</code> appears in the hero banner with subsequent
-                <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> elements following a logical
-                order throughout the page. All internal anchor links were verified to correctly target
-                their corresponding section <code>id</code> attributes. All four images include
-                valid <code>alt</code> text. The page validated successfully with no errors.</p>
+                <p>
+                    The Sanitation Systems Content Page (<code>content_ST2.html</code>) was validated
+                    using the W3C HTML Markup Validation Service. The page passed with
+                    <strong>no errors</strong>. The heading hierarchy was carefully checked to ensure one
+                    <code>&lt;h1&gt;</code> appears in the hero banner with subsequent
+                    <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code> elements following a logical
+                    order throughout the page. All internal anchor links were verified to correctly target
+                    their corresponding section <code>id</code> attributes. All four images include
+                    valid <code>alt</code> text. The page validated successfully with no errors.
+                </p>
 
-                <!-- Replace screenshot filename with your actual screenshot name -->
-                <img src="validationSnapshots/validation_content_ST2.png" alt="W3C validation result for content_ST2.html showing no errors">
+                <img src="validationSnapshots/validation_content_ST2.png"
+                     alt="W3C validation result for content_ST2.html showing no errors">
 
                 <h3>Back to Page Editor</h3>
                 <p><a href="pageEditor_ST2.html#content">Back to Sanitation Systems Content Page section in Page Editor</a></p>
             </section>
 
             <p class="top"><a href="#top">Go top</a></p>
-
         </main>
-
-        <!-- ===== SIDEBAR ===== -->
-        <aside>
-            <h3>Core pages validated:</h3>
-            <ul class="top-level-ul">
-                <li>Student 2 — Sachith Pamoda</li>
-                <ul>
-                    <li><a href="#splashVal">Splash Screen</a></li>
-                    <li><a href="#aisVal">Action Impact Simulator</a></li>
-                    <li><a href="#contentVal">Sanitation Systems Content Page</a></li>
-                </ul>
-            </ul>
-        </aside>
-
     </div>
 
-    <!-- ===== FOOTER ===== -->
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
         <p>
@@ -115,7 +125,10 @@
             <a href="validation_ST2.html">Validation Report</a> |
             <a href="https://wave.webaim.org/">Accessibility Compliance</a>
         </p>
-        <p>Sachith Pamoda Wattaranthenna | 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page ST2</p>
+        <p>
+            Sachith Pamoda Wattaranthenna | 20241617 / W2182298 |
+            Role: Splash Screen &amp; Action Impact Simulator &amp; Content Page ST2
+        </p>
     </footer>
 
 </body>

@@ -1,101 +1,173 @@
+/* =========================
+   VALIDATION PAGE TEMPLATE
+   Makes the page look like the old validator template
+   ========================= */
 
-body {
-    font-family: Arial, sans-serif;
+.validation-page .stud {
+    text-align: center;
+    background-color: #d9e6ea;
+    color: var(--dark-abyss);
+    padding: 0.8rem 1rem;
+    margin: 0;
+    border-top: 1px solid #c7d8de;
+    border-bottom: 1px solid #c7d8de;
+}
+
+.validation-page .stud h2 {
+    margin: 0;
+    color: var(--dark-abyss);
+    font-size: 1.1rem;
+    font-weight: 700;
+}
+
+/* MAIN TWO COLUMN LAYOUT */
+.validation-page .container {
+    display: flex;
+    flex-direction: row;   /* sidebar LEFT, content RIGHT */
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 2rem 4%;
+    width: 100%;
+    align-items: flex-start;
+}
+
+/* SIDEBAR */
+.validation-page aside {
+    flex: 1;
+    background-color: #f5f5f5;
+    padding: 1.5rem 1.2rem;
+    border: 1px solid #d8d8d8;
+    border-radius: 0;
+    box-shadow: none;
+    margin-right: 0;
+    position: static;
+}
+
+.validation-page aside h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    color: var(--dark-abyss);
+    font-size: 1.1rem;
+}
+
+.validation-page .top-level-ul {
+    margin: 0;
+    padding-left: 1.2rem;
+}
+
+.validation-page .top-level-ul li {
+    margin-bottom: 0.8rem;
+}
+
+.validation-page aside a {
+    text-decoration: none;
+}
+
+.validation-page aside a:hover {
+    text-decoration: underline;
+}
+
+/* MAIN CONTENT */
+.validation-page main {
+    flex: 3;
+    width: 100%;
+    max-width: none;
     margin: 0;
     padding: 0;
 }
 
-.container {
-    display: flex;
-    flex-direction: row-reverse;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-main {
-    flex: 3;
-}
-aside {
-    flex: 1;
-    background-color: #f4f4f4;
-    padding: 15px;
-    border: 1px solid #ddd;
-    margin-right: 20px;
+/* RECTANGLE CONTENT BOXES */
+.validation-page main section {
+    background: #f8f8f8;
+    border: 1px solid #d8d8d8;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 2rem;
+    margin-bottom: 2rem;
 }
 
-h2{
-    color: #333;
-}
-section {
-    margin-bottom: 20px;
-    padding: 15px;
-    border: 1px solid #ddd;
-    background-color: #fafafa;
-}
-header, footer {
+/* HEADINGS */
+.validation-page main section h2 {
     text-align: center;
-    background-color: #333;
-    color: white;
-    padding: 10px 0;
+    color: #2f3b46;
+    margin-top: 0;
+    margin-bottom: 1rem;
+    font-size: 1.35rem;
 }
 
-.ref li{
-    list-style: none;
-    padding-bottom: 9px;
+.validation-page main section h3 {
+    color: #2f3b46;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
 }
 
-aside a{
-    text-decoration : none;
-}
-
-aside li{
-    padding-bottom: 4px;
-}
-
-.stud {
+/* PARAGRAPHS */
+.validation-page main section p {
     text-align: center;
-    line-height: 0;
-    background-color: #cbccc2ef;
-    color: white;
-    margin-top: 8px;
+    margin-bottom: 1rem;
+    line-height: 1.8;
 }
 
-.top {
-    position: fixed;
-    bottom: 5%;
-    right: 5%;
-}
-        
-.top a {
-    padding: 10px 20px; /* Adds padding for button-like feel */
-    background-color: #007bff; /* Button color */
-    color: white; /* Text color */
-    text-decoration: none; /* Removes underline */
-    border-radius: 20px; /* Rounds the corners */
-    font-size: 12px; /* Adjust font size */
-    font-weight: bold; /* Make the text stand out */
-}
-
-.top a:hover {
-    background-color: #0056b3; /* Darker shade on hover */
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow */
-}
-
-img{
+/* SCREENSHOTS */
+.validation-page main section img {
+    display: block;
     width: 90%;
+    max-width: 950px;
+    height: auto;
+    margin: 1rem auto 0 auto;
+    border: 1px solid #cccccc;
+    border-radius: 0;
+    box-shadow: none;
 }
 
-
-table{
-    border: 1px solid black;
-    border-collapse: collapse;
+/* CODE STYLE */
+.validation-page code {
+    background-color: #eef3f5;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.95em;
 }
 
-th, td{
-    padding: 4px;
-    border: 1px solid black;
+/* GO TOP BUTTON */
+.validation-page .top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    margin: 0;
 }
-thead{
-    background-color: #333;
-    color: azure;
+
+.validation-page .top a {
+    display: inline-block;
+    padding: 12px 20px;
+    background-color: #0d84ff;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 24px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.validation-page .top a:hover {
+    background-color: #0066cc;
+}
+
+/* FOOTER SMALL ADJUSTMENT */
+.validation-page footer {
+    margin-top: 1rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .validation-page .container {
+        flex-direction: column;
+    }
+
+    .validation-page aside {
+        width: 100%;
+    }
+
+    .validation-page main section img {
+        width: 100%;
+    }
 }
