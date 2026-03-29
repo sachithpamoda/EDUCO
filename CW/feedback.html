@@ -495,7 +495,7 @@
 
             <div class="reviews-grid">
     <article class="review-card">
-        <h4>Life-Changing Experience</h4>
+        <h3>Life-Changing Experience</h3>
         <p>Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways...</p>
         <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(0)">See more</a>
         <div class="review-meta">
@@ -621,6 +621,22 @@
          PROGRAMME MODAL — identical structure to gallery modal
          Populated dynamically by openProgramModal(index)
     ====================================================== -->
+    <div class="prog-modal-overlay" id="prog-modal" role="dialog" aria-modal="true">
+    <div class="prog-modal-content">
+        <div class="prog-modal-header">
+            <button class="prog-modal-close" onclick="closeProgramModal()">&times;</button>
+        </div>
+        <div class="prog-modal-body">
+            <img id="modal-img" src="#" alt="" class="prog-modal-img">
+            <div class="prog-modal-info">
+                <span id="modal-tag" class="prog-modal-tag"></span>
+                <h2 id="modal-title"></h2>
+                <p id="modal-desc"></p>
+                <p id="modal-detail" style="font-weight:700; color:var(--secondary-blue);"></p>
+            </div>
+        </div>
+    </div>
+</div>
     <div class="prog-modal-overlay" id="review-modal" role="dialog" aria-modal="true">
     <div class="prog-modal-content">
         <div class="prog-modal-header">
@@ -644,7 +660,7 @@
             <a href="validation_ST3.html">Validation Report</a> |
             <a href="#">Accessibility Compliance</a>
         </p>
-        <p>Sasiru Insara Rajapaksha | 2181982 | Role: Engagement &amp; Team Lead</p>
+        <p>Student Name: Sasiru Insara Rajapaksha | Student ID: 20250855/w2181982 | Role: Feedback & Programme Directory, Team Page & Content Page</p>
     </footer>
 
     <script>
@@ -658,49 +674,49 @@
         // t = title, tag = category badge, d = short description,
         // detail = extra detail line, i = image URL
         const programmeData = [
-            {
-                t:      "River Clean-Up Brigade",
-                tag:    "🌊 Community Action",
-                d:      "Every weekend, dedicated volunteers come together to restore our urban waterways — removing plastic waste, monitoring water quality, and educating the public one river at a time.",
-                detail: "📍 14 active sites · ♻️ 400 kg waste removed monthly · ✅ Open to ages 14+",
-                i:      "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700&h=460&fit=crop&auto=format"
-            },
-            {
-                t:      "Campus Water Audit",
-                tag:    "🎓 Student-Led",
-                d:      "A student-driven initiative that surveys university water consumption — from shower durations in halls to toilet flush volumes in lecture buildings — and turns findings into action.",
-                detail: "📉 18% average reduction achieved · 👩‍🔬 60+ trained auditors · 🏫 4 campuses",
-                i:      "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700&h=460&fit=crop&auto=format"
-            },
-            {
-                t:      "Rainwater Harvest Project",
-                tag:    "🏡 Infrastructure",
-                d:      "Using simple diverter kits and storage barrels, this project turns rainfall into a usable resource for homes, schools, and community gardens — reducing mains water demand significantly.",
-                detail: "💧 200+ systems installed · 🪣 35,000 litres saved per household/year · 🌍 3 countries",
-                i:      "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=700&h=460&fit=crop&auto=format"
-            },
-            {
-                t:      "Blue Schools Initiative",
-                tag:    "📚 Education",
-                d:      "An interactive six-week WASH curriculum delivered in primary and secondary schools, covering safe water, sanitation, and hygiene — backed by real handwashing infrastructure on-site.",
-                detail: "🏫 42 schools reached · 👦 11,000+ pupils · 🚿 28 handwashing stations installed",
-                i:      "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700&h=460&fit=crop&auto=format"
-            },
-            {
-                t:      "Wetland Guardians",
-                tag:    "🌿 Conservation",
-                d:      "Volunteers trained as citizen scientists survey wetland sites monthly, recording water quality and wildlife data — while restoration teams remove invasive species and repair sluice gates.",
-                detail: "🦆 7 monitoring sites · 🌱 3 wetlands restored · 🔬 22 protected species recorded",
-                i:      "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700&h=460&fit=crop&auto=format"
-            },
-            {
-                t:      "Smart Irrigation Network",
-                tag:    "⚙️ Technology",
-                d:      "Subsidised soil moisture sensors and drip irrigation kits help smallholder farmers cut water use by up to 50% — without any reduction in crop yield — through precision agriculture.",
-                detail: "🌾 35 farms enrolled · 💧 18 million litres saved (2025) · 📈 12% yield improvement",
-                i:      "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700&h=460&fit=crop&auto=format"
-            }
-        ];
+    {
+        t: "River Clean-Up Brigade",
+        tag: "🌊 Community Action",
+        d: "Every weekend, volunteers restore urban waterways by removing plastic waste and monitoring water quality.",
+        detail: "📍 14 active sites · ♻️ 400 kg waste removed monthly · ✅ Open to ages 14+",
+        i: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700"
+    },
+    {
+        t: "Campus Water Audit",
+        tag: "🎓 Student-Led",
+        d: "A student-driven initiative surveying university water consumption and turning findings into action.",
+        detail: "📉 18% reduction achieved · 👩‍🔬 60+ trained auditors",
+        i: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700"
+    },
+    {
+        t: "Rainwater Harvest Project",
+        tag: "🏡 Infrastructure",
+        d: "Turning rainfall into a usable resource for homes and schools using simple diverter kits.",
+        detail: "💧 200+ systems installed · 🌍 3 countries active",
+        i: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=700"
+    },
+    {
+        t: "Blue Schools Initiative",
+        tag: "📚 Education",
+        d: "An interactive six-week curriculum covering sanitation and hygiene in primary schools.",
+        detail: "🏫 42 schools reached · 🚿 28 handwashing stations installed",
+        i: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700"
+    },
+    {
+        t: "Wetland Guardians",
+        tag: "🦆 Conservation",
+        d: "Protect and restore natural wetlands that filter water and provide crucial ecosystems for wildlife.",
+        detail: "🌾 5,000 hectares protected · 🦋 Biodiversity monitoring included",
+        i: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700"
+    },
+    {
+        t: "Smart Irrigation Network",
+        tag: "🚜 Tech & Ag",
+        d: "Support farmers in adopting drip irrigation and moisture sensors to reduce agricultural water waste.",
+        detail: "🛰️ Satellite monitoring · 🚿 40% water savings per farm",
+        i: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700"
+    }
+];
 
         // Open modal — populate with data at given index (same pattern as gallery.js openModal)
         function openProgramModal(index) {
@@ -834,6 +850,39 @@ function openReviewModal(index) {
 // --- 3. FUNCTION TO CLOSE THE REVIEW MODAL ---
 function closeReviewModal() {
     document.getElementById('review-modal').classList.remove('open');
+}
+// Function for Program Cards
+function openProgramModal(index) {
+    const data = programmeData[index];
+    document.getElementById('modal-title').innerText = data.t;
+    document.getElementById('modal-tag').innerText = data.tag;
+    document.getElementById('modal-desc').innerText = data.d;
+    document.getElementById('modal-detail').innerText = data.detail;
+    document.getElementById('modal-img').src = data.i;
+    document.getElementById('prog-modal').classList.add('open');
+}
+
+function closeProgramModal() {
+    document.getElementById('prog-modal').classList.remove('open');
+}
+
+// Function for Reviews
+function openReviewModal(index) {
+    const rev = reviewData[index]; // Make sure you have a reviewData array!
+    document.getElementById('rev-modal-title').innerText = rev.title;
+    document.getElementById('rev-modal-fulltext').innerText = rev.text;
+    document.getElementById('rev-modal-author').innerText = rev.author;
+    document.getElementById('rev-modal-date').innerText = rev.date;
+    document.getElementById('review-modal').classList.add('open');
+}
+
+function closeReviewModal() {
+    document.getElementById('review-modal').classList.remove('open');
+}
+window.onclick = function(event) {
+    if (event.target.classList.contains('prog-modal-overlay')) {
+        event.target.classList.remove('open');
+    }
 }
     </script>
 
