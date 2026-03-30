@@ -1,0 +1,332 @@
+<!--
+/**
+ * @file pageEditor_ST1.html
+ * @description Technical Documentation and Page Editor file for Student 1.
+ * @project AquaAction (SDG 06: Clean Water and Sanitation)
+ * @author Methum Thevjan Weeratunga (Student 1)
+ * @role Technical Implementation Lead & Water Conservation Specialist
+ * @theme Dark Abyss Palette
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — Methum Thevjan Weeratunga | ST1</title>
+    
+    <!-- External global and validator structural CSS -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pageEditor_validator.css">
+    
+    <!-- Embedded CSS scoped to this documentation page following the "Dark Abyss" branding -->
+    <style>
+        .page-editor main {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+        .editor-section {
+            background-color: #ffffff;
+            border-left: 6px solid #2a8da7; 
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        .editor-section h2 {
+            color: #134957;
+            border-bottom: 2px solid #9fd7e6;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .editor-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            font-size: 0.95rem;
+        }
+        .editor-table th, .editor-table td {
+            border: 1px solid #9fd7e6;
+            padding: 12px 15px;
+            text-align: left;
+        }
+        .editor-table th {
+            background-color: #134957;
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .editor-table tr:nth-child(even) {
+            background-color: #f4f9fa;
+        }
+        .editor-table tr:hover {
+            background-color: #e6f4f7;
+        }
+        .editor-table a {
+            color: #2a8da7;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        .editor-table a:hover {
+            text-decoration: underline;
+        }
+        /* Page Navigation Buttons styling */
+        .btn-nav {
+            display: inline-block;
+            background-color: #2a8da7;
+            color: #ffffff;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            margin-right: 1rem;
+            margin-bottom: 1rem;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+        .btn-nav:hover {
+            background-color: #134957;
+            transform: translateY(-2px);
+            color: #ffffff;
+        }
+        .ai-quote {
+            background-color: #f4f9fa;
+            border-left: 4px solid #134957;
+            padding: 1rem 1.5rem;
+            margin: 1rem 0;
+            font-style: italic;
+            color: #333;
+        }
+    </style>
+</head>
+<body class="page-editor">
+
+    <!-- ===== HEADER (AquaAction Global Banner) ===== -->
+    <header id="top">
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== SECTION 1: STUDENT IDENTITY ===== -->
+    <section class="stud">
+        <h2>Methum Thevjan Weeratunga &nbsp;|&nbsp; 20233134 / W2182089 &nbsp;|&nbsp; Role: Technical Implementation Lead &amp; Water Conservation Specialist</h2>
+    </section>
+
+    <div class="container">
+        
+        <!-- ===== SIDEBAR ===== -->
+        <aside>
+            <h3>Page Editor Index</h3>
+            <ul class="top-level-ul">
+                <li>Student 1 — Methum Thevjan</li>
+                <ul>
+                    <li><a href="#ai">AI Design Reflection</a></li>
+                    <li><a href="#impl">Task Implementation Log</a></li>
+                    <li><a href="#credits">Resource &amp; Image Credits</a></li>
+                    <li><a href="#meetings">Group Meeting Logs</a></li>
+                    <li><a href="#nav">Page Navigation Links</a></li>
+                </ul>
+            </ul>
+        </aside>
+
+        <!-- ===== MAIN CONTENT ===== -->
+        <main>
+            
+            <!-- ===== SECTION 2: AI DESIGN REFLECTION ===== -->
+            <article class="editor-section" id="ai">
+                <h2>AI Tool Reflection for Design Support</h2>
+                <p>During the development of the AquaAction web application, Google Gemini AI was heavily utilized as an architectural co-pilot to streamline the design thinking process. I leveraged prompts to brainstorm and draft initial CSS structures for the <strong>"Dark Abyss"</strong> theme globally, as well as to quickly aggregate and structure technical SDG 06 statistical data efficiently.</p>
+                
+                <h3>Crucial Technical Adaptations</h3>
+                <p>To comply with academic standards, AI outputs were never copied blindly. Instead, they were used as foundational blueprints which I manually adapted for the exact requirements of Student 1 role deliverables:</p>
+                
+                <div class="ai-quote">
+                    "The AI suggested a standard grid, which I manually modified into a 3x2 portrait grid to better fit my 300x400 source images."
+                </div>
+                
+                <div class="ai-quote">
+                    "I manually implemented the Requirement C 'Targeted Text Scaling' logic to ensure the Navigation and Footer remain stable while main content enlarges."
+                </div>
+                
+                <div class="ai-quote">
+                    "I used AI to assist in identifying and resolving Nu HTML Checker errors like empty headings and bad image attributes."
+                </div>
+            </article>
+
+            <!-- ===== SECTION 3: TASK IMPLEMENTATION LOG ===== -->
+            <article class="editor-section" id="impl">
+                <h2>Task Implementation Log</h2>
+                <p>The following table tracks the major architectural elements authored specifically under the Student 1 purview.</p>
+                
+                <table class="editor-table">
+                    <thead>
+                        <tr>
+                            <th>Task / Core Element</th>
+                            <th>Description</th>
+                            <th>Technical Implementation &amp; Fixes</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Global Branding</strong><br>(<code>style.css</code>)</td>
+                            <td>Creation of the baseline visual language driving the entire AquaAction project.</td>
+                            <td>Established the `:root` pseudo-class carrying the "Dark Abyss" palette variables. Ensured responsive typography scales dynamically using `rem` units to avoid hardcoded breaking points.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Water Conservation Page</strong><br>(<code>content_ST1.html</code>)</td>
+                            <td>Development of the primary awareness page educating users on domestic conservation strategies.</td>
+                            <td>Utilized semantic `<article>` tags for logical readability flow. Resolved early validation bugs relating to missing alt tags and properly anchored internal navigational hooks (`id` linking).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Home Page Hero &amp; Form</strong><br>(<code>home.html</code>)</td>
+                            <td>Landing experience featuring active CTAs and the "Join the Mission" outreach form.</td>
+                            <td>Built the global sticky navigation shell. Integrated a responsive Google Form `<iframe>` embed and optimized minimum height attributes to ensure full cross-device accessibility without clipping.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- ===== SECTION 4: RESOURCE & IMAGE CREDITS ===== -->
+            <article class="editor-section" id="credits">
+                <h2>Resource &amp; Image Credits</h2>
+                <p>Consistent with JANET acceptable use policies and academic integrity regulations, all external resources, data points, and media used across the ST1 implementations are fully attributed below.</p>
+                
+                <table class="editor-table">
+                    <thead>
+                        <tr>
+                            <th>Innovation / Topic</th>
+                            <th>Source Link (URL)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>SDG 6 Official Data</td>
+                            <td><a href="https://sdgs.un.org/goals/goal6" target="_blank">https://sdgs.un.org/goals/goal6</a></td>
+                        </tr>
+                        <tr>
+                            <td>Smart Irrigation</td>
+                            <td><a href="https://unsplash.com/photos/sprinklers-spraying-water-on-a-field-of-crops-ztHHjV0t0Qw" target="_blank">https://unsplash.com/photos/sprinklers-spraying-water...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Rainwater Harvesting Diagram</td>
+                            <td><a href="https://commons.wikimedia.org/wiki/File:Simple_Diagram_to_show_Rainwater_Harvesting.png" target="_blank">https://commons.wikimedia.org/wiki/File:Simple_Diagram...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Clay Filtration Mechanics</td>
+                            <td><a href="https://www.scielo.org.za/scielo.php?pid=S1816-79502012000500010&script=sci_arttext" target="_blank">https://www.scielo.org.za/scielo.php?pid=S1816-795...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Solar Desalination Schematic</td>
+                            <td><a href="https://www.researchgate.net/figure/Schematic-of-solar-thermal-integrated-desalination-plant-which-shows-the-economic_fig1_367072149" target="_blank">https://www.researchgate.net/figure/Schematic-of-solar...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Clean Sanitation Imagery</td>
+                            <td><a href="https://www.flickr.com/photos/usaid_images/14783669867" target="_blank">https://www.flickr.com/photos/usaid_images/14783669867</a></td>
+                        </tr>
+                        <tr>
+                            <td>Wastewater Recovery Tech</td>
+                            <td><a href="https://juniperpublishers.com/aibm/AIBM.MS.ID.555639.php" target="_blank">https://juniperpublishers.com/aibm/AIBM.MS.ID...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Crystal Ocean Imagery</td>
+                            <td><a href="https://www.gettyimages.com/photos/crystal-clear-water-beach" target="_blank">https://www.gettyimages.com/photos/crystal-clear-water-beach</a></td>
+                        </tr>
+                        <tr>
+                            <td>Environmental Health Statistics</td>
+                            <td><a href="https://apureinstrument.com/blogs/importance-of-clean-water-in-the-environment/" target="_blank">https://apureinstrument.com/blogs/importance-of-clean...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Cracked Earth (Scarcity Concept)</td>
+                            <td><a href="https://stockcake.com/i/cracked-earth-pattern_1975778_1302073" target="_blank">https://stockcake.com/i/cracked-earth-pattern_1975778_1302073</a></td>
+                        </tr>
+                        <tr>
+                            <td>Tap Water Action Habit</td>
+                            <td><a href="https://depositphotos.com/video/turning-off-the-tap-water-90872114.html" target="_blank">https://depositphotos.com/video/turning-off-the-tap...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Dietary Water Footprint Data</td>
+                            <td><a href="https://www.ers.usda.gov/amber-waves/2021/august/u-s-food-related-water-use-varies-by-food-category-supply-chain-stage-and-dietary-pattern" target="_blank">https://www.ers.usda.gov/amber-waves/2021/august/...</a></td>
+                        </tr>
+                        <tr>
+                            <td>Campus Action Campaign</td>
+                            <td><a href="https://educationaus.net.au/civiq/" target="_blank">https://educationaus.net.au/civiq/</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- ===== SECTION 5: GROUP MEETING LOGS ===== -->
+            <article class="editor-section" id="meetings">
+                <h2>Group Meetings and Individual Contribution Log</h2>
+                <p>Below is a required accounting of my personal attendance and fundamental responsibilities fulfilled during critical team alignment syncs.</p>
+                
+                <table class="editor-table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Meeting Type</th>
+                            <th>Core Objective / Resolution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>March 01, 2026</td>
+                            <td>Project Kickoff</td>
+                            <td>Defined SDG 06 scope and roles across the overarching team. Established individual mandates.</td>
+                        </tr>
+                        <tr>
+                            <td>March 15, 2026</td>
+                            <td>Branding Alignment</td>
+                            <td>Established the shared "Dark Abyss" global CSS variables and specific hexadecimal application maps.</td>
+                        </tr>
+                        <tr>
+                            <td>March 25, 2026</td>
+                            <td>Final Integration Check</td>
+                            <td>Merged individual student pages into the master layout and isolated/fixed local markup validation bugs.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+
+            <!-- ===== SECTION 6: PAGE NAVIGATION ===== -->
+            <article class="editor-section" id="nav" style="text-align: center;">
+                <h2>Page Navigation Actions</h2>
+                <p style="margin-bottom: 2rem;">Use the links below to instantly review the live outputs or technical compliance matrix for Student 1.</p>
+                
+                <a href="home.html" class="btn-nav">Return to Home Page</a>
+                <a href="validation_ST1.html" class="btn-nav">View Validation Report (ST1)</a>
+            </article>
+
+        </main>
+    </div>
+
+    <!-- ===== SHARED GLOBAL FOOTER ===== -->
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST1.html">Page Editor</a> |
+            <a href="validation_ST1.html">Validation Report</a> |
+            <a href="https://wave.webaim.org/" target="_blank">Accessibility Compliance</a>
+        </p>
+        <p>Methum Thevjan Weeratunga | 20233134 / W2182089 | Role: Website template, Navigation, Home, Gallery</p>
+    </footer>
+
+</body>
+</html>
