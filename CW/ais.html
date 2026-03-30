@@ -291,7 +291,8 @@
 
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
@@ -325,12 +326,7 @@
             <div class="action-grid" id="action-grid">
 
                 <!-- Card 1 -->
-                <div class="action-card"
-                    data-points="2"
-                    data-id="1"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="2" data-id="1" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Turn off the tap — 2 impact points">
                     <img src="images/tile-conss.jpg" alt="A person turning off a running tap to save water">
                     <h3>Turn Off the Tap</h3>
@@ -340,12 +336,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="action-card"
-                    data-points="3"
-                    data-id="2"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="3" data-id="2" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Fix leaks at home — 3 impact points">
                     <img src="images/tile-san.jpeg" alt="A dripping tap being repaired to prevent water waste">
                     <h3>Fix Leaks at Home</h3>
@@ -355,12 +346,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="action-card"
-                    data-points="4"
-                    data-id="3"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="4" data-id="3" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Collect rainwater — 4 impact points">
                     <img src="images/tile-comm.jpeg" alt="A rain barrel collecting water from a roof">
                     <h3>Collect Rainwater</h3>
@@ -370,12 +356,7 @@
                 </div>
 
                 <!-- Card 4 -->
-                <div class="action-card"
-                    data-points="3"
-                    data-id="4"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="3" data-id="4" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Take shorter showers — 3 impact points">
                     <img src="images/tile-innn.png" alt="A shower timer on a wall showing time saving">
                     <h3>Shorter Showers</h3>
@@ -385,12 +366,7 @@
                 </div>
 
                 <!-- Card 5 -->
-                <div class="action-card"
-                    data-points="4"
-                    data-id="5"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="4" data-id="5" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Use water-efficient appliances — 4 impact points">
                     <img src="images/missionn.jpg" alt="A water-efficient washing machine with an eco rating label">
                     <h3>Use Efficient Appliances</h3>
@@ -400,14 +376,10 @@
                 </div>
 
                 <!-- Card 6 -->
-                <div class="action-card"
-                    data-points="4"
-                    data-id="6"
-                    tabindex="0"
-                    role="checkbox"
-                    aria-checked="false"
+                <div class="action-card" data-points="4" data-id="6" tabindex="0" role="checkbox" aria-checked="false"
                     aria-label="Spread water awareness — 4 impact points">
-                    <img src="images/relevance.png" alt="Water usage awareness card featuring saving tips and a 4-point achievement badge">
+                    <img src="images/relevance.png"
+                        alt="Water usage awareness card featuring saving tips and a 4-point achievement badge">
                     <h3>Spread Awareness</h3>
                     <p>Share water-saving tips with friends, family, or on campus. Collective awareness drives
                         community change and supports SDG 6 globally.</p>
@@ -431,7 +403,8 @@
             </div>
 
             <!-- Progress bar -->
-            <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Impact score progress">
+            <div class="progress-track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+                aria-label="Impact score progress">
                 <div class="progress-fill" id="progress-fill"></div>
             </div>
 
@@ -454,9 +427,10 @@
         <p>
             <a href="pageEditor_ST2.html">Page Editor</a> |
             <a href="validation_ST2.html">Validation Report</a> |
-            <a href="#">Accessibility Compliance</a>
+            <a href="https://wave.webaim.org/">Accessibility Compliance</a>
         </p>
-        <p>Student Name: Sachith Pamoda Wattaranthenna | Student ID: 20241617 / W2182298 | Role: Splash Screen &amp; Action Impact Simulator</p>
+        <p>Student Name: Sachith Pamoda Wattaranthenna | Student ID: 20241617 / W2182298 | Role: Splash Screen &amp;
+            Action Impact Simulator</p>
     </footer>
 
     <script>
@@ -471,9 +445,9 @@
 
         // Background images for each impact level (swap filenames to match your assets)
         const BACKGROUNDS = {
-            low:    'images/bg-low.jpg',    // A dry/arid landscape image
+            low: 'images/bg-low.jpg',    // A dry/arid landscape image
             medium: 'images/bg-medium.jpg', // A flowing stream / river image
-            high:   'images/bg-high.jpg'    // A clean waterfall / thriving community image
+            high: 'images/bg-high.jpg'    // A clean waterfall / thriving community image
         };
 
         // Track selected card IDs
@@ -491,19 +465,19 @@
 
         // ---- Helper: determine impact level from score ----
         function getLevel(score) {
-            if (score === 0)  return 'none';
-            if (score <= 5)   return 'low';
-            if (score <= 12)  return 'medium';
+            if (score === 0) return 'none';
+            if (score <= 5) return 'low';
+            if (score <= 12) return 'medium';
             return 'high';
         }
 
         // ---- Helper: get descriptive message for each level ----
         function getMessage(level, score) {
             const messages = {
-                none:   'Select one or more actions above to calculate your personal water impact score.',
-                low:    'Great start! You\'re becoming aware of water issues. Every action counts — try adding a few more to boost your impact.',
+                none: 'Select one or more actions above to calculate your personal water impact score.',
+                low: 'Great start! You\'re becoming aware of water issues. Every action counts — try adding a few more to boost your impact.',
                 medium: 'You\'re an Active Water Advocate! Your habits are making a real difference. Keep going to reach Champion level.',
-                high:   '🏆 Water Champion! Your commitment to SDG 6 is exceptional. Share your actions and inspire others to join the mission!'
+                high: '🏆 Water Champion! Your commitment to SDG 6 is exceptional. Share your actions and inspire others to join the mission!'
             };
             return messages[level];
         }
@@ -511,20 +485,20 @@
         // ---- Helper: get level label for display ----
         function getLevelLabel(level) {
             const labels = {
-                none:   'No actions selected yet',
-                low:    '💧 Aware',
+                none: 'No actions selected yet',
+                low: '💧 Aware',
                 medium: '🌊 Active Advocate',
-                high:   '🏆 Water Champion'
+                high: '🏆 Water Champion'
             };
             return labels[level];
         }
 
         // ---- Update the feedback panel with current score ----
         function updateFeedback() {
-            const score   = calcScore();
-            const level   = getLevel(score);
+            const score = calcScore();
+            const level = getLevel(score);
             const maxScore = 20;
-            const pct      = Math.round((score / maxScore) * 100);
+            const pct = Math.round((score / maxScore) * 100);
 
             // Update score number
             document.getElementById('score-number').textContent = score;

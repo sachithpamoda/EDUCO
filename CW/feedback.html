@@ -22,7 +22,11 @@
             margin-bottom: 2.5rem;
             scroll-behavior: smooth;
         }
-        .directory-scroll-wrapper::-webkit-scrollbar { width: 6px; }
+
+        .directory-scroll-wrapper::-webkit-scrollbar {
+            width: 6px;
+        }
+
         .directory-scroll-wrapper::-webkit-scrollbar-thumb {
             background: var(--tertiary-teal);
             border-radius: 10px;
@@ -48,6 +52,7 @@
             cursor: pointer;
             transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
         }
+
         .program-card:hover,
         .program-card:focus-within {
             transform: translateY(-6px);
@@ -55,23 +60,27 @@
             border-color: var(--secondary-blue);
             outline: none;
         }
+
         .program-card img {
             width: 100%;
             height: 160px;
             object-fit: cover;
             display: block;
         }
+
         .program-card-body {
             padding: 1.2rem;
             flex: 1;
             display: flex;
             flex-direction: column;
         }
+
         .program-card-body h3 {
             font-size: 1rem;
             margin-bottom: 0.5rem;
             color: var(--dark-abyss);
         }
+
         .program-card-body p {
             font-size: 0.88rem;
             color: var(--muted-text);
@@ -92,7 +101,10 @@
             align-self: flex-start;
             transition: background-color 0.25s ease;
         }
-        .program-card:hover .card-cta { background-color: var(--dark-abyss); }
+
+        .program-card:hover .card-cta {
+            background-color: var(--dark-abyss);
+        }
 
         /* --- 5. Section Title --- */
         .section-title {
@@ -112,6 +124,7 @@
             gap: 1rem;
             margin-bottom: 1.5rem;
         }
+
         .sort-dropdown {
             padding: 0.5rem 1rem;
             border: 2px solid var(--secondary-blue);
@@ -131,14 +144,24 @@
             margin-bottom: 1.5rem;
             flex-wrap: wrap;
         }
+
         .big-rating {
             font-size: 3.5rem;
             font-weight: 900;
             color: var(--dark-abyss);
             line-height: 1;
         }
-        .rating-label  { font-size: 1.1rem; font-weight: 700; color: var(--tertiary-teal); }
-        .rating-subtext{ font-size: 0.85rem; color: var(--muted-text); }
+
+        .rating-label {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--tertiary-teal);
+        }
+
+        .rating-subtext {
+            font-size: 0.85rem;
+            color: var(--muted-text);
+        }
 
         .reviews-grid {
             display: grid;
@@ -146,6 +169,7 @@
             gap: 1.2rem;
             margin-bottom: 2.5rem;
         }
+
         .review-card {
             background: #fff;
             border-radius: 14px;
@@ -153,8 +177,19 @@
             box-shadow: 0 4px 14px rgba(26, 47, 59, 0.09);
             border-left: 4px solid var(--secondary-blue);
         }
-        .review-card h4 { color: var(--dark-abyss); margin-bottom: 0.4rem; font-size: 1rem; }
-        .review-card p  { font-size: 0.87rem; color: var(--muted-text); margin-bottom: 0.5rem; }
+
+        .review-card h4 {
+            color: var(--dark-abyss);
+            margin-bottom: 0.4rem;
+            font-size: 1rem;
+        }
+
+        .review-card p {
+            font-size: 0.87rem;
+            color: var(--muted-text);
+            margin-bottom: 0.5rem;
+        }
+
         .review-meta {
             display: flex;
             justify-content: space-between;
@@ -162,9 +197,23 @@
             color: var(--muted-text);
             margin-top: 0.5rem;
         }
-        .review-rating { font-weight: 900; color: var(--tertiary-teal); font-size: 0.9rem; }
-        .see-more-link { color: var(--tertiary-teal); text-decoration: none; font-size: 0.82rem; font-weight: 700; }
-        .see-more-link:hover { text-decoration: underline; }
+
+        .review-rating {
+            font-weight: 900;
+            color: var(--tertiary-teal);
+            font-size: 0.9rem;
+        }
+
+        .see-more-link {
+            color: var(--tertiary-teal);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .see-more-link:hover {
+            text-decoration: underline;
+        }
 
         /* --- 8. Feedback Form Section --- */
         .feedback-form-section {
@@ -174,13 +223,20 @@
             box-shadow: 0 6px 22px rgba(26, 47, 59, 0.10);
             border-top: 6px solid var(--tertiary-teal);
         }
+
         .form-group {
             margin-bottom: 1.2rem;
             display: flex;
             flex-direction: column;
             gap: 0.35rem;
         }
-        .form-group label { font-weight: 700; font-size: 0.9rem; color: var(--dark-abyss); }
+
+        .form-group label {
+            font-weight: 700;
+            font-size: 0.9rem;
+            color: var(--dark-abyss);
+        }
+
         .form-group input,
         .form-group textarea,
         .form-group select {
@@ -193,14 +249,32 @@
             transition: border-color 0.25s;
             background: #f7fbfc;
         }
+
         .form-group input:focus,
         .form-group textarea:focus,
-        .form-group select:focus { outline: none; border-color: var(--tertiary-teal); background: #fff; }
+        .form-group select:focus {
+            outline: none;
+            border-color: var(--tertiary-teal);
+            background: #fff;
+        }
+
         .form-group input.error,
         .form-group textarea.error,
-        .form-group select.error  { border-color: #e05252; }
-        .error-msg { color: #e05252; font-size: 0.8rem; display: none; }
-        .char-counter { font-size: 0.78rem; color: var(--muted-text); text-align: right; }
+        .form-group select.error {
+            border-color: #e05252;
+        }
+
+        .error-msg {
+            color: #e05252;
+            font-size: 0.8rem;
+            display: none;
+        }
+
+        .char-counter {
+            font-size: 0.78rem;
+            color: var(--muted-text);
+            text-align: right;
+        }
 
         fieldset {
             border: 2px solid var(--secondary-blue);
@@ -208,7 +282,13 @@
             padding: 1.2rem;
             margin-bottom: 1.5rem;
         }
-        legend { font-weight: 700; color: var(--tertiary-teal); font-size: 1rem; padding: 0 0.5rem; }
+
+        legend {
+            font-weight: 700;
+            color: var(--tertiary-teal);
+            font-size: 1rem;
+            padding: 0 0.5rem;
+        }
 
         .submit-btn {
             background-color: var(--tertiary-teal);
@@ -222,7 +302,11 @@
             transition: background-color 0.3s ease, transform 0.2s ease;
             font-family: inherit;
         }
-        .submit-btn:hover { background-color: var(--dark-abyss); transform: translateY(-2px); }
+
+        .submit-btn:hover {
+            background-color: var(--dark-abyss);
+            transform: translateY(-2px);
+        }
 
         .confirmation-msg {
             display: none;
@@ -240,15 +324,20 @@
         .prog-modal-overlay {
             display: none;
             position: fixed;
-            top: 0; left: 0;
-            width: 100%; height: 100%;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background: rgba(19, 73, 87, 0.97);
             z-index: 2000;
             justify-content: center;
             align-items: center;
             backdrop-filter: blur(8px);
         }
-        .prog-modal-overlay.open { display: flex; }
+
+        .prog-modal-overlay.open {
+            display: flex;
+        }
 
         .prog-modal-content {
             background: var(--dark-abyss);
@@ -258,13 +347,21 @@
             border-radius: 20px;
             border: 2px solid var(--secondary-blue);
             padding: 2.5rem;
-            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
             position: relative;
             animation: modalSlideIn 0.25s ease;
         }
+
         @keyframes modalSlideIn {
-            from { opacity: 0; transform: translateY(-24px); }
-            to   { opacity: 1; transform: translateY(0); }
+            from {
+                opacity: 0;
+                transform: translateY(-24px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         .prog-modal-header {
@@ -272,6 +369,7 @@
             justify-content: flex-end;
             margin-bottom: 1rem;
         }
+
         .prog-modal-close {
             background: none;
             border: none;
@@ -281,7 +379,10 @@
             line-height: 1;
             transition: color 0.2s;
         }
-        .prog-modal-close:hover { color: var(--secondary-blue); }
+
+        .prog-modal-close:hover {
+            color: var(--secondary-blue);
+        }
 
         .prog-modal-body {
             display: grid;
@@ -289,24 +390,28 @@
             gap: 2rem;
             align-items: start;
         }
+
         .prog-modal-img {
             width: 100%;
             border-radius: 12px;
-            border: 1px solid rgba(255,255,255,0.1);
+            border: 1px solid rgba(255, 255, 255, 0.1);
             display: block;
         }
+
         .prog-modal-info h2 {
             color: var(--secondary-blue);
             margin-bottom: 0.8rem;
             font-size: 1.4rem;
             line-height: 1.3;
         }
+
         .prog-modal-info p {
-            color: rgba(255,255,255,0.85);
+            color: rgba(255, 255, 255, 0.85);
             line-height: 1.75;
             font-size: 0.95rem;
             margin-bottom: 1rem;
         }
+
         .prog-modal-tag {
             display: inline-block;
             background: var(--tertiary-teal);
@@ -319,12 +424,21 @@
         }
 
         @media (max-width: 620px) {
-            .prog-modal-body { grid-template-columns: 1fr; }
-            .prog-modal-content { padding: 1.5rem; }
+            .prog-modal-body {
+                grid-template-columns: 1fr;
+            }
+
+            .prog-modal-content {
+                padding: 1.5rem;
+            }
         }
 
         @media (max-width: 700px) {
-            .program-grid, .reviews-grid { grid-template-columns: 1fr; }
+
+            .program-grid,
+            .reviews-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
@@ -355,7 +469,8 @@
             </nav>
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
@@ -364,7 +479,8 @@
     <main>
         <h1>Feedback &amp; Program Directory</h1>
         <p style="color:var(--muted-text);margin-bottom:2rem;">
-            Explore water conservation programmes below — click any card to learn more — or scroll down to leave your feedback.
+            Explore water conservation programmes below — click any card to learn more — or scroll down to leave your
+            feedback.
         </p>
 
         <!-- ======================================================
@@ -393,84 +509,84 @@
 
                     <!-- Card 0 — index matches programmeData array -->
                     <article class="program-card" onclick="openProgramModal(0)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(0)"
-                             aria-label="River Clean-Up Brigade – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(0)"
+                        aria-label="River Clean-Up Brigade – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=600&h=320&fit=crop&auto=format"
                             alt="Volunteers in high-visibility vests collecting rubbish from a riverbank">
                         <div class="program-card-body">
                             <h3>River Clean-Up Brigade</h3>
-                            <p>Join local volunteers every weekend to remove plastic and pollutants from urban waterways.</p>
+                            <p>Join local volunteers every weekend to remove plastic and pollutants from urban
+                                waterways.</p>
                             <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
                     <!-- Card 1 -->
                     <article class="program-card" onclick="openProgramModal(1)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(1)"
-                             aria-label="Campus Water Audit – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(1)"
+                        aria-label="Campus Water Audit – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=320&fit=crop&auto=format"
                             alt="Students working on a sustainability audit inside a modern university building">
                         <div class="program-card-body">
                             <h3>Campus Water Audit</h3>
-                            <p>A student-led initiative measuring water usage on campus and proposing practical reductions.</p>
+                            <p>A student-led initiative measuring water usage on campus and proposing practical
+                                reductions.</p>
                             <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
                     <!-- Card 2 -->
                     <article class="program-card" onclick="openProgramModal(2)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(2)"
-                             aria-label="Rainwater Harvest Project – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(2)"
+                        aria-label="Rainwater Harvest Project – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=600&h=320&fit=crop&auto=format"
                             alt="A large rainwater collection barrel set up in a community garden">
                         <div class="program-card-body">
                             <h3>Rainwater Harvest Project</h3>
-                            <p>Help communities install low-cost rainwater collection systems in areas with limited water access.</p>
+                            <p>Help communities install low-cost rainwater collection systems in areas with limited
+                                water access.</p>
                             <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
                     <!-- Card 3 -->
                     <article class="program-card" onclick="openProgramModal(3)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(3)"
-                             aria-label="Blue Schools Initiative – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(3)"
+                        aria-label="Blue Schools Initiative – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=600&h=320&fit=crop&auto=format"
                             alt="Children in a bright classroom engaged in a water and sanitation lesson">
                         <div class="program-card-body">
                             <h3>Blue Schools Initiative</h3>
-                            <p>Educate children in underserved communities about sanitation, hygiene, and safe water practices.</p>
+                            <p>Educate children in underserved communities about sanitation, hygiene, and safe water
+                                practices.</p>
                             <span class="card-cta">Fit Out More →</span>
                         </div>
                     </article>
 
                     <!-- Card 4 -->
                     <article class="program-card" onclick="openProgramModal(4)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(4)"
-                             aria-label="Wetland Guardians – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(4)"
+                        aria-label="Wetland Guardians – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&h=320&fit=crop&auto=format"
                             alt="A peaceful wetland landscape with reeds and open water at golden hour">
                         <div class="program-card-body">
                             <h3>Wetland Guardians</h3>
-                            <p>Protect and restore natural wetlands that filter water and provide crucial ecosystems for wildlife.</p>
+                            <p>Protect and restore natural wetlands that filter water and provide crucial ecosystems for
+                                wildlife.</p>
                             <span class="card-cta">Learn More →</span>
                         </div>
                     </article>
 
                     <!-- Card 5 -->
                     <article class="program-card" onclick="openProgramModal(5)" tabindex="0"
-                             onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(5)"
-                             aria-label="Smart Irrigation Network – click to learn more">
-                        <img
-                            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=320&fit=crop&auto=format"
+                        onkeydown="if(event.key==='Enter'||event.key===' ')openProgramModal(5)"
+                        aria-label="Smart Irrigation Network – click to learn more">
+                        <img src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=320&fit=crop&auto=format"
                             alt="Rows of drip irrigation pipes running through a lush green agricultural field">
                         <div class="program-card-body">
                             <h3>Smart Irrigation Network</h3>
-                            <p>Support farmers in adopting drip irrigation and moisture sensors to reduce agricultural water waste.</p>
+                            <p>Support farmers in adopting drip irrigation and moisture sensors to reduce agricultural
+                                water waste.</p>
                             <span class="card-cta">Find Out More →</span>
                         </div>
                     </article>
@@ -494,36 +610,39 @@
             </div>
 
             <div class="reviews-grid">
-    <article class="review-card">
-        <h3>Life-Changing Experience</h3>
-        <p>Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways...</p>
-        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(0)">See more</a>
-        <div class="review-meta">
-            <span>Priya Nair — 12 Feb 2026</span>
-            <span class="review-rating">9/10</span>
-        </div>
-    </article>
+                <article class="review-card">
+                    <h3>Life-Changing Experience</h3>
+                    <p>Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local
+                        waterways...</p>
+                    <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(0)">See more</a>
+                    <div class="review-meta">
+                        <span>Priya Nair — 12 Feb 2026</span>
+                        <span class="review-rating">9/10</span>
+                    </div>
+                </article>
 
-    <article class="review-card">
-        <h4>Highly Recommend Campus Audit</h4>
-        <p>I never realised how much water our university wastes. The audit gave real data and the university acted on it...</p>
-        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(1)">See more</a>
-        <div class="review-meta">
-            <span>James Okafor — 05 Mar 2026</span>
-            <span class="review-rating">8/10</span>
-        </div>
-    </article>
+                <article class="review-card">
+                    <h4>Highly Recommend Campus Audit</h4>
+                    <p>I never realised how much water our university wastes. The audit gave real data and the
+                        university acted on it...</p>
+                    <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(1)">See more</a>
+                    <div class="review-meta">
+                        <span>James Okafor — 05 Mar 2026</span>
+                        <span class="review-rating">8/10</span>
+                    </div>
+                </article>
 
-    <article class="review-card">
-        <h4>Blue Schools Changed Everything</h4>
-        <p>Teaching kids about clean water in rural areas was the most rewarding thing I've done as a student volunteer...</p>
-        <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(2)">See more</a>
-        <div class="review-meta">
-            <span>Amara Diallo — 19 Mar 2026</span>
-            <span class="review-rating">10/10</span>
-        </div>
-    </article>
-</div>
+                <article class="review-card">
+                    <h4>Blue Schools Changed Everything</h4>
+                    <p>Teaching kids about clean water in rural areas was the most rewarding thing I've done as a
+                        student volunteer...</p>
+                    <a href="javascript:void(0)" class="see-more-link" onclick="openReviewModal(2)">See more</a>
+                    <div class="review-meta">
+                        <span>Amara Diallo — 19 Mar 2026</span>
+                        <span class="review-rating">10/10</span>
+                    </div>
+                </article>
+            </div>
         </section>
 
         <!-- ======================================================
@@ -539,14 +658,17 @@
 
                         <div class="form-group">
                             <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
-                            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Smith" required aria-required="true">
+                            <input type="text" id="fullName" name="fullName" placeholder="e.g. John Smith" required
+                                aria-required="true">
                             <span class="error-msg" id="fullNameError" role="alert">Please enter your full name.</span>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email Address <span aria-hidden="true">*</span></label>
-                            <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required aria-required="true">
-                            <span class="error-msg" id="emailError" role="alert">Please enter a valid email address.</span>
+                            <input type="email" id="email" name="email" placeholder="e.g. john@example.com" required
+                                aria-required="true">
+                            <span class="error-msg" id="emailError" role="alert">Please enter a valid email
+                                address.</span>
                         </div>
 
                         <div class="form-group">
@@ -556,7 +678,8 @@
 
                         <div class="form-group">
                             <label for="address">Address</label>
-                            <textarea id="address" name="address" rows="3" placeholder="Your address (optional)"></textarea>
+                            <textarea id="address" name="address" rows="3"
+                                placeholder="Your address (optional)"></textarea>
                         </div>
                     </fieldset>
 
@@ -579,7 +702,8 @@
 
                         <div class="form-group">
                             <label for="involvement">How would you like to get involved?</label>
-                            <select id="involvement" name="involvement" multiple size="4" aria-label="Select one or more involvement types">
+                            <select id="involvement" name="involvement" multiple size="4"
+                                aria-label="Select one or more involvement types">
                                 <option value="volunteer">Volunteer in person</option>
                                 <option value="donate">Donate / Fundraise</option>
                                 <option value="spread">Spread awareness online</option>
@@ -600,8 +724,8 @@
                         <div class="form-group">
                             <label for="message">Message / Comment <span aria-hidden="true">*</span></label>
                             <textarea id="message" name="message" rows="5" maxlength="500"
-                                placeholder="Tell us your thoughts, questions, or ideas..."
-                                required aria-required="true" aria-describedby="charCount"></textarea>
+                                placeholder="Tell us your thoughts, questions, or ideas..." required
+                                aria-required="true" aria-describedby="charCount"></textarea>
                             <div class="char-counter" id="charCount" aria-live="polite">500 characters remaining</div>
                             <span class="error-msg" id="messageError" role="alert">Please enter a message.</span>
                         </div>
@@ -622,45 +746,47 @@
          Populated dynamically by openProgramModal(index)
     ====================================================== -->
     <div class="prog-modal-overlay" id="prog-modal" role="dialog" aria-modal="true">
-    <div class="prog-modal-content">
-        <div class="prog-modal-header">
-            <button class="prog-modal-close" onclick="closeProgramModal()">&times;</button>
-        </div>
-        <div class="prog-modal-body">
-            <img id="modal-img" src="#" alt="" class="prog-modal-img">
-            <div class="prog-modal-info">
-                <span id="modal-tag" class="prog-modal-tag"></span>
-                <h2 id="modal-title"></h2>
-                <p id="modal-desc"></p>
-                <p id="modal-detail" style="font-weight:700; color:var(--secondary-blue);"></p>
+        <div class="prog-modal-content">
+            <div class="prog-modal-header">
+                <button class="prog-modal-close" onclick="closeProgramModal()">&times;</button>
+            </div>
+            <div class="prog-modal-body">
+                <img id="modal-img" src="#" alt="" class="prog-modal-img">
+                <div class="prog-modal-info">
+                    <span id="modal-tag" class="prog-modal-tag"></span>
+                    <h2 id="modal-title"></h2>
+                    <p id="modal-desc"></p>
+                    <p id="modal-detail" style="font-weight:700; color:var(--secondary-blue);"></p>
+                </div>
             </div>
         </div>
     </div>
-</div>
     <div class="prog-modal-overlay" id="review-modal" role="dialog" aria-modal="true">
-    <div class="prog-modal-content">
-        <div class="prog-modal-header">
-            <button class="prog-modal-close" onclick="closeReviewModal()">&times;</button>
-        </div>
-        <div class="prog-modal-info">
-            <h2 id="rev-modal-title" style="color: var(--secondary-blue); margin-bottom: 10px;"></h2>
-            <p id="rev-modal-fulltext" style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; color: white;"></p>
-            <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
-                <span id="rev-modal-author" style="font-weight: bold; color: var(--tertiary-teal);"></span><br>
-                <span id="rev-modal-date" style="opacity: 0.7; font-size: 0.85rem; color: white;"></span>
+        <div class="prog-modal-content">
+            <div class="prog-modal-header">
+                <button class="prog-modal-close" onclick="closeReviewModal()">&times;</button>
+            </div>
+            <div class="prog-modal-info">
+                <h2 id="rev-modal-title" style="color: var(--secondary-blue); margin-bottom: 10px;"></h2>
+                <p id="rev-modal-fulltext"
+                    style="font-size: 1.1rem; line-height: 1.6; margin-bottom: 20px; color: white;"></p>
+                <div style="border-top: 1px solid rgba(255,255,255,0.2); padding-top: 15px;">
+                    <span id="rev-modal-author" style="font-weight: bold; color: var(--tertiary-teal);"></span><br>
+                    <span id="rev-modal-date" style="opacity: 0.7; font-size: 0.85rem; color: white;"></span>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
     <footer>
         <p>AquaAction: Securing Every Drop for Everyone</p>
         <p>
             <a href="pageEditor_ST3.html">Page Editor</a> |
             <a href="validation_ST3.html">Validation Report</a> |
-            <a href="#">Accessibility Compliance</a>
+            <a href="https://wave.webaim.org/">Accessibility Compliance</a>
         </p>
-        <p>Student Name: Sasiru Insara Rajapaksha | Student ID: 20250855/w2181982 | Role: Feedback & Programme Directory, Team Page & Content Page</p>
+        <p>Student Name: Sasiru Insara Rajapaksha | Student ID: 20250855/w2181982 | Role: Feedback & Programme
+            Directory, Team Page & Content Page</p>
     </footer>
 
     <script>
@@ -674,60 +800,60 @@
         // t = title, tag = category badge, d = short description,
         // detail = extra detail line, i = image URL
         const programmeData = [
-    {
-        t: "River Clean-Up Brigade",
-        tag: "🌊 Community Action",
-        d: "Every weekend, volunteers restore urban waterways by removing plastic waste and monitoring water quality.",
-        detail: "📍 14 active sites · ♻️ 400 kg waste removed monthly · ✅ Open to ages 14+",
-        i: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700"
-    },
-    {
-        t: "Campus Water Audit",
-        tag: "🎓 Student-Led",
-        d: "A student-driven initiative surveying university water consumption and turning findings into action.",
-        detail: "📉 18% reduction achieved · 👩‍🔬 60+ trained auditors",
-        i: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700"
-    },
-    {
-        t: "Rainwater Harvest Project",
-        tag: "🏡 Infrastructure",
-        d: "Turning rainfall into a usable resource for homes and schools using simple diverter kits.",
-        detail: "💧 200+ systems installed · 🌍 3 countries active",
-        i: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=700"
-    },
-    {
-        t: "Blue Schools Initiative",
-        tag: "📚 Education",
-        d: "An interactive six-week curriculum covering sanitation and hygiene in primary schools.",
-        detail: "🏫 42 schools reached · 🚿 28 handwashing stations installed",
-        i: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700"
-    },
-    {
-        t: "Wetland Guardians",
-        tag: "🦆 Conservation",
-        d: "Protect and restore natural wetlands that filter water and provide crucial ecosystems for wildlife.",
-        detail: "🌾 5,000 hectares protected · 🦋 Biodiversity monitoring included",
-        i: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700"
-    },
-    {
-        t: "Smart Irrigation Network",
-        tag: "🚜 Tech & Ag",
-        d: "Support farmers in adopting drip irrigation and moisture sensors to reduce agricultural water waste.",
-        detail: "🛰️ Satellite monitoring · 🚿 40% water savings per farm",
-        i: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700"
-    }
-];
+            {
+                t: "River Clean-Up Brigade",
+                tag: "🌊 Community Action",
+                d: "Every weekend, volunteers restore urban waterways by removing plastic waste and monitoring water quality.",
+                detail: "📍 14 active sites · ♻️ 400 kg waste removed monthly · ✅ Open to ages 14+",
+                i: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=700"
+            },
+            {
+                t: "Campus Water Audit",
+                tag: "🎓 Student-Led",
+                d: "A student-driven initiative surveying university water consumption and turning findings into action.",
+                detail: "📉 18% reduction achieved · 👩‍🔬 60+ trained auditors",
+                i: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=700"
+            },
+            {
+                t: "Rainwater Harvest Project",
+                tag: "🏡 Infrastructure",
+                d: "Turning rainfall into a usable resource for homes and schools using simple diverter kits.",
+                detail: "💧 200+ systems installed · 🌍 3 countries active",
+                i: "https://images.unsplash.com/photo-1518173946687-a4c8892bbd9f?w=700"
+            },
+            {
+                t: "Blue Schools Initiative",
+                tag: "📚 Education",
+                d: "An interactive six-week curriculum covering sanitation and hygiene in primary schools.",
+                detail: "🏫 42 schools reached · 🚿 28 handwashing stations installed",
+                i: "https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?w=700"
+            },
+            {
+                t: "Wetland Guardians",
+                tag: "🦆 Conservation",
+                d: "Protect and restore natural wetlands that filter water and provide crucial ecosystems for wildlife.",
+                detail: "🌾 5,000 hectares protected · 🦋 Biodiversity monitoring included",
+                i: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=700"
+            },
+            {
+                t: "Smart Irrigation Network",
+                tag: "🚜 Tech & Ag",
+                d: "Support farmers in adopting drip irrigation and moisture sensors to reduce agricultural water waste.",
+                detail: "🛰️ Satellite monitoring · 🚿 40% water savings per farm",
+                i: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=700"
+            }
+        ];
 
         // Open modal — populate with data at given index (same pattern as gallery.js openModal)
         function openProgramModal(index) {
-            const prog   = programmeData[index];
-            const modal  = document.getElementById('prog-modal');
+            const prog = programmeData[index];
+            const modal = document.getElementById('prog-modal');
 
-            document.getElementById('prog-modal-img').src         = prog.i;
-            document.getElementById('prog-modal-img').alt         = prog.t;
-            document.getElementById('prog-modal-tag').textContent  = prog.tag;
+            document.getElementById('prog-modal-img').src = prog.i;
+            document.getElementById('prog-modal-img').alt = prog.t;
+            document.getElementById('prog-modal-tag').textContent = prog.tag;
             document.getElementById('prog-modal-title').textContent = prog.t;
-            document.getElementById('prog-modal-desc').textContent  = prog.d;
+            document.getElementById('prog-modal-desc').textContent = prog.d;
             document.getElementById('prog-modal-detail').textContent = prog.detail;
 
             modal.classList.add('open');
@@ -756,8 +882,8 @@
 
         // ── FORM: LIVE CHARACTER COUNTER ─────────────────────────────
         const messageArea = document.getElementById('message');
-        const charCount   = document.getElementById('charCount');
-        const MAX_CHARS   = 500;
+        const charCount = document.getElementById('charCount');
+        const MAX_CHARS = 500;
 
         messageArea.addEventListener('input', function () {
             const remaining = MAX_CHARS - this.value.length;
@@ -785,10 +911,10 @@
         document.getElementById('feedbackForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const ok = [
-                validateField(document.getElementById('fullName'),  'fullNameError'),
-                validateField(document.getElementById('email'),     'emailError'),
+                validateField(document.getElementById('fullName'), 'fullNameError'),
+                validateField(document.getElementById('email'), 'emailError'),
                 validateField(document.getElementById('programme'), 'programmeError'),
-                validateField(document.getElementById('message'),   'messageError')
+                validateField(document.getElementById('message'), 'messageError')
             ].every(Boolean);
 
             if (ok) {
@@ -814,77 +940,78 @@
             setError('programme', 'programmeError', false)
         );
         // --- 1. FULL DATA FOR THE REVIEW POPUPS ---
-const reviewData = [
-    {
-        title: "Life-Changing Experience",
-        text: "Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways. We spent the morning removing over 50kg of waste! It's hard work but incredibly rewarding to see the immediate difference in the water clarity.",
-        author: "Priya Nair",
-        date: "12 Feb 2026"
-    },
-    {
-        title: "Highly Recommend Campus Audit",
-        text: "I never realised how much water our university wastes daily. The audit gave us real data on leaky faucets and inefficient flush systems. After our report, the administration replaced 40% of the old hardware. Seeing policy change based on our data was amazing!",
-        author: "James Okafor",
-        date: "05 Mar 2026"
-    },
-    {
-        title: "Blue Schools Changed Everything",
-        text: "Teaching kids about clean water in rural areas was the most rewarding thing I've done. The curriculum is so engaging, and the kids were genuinely excited to learn about hygiene. It’s not just about education; it's about building long-term healthy habits.",
-        author: "Amara Diallo",
-        date: "19 Mar 2026"
-    }
-];
+        const reviewData = [
+            {
+                title: "Life-Changing Experience",
+                text: "Volunteering with River Clean-Up Brigade opened my eyes to how much plastic ends up in our local waterways. We spent the morning removing over 50kg of waste! It's hard work but incredibly rewarding to see the immediate difference in the water clarity.",
+                author: "Priya Nair",
+                date: "12 Feb 2026"
+            },
+            {
+                title: "Highly Recommend Campus Audit",
+                text: "I never realised how much water our university wastes daily. The audit gave us real data on leaky faucets and inefficient flush systems. After our report, the administration replaced 40% of the old hardware. Seeing policy change based on our data was amazing!",
+                author: "James Okafor",
+                date: "05 Mar 2026"
+            },
+            {
+                title: "Blue Schools Changed Everything",
+                text: "Teaching kids about clean water in rural areas was the most rewarding thing I've done. The curriculum is so engaging, and the kids were genuinely excited to learn about hygiene. It’s not just about education; it's about building long-term healthy habits.",
+                author: "Amara Diallo",
+                date: "19 Mar 2026"
+            }
+        ];
 
-// --- 2. FUNCTION TO OPEN THE REVIEW MODAL ---
-function openReviewModal(index) {
-    const review = reviewData[index];
-    document.getElementById('rev-modal-title').innerText = review.title;
-    document.getElementById('rev-modal-fulltext').innerText = review.text;
-    document.getElementById('rev-modal-author').innerText = "Review by: " + review.author;
-    document.getElementById('rev-modal-date').innerText = "Posted on: " + review.date;
-    
-    // Shows the modal by adding the 'open' class
-    document.getElementById('review-modal').classList.add('open');
-}
+        // --- 2. FUNCTION TO OPEN THE REVIEW MODAL ---
+        function openReviewModal(index) {
+            const review = reviewData[index];
+            document.getElementById('rev-modal-title').innerText = review.title;
+            document.getElementById('rev-modal-fulltext').innerText = review.text;
+            document.getElementById('rev-modal-author').innerText = "Review by: " + review.author;
+            document.getElementById('rev-modal-date').innerText = "Posted on: " + review.date;
 
-// --- 3. FUNCTION TO CLOSE THE REVIEW MODAL ---
-function closeReviewModal() {
-    document.getElementById('review-modal').classList.remove('open');
-}
-// Function for Program Cards
-function openProgramModal(index) {
-    const data = programmeData[index];
-    document.getElementById('modal-title').innerText = data.t;
-    document.getElementById('modal-tag').innerText = data.tag;
-    document.getElementById('modal-desc').innerText = data.d;
-    document.getElementById('modal-detail').innerText = data.detail;
-    document.getElementById('modal-img').src = data.i;
-    document.getElementById('prog-modal').classList.add('open');
-}
+            // Shows the modal by adding the 'open' class
+            document.getElementById('review-modal').classList.add('open');
+        }
 
-function closeProgramModal() {
-    document.getElementById('prog-modal').classList.remove('open');
-}
+        // --- 3. FUNCTION TO CLOSE THE REVIEW MODAL ---
+        function closeReviewModal() {
+            document.getElementById('review-modal').classList.remove('open');
+        }
+        // Function for Program Cards
+        function openProgramModal(index) {
+            const data = programmeData[index];
+            document.getElementById('modal-title').innerText = data.t;
+            document.getElementById('modal-tag').innerText = data.tag;
+            document.getElementById('modal-desc').innerText = data.d;
+            document.getElementById('modal-detail').innerText = data.detail;
+            document.getElementById('modal-img').src = data.i;
+            document.getElementById('prog-modal').classList.add('open');
+        }
 
-// Function for Reviews
-function openReviewModal(index) {
-    const rev = reviewData[index]; // Make sure you have a reviewData array!
-    document.getElementById('rev-modal-title').innerText = rev.title;
-    document.getElementById('rev-modal-fulltext').innerText = rev.text;
-    document.getElementById('rev-modal-author').innerText = rev.author;
-    document.getElementById('rev-modal-date').innerText = rev.date;
-    document.getElementById('review-modal').classList.add('open');
-}
+        function closeProgramModal() {
+            document.getElementById('prog-modal').classList.remove('open');
+        }
 
-function closeReviewModal() {
-    document.getElementById('review-modal').classList.remove('open');
-}
-window.onclick = function(event) {
-    if (event.target.classList.contains('prog-modal-overlay')) {
-        event.target.classList.remove('open');
-    }
-}
+        // Function for Reviews
+        function openReviewModal(index) {
+            const rev = reviewData[index]; // Make sure you have a reviewData array!
+            document.getElementById('rev-modal-title').innerText = rev.title;
+            document.getElementById('rev-modal-fulltext').innerText = rev.text;
+            document.getElementById('rev-modal-author').innerText = rev.author;
+            document.getElementById('rev-modal-date').innerText = rev.date;
+            document.getElementById('review-modal').classList.add('open');
+        }
+
+        function closeReviewModal() {
+            document.getElementById('review-modal').classList.remove('open');
+        }
+        window.onclick = function (event) {
+            if (event.target.classList.contains('prog-modal-overlay')) {
+                event.target.classList.remove('open');
+            }
+        }
     </script>
 
 </body>
+
 </html>
