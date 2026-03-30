@@ -57,7 +57,7 @@
             border: 4px solid transparent;
             box-shadow: 0 8px 22px rgba(26, 47, 59, 0.14);
             transition: transform 0.3s ease, border-color 0.3s ease,
-                        box-shadow 0.3s ease, opacity 0.3s ease;
+                box-shadow 0.3s ease, opacity 0.3s ease;
             position: relative;
         }
 
@@ -122,7 +122,9 @@
             margin-top: 0.8rem;
         }
 
-        .member-details-inner { padding: 1.2rem 1.4rem; }
+        .member-details-inner {
+            padding: 1.2rem 1.4rem;
+        }
 
         .member-details h2 {
             font-size: 1rem;
@@ -154,7 +156,9 @@
             border-bottom: 1px dashed #d8eef3;
         }
 
-        .member-details ul li:last-child { border-bottom: none; }
+        .member-details ul li:last-child {
+            border-bottom: none;
+        }
 
         .member-summary {
             font-size: 0.83rem;
@@ -164,8 +168,17 @@
         }
 
         /* Responsive breakpoints */
-        @media (max-width: 600px) { .team-grid { grid-template-columns: 1fr 1fr; } }
-        @media (max-width: 400px) { .team-grid { grid-template-columns: 1fr; } }
+        @media (max-width: 600px) {
+            .team-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .team-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 
@@ -195,7 +208,8 @@
             </nav>
             <a href="profile.html" class="profile-circle" title="User Profile">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
                 </svg>
             </a>
         </div>
@@ -206,7 +220,7 @@
 
         <div class="team-intro">
             <p>We are four students united by a commitment to SDG 06 — Clean Water &amp; Sanitation.
-               Hover over each member to discover their role and contributions to AquaAction.</p>
+                Hover over each member to discover their role and contributions to AquaAction.</p>
         </div>
 
         <!--
@@ -219,14 +233,13 @@
 
             <!-- ===== MEMBER 1: Implementation Lead ===== -->
             <div class="member-block" tabindex="0" role="listitem"
-                 aria-label="Student 1 – Template  Home Page Lead. Hover or press Tab then Enter to see details.">
+                aria-label="Student 1 – Template  Home Page Lead. Hover or press Tab then Enter to see details.">
                 <div class="member-thumb">
                     <!--
                         Male portrait — unsplash photo-1507003211169-0a1dd7228f2d
                         (man in a grey shirt, neutral background)
                     -->
-                    <img src="images/ST1_profile.jpeg"
-                        alt="Portrait of Student 1, Template and Home Page Lead">
+                    <img src="images/ST1_profile.jpeg" alt="Portrait of Student 1, Template and Home Page Lead">
                 </div>
                 <div class="member-label">
                     <strong>Student 1</strong>
@@ -242,22 +255,21 @@
                             <li>🖼️ Gallery Page (gallery.html)</li>
                             <li>📝 Content Page (content_ST1.html)</li>
                         </ul>
-                        <p class="member-summary">"Established the visual identity of AquaAction — the template, colour palette, and gallery that gives the whole site its look and feel."</p>
+                        <p class="member-summary">"Established the visual identity of AquaAction — the template, colour
+                            palette, and gallery that gives the whole site its look and feel."</p>
                     </div>
                 </div>
             </div>
 
             <!-- ===== MEMBER 2: Splash Screen & Simulator Lead ===== -->
             <div class="member-block" tabindex="0" role="listitem"
-                 aria-label="Student 2 – Splash Screen and Simulator Lead. Hover or press Tab then Enter to see details.">
+                aria-label="Student 2 – Splash Screen and Simulator Lead. Hover or press Tab then Enter to see details.">
                 <div class="member-thumb">
                     <!--
                         Male portrait — unsplash photo-1472099645785-5658abf4ff4e
                         (man with short hair, smiling, dark background)
                     -->
-                    <img src="images/ST2_profile.jpeg"
-                        
-                        alt="Portrait of Student 2, Splash Screen and Simulator Lead">
+                    <img src="images/ST2_profile.jpeg" alt="Portrait of Student 2, Splash Screen and Simulator Lead">
                 </div>
                 <div class="member-label">
                     <strong>Student 2</strong>
@@ -272,21 +284,21 @@
                             <li>⚙️ Action Impact Simulator (ais.html)</li>
                             <li>📝 Content Page (content_ST2.html)</li>
                         </ul>
-                        <p class="member-summary">"Built the immersive splash entry and the water-saving simulator — the two most interactive experiences on the site."</p>
+                        <p class="member-summary">"Built the immersive splash entry and the water-saving simulator — the
+                            two most interactive experiences on the site."</p>
                     </div>
                 </div>
             </div>
 
             <!-- ===== MEMBER 3: Feedback & Team Lead (Sasiru) ===== -->
             <div class="member-block" tabindex="0" role="listitem"
-                 aria-label="Sasiru Insara Rajapaksha – Feedback and Team page Lead. Hover or press Tab then Enter to see details.">
+                aria-label="Sasiru Insara Rajapaksha – Feedback and Team page Lead. Hover or press Tab then Enter to see details.">
                 <div class="member-thumb">
                     <!--
                         Male portrait — unsplash photo-1539571696357-5a69c17a67c6
                         (young man in casual clothing, warm background)
                     -->
                     <img src="images/ST3_profile.jpeg"
-                        
                         alt="Portrait of Sasiru Insara Rajapaksha, Feedback and Team Lead">
                 </div>
                 <div class="member-label">
@@ -302,22 +314,21 @@
                             <li>👥 Team Page (team.html)</li>
                             <li>📝 Content Page (content_ST3.html)</li>
                         </ul>
-                        <p class="member-summary">"Designed the community engagement layer of AquaAction — connecting users with real programmes and presenting the team behind the project."</p>
+                        <p class="member-summary">"Designed the community engagement layer of AquaAction — connecting
+                            users with real programmes and presenting the team behind the project."</p>
                     </div>
                 </div>
             </div>
 
             <!-- ===== MEMBER 4: Profile & Sitemap Lead ===== -->
             <div class="member-block" tabindex="0" role="listitem"
-                 aria-label="Student 4 – User Profile and Sitemap Lead. Hover or press Tab then Enter to see details.">
+                aria-label="Student 4 – User Profile and Sitemap Lead. Hover or press Tab then Enter to see details.">
                 <div class="member-thumb">
                     <!--
                         Male portrait — unsplash photo-1500648767791-00dcc994a43e
                         (man in a light blue shirt, arms crossed)
                     -->
-                    <img src="images/ST4_profile.jpeg"
-                        
-                        alt="Portrait of Student 4, User Profile and Sitemap Lead">
+                    <img src="images/ST4_profile.jpeg" alt="Portrait of Student 4, User Profile and Sitemap Lead">
                 </div>
                 <div class="member-label">
                     <strong>Student 4</strong>
@@ -332,7 +343,8 @@
                             <li>🗺️ SVG Sitemap (sitemap.html)</li>
                             <li>📝 Content Page (content_ST4.html)</li>
                         </ul>
-                        <p class="member-summary">"Created the personalised user journey and the interactive SVG sitemap that gives AquaAction its clear, navigable structure."</p>
+                        <p class="member-summary">"Created the personalised user journey and the interactive SVG sitemap
+                            that gives AquaAction its clear, navigable structure."</p>
                     </div>
                 </div>
             </div>
@@ -345,9 +357,10 @@
         <p>
             <a href="pageEditor_ST3.html">Page Editor</a> |
             <a href="validation_ST3.html">Validation Report</a> |
-            <a href="#">Accessibility Compliance</a>
+            <a href="https://wave.webaim.org/">Accessibility Compliance</a>
         </p>
-        <p>Student Name: Sasiru Insara Rajapaksha | Student ID: 20250855/w2181982 | Role: Feedback & Programme Directory, Team Page & Content Page</p>
+        <p>Student Name: Sasiru Insara Rajapaksha | Student ID: 20250855/w2181982 | Role: Feedback & Programme
+            Directory, Team Page & Content Page</p>
 
     </footer>
 
@@ -360,4 +373,5 @@
     -->
 
 </body>
+
 </html>
