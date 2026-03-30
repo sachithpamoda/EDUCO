@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page Editor — T S Thewnuja Rajasinghe | ST4</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pageEditor_validator.css">
+</head>
+
+<body class="validation-page">
+
+    <header>
+        <div class="logo-container">
+            <a href="home.html" class="logo-link">
+                <img src="logo.png" alt="AquaAction Logo" class="logo-img">
+                <div class="logo-text">
+                    <h2>AquaAction</h2>
+                    <p>SDG 06 | CLEAN WATER</p>
+                </div>
+            </a>
+        </div>
+
+        <div class="header-right">
+            <nav aria-label="Main navigation">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="ais.html">Simulator</a></li>
+                    <li><a href="feedback.html">Support</a></li>
+                    <li><a href="team.html">Team</a></li>
+                    <li><a href="sitemap.html" class="active">Sitemap</a></li>
+                </ul>
+            </nav>
+
+            <a href="profile.html" class="profile-circle" title="User Profile">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <section class="stud">
+        <h2>T S Thewnuja Rajasinghe &nbsp;|&nbsp; 20240370 / W2182335 &nbsp;|&nbsp; Role: User Profile Page, Sitemap
+            &amp; Content Page</h2>
+    </section>
+
+    <div class="container">
+
+        <aside>
+            <h3>Core pages developed:</h3>
+            <ul class="top-level-ul">
+                <li>Student 4 — Thewnuja Rajasinghe
+                    <ul>
+                        <li><a href="#profile">User Profile Page</a></li>
+                        <li><a href="#sitemap">Sitemap Page</a></li>
+                        <li><a href="#content">Content Page</a></li>
+                    </ul>
+                </li>
+                <li><a href="#challenge">Challenges and Lessons Learned</a></li>
+                <li><a href="#compliance">Compliance</a></li>
+                <li><a href="#group">Group Meetings and Individual Contribution Log</a></li>
+                <li><a href="#ref">References</a></li>
+            </ul>
+        </aside>
+
+        <main>
+
+            <section id="profile">
+                <h2>User Profile Page</h2>
+
+                <h3>Technical Description</h3>
+                <p>The User Profile page (<code>profile.html</code>) was implemented as a progressive, multi-step
+                    interface that allows users to build a personal SDG 06 profile. The page structure relies on
+                    semantic HTML5 <code>&lt;section&gt;</code> elements and uses a <code>.hidden-section</code> class
+                    in CSS to manage the visibility of the profile builder's output cards.</p>
+                <p><strong>JavaScript and DOM Manipulation:</strong> The core functionality is driven by a JavaScript
+                    system that uses prompt-based prompts to collect user data. For each of the three steps (Basics,
+                    Interests, Actions), custom functions validate input and progressively populate
+                    <code>&lt;dl&gt;</code> lists with user responses. The profile completion is visually tracked using
+                    a dynamic progress bar; the <code>.progress-bar-fill</code> width is updated via JavaScript to
+                    reflect the percentage of steps completed (0%, 33%, 66%, or 100%). Once all steps are finalized, a
+                    confirmation message is revealed at the bottom of the card.
+                </p>
+
+                <h3>Accessibility</h3>
+                <p>The profile builder utilizes <code>aria-labelledby</code> to link sections to their descriptive
+                    headings. The progress bar container includes <code>aria-hidden="true"</code> as the progress is
+                    already announced by a live text description (e.g., "0% completed") for screen reader users.
+                    Interactive buttons are clearly labeled, and the progressive reveal ensures that users with
+                    assistive technologies are not overwhelmed by empty containers.</p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST4.html#profileVal">View HTML validation result for User Profile</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="profile.html" target="_blank">Open User Profile (profile.html)</a></p>
+            </section>
+
+            <section id="sitemap">
+                <h2>Sitemap Page</h2>
+
+                <h3>Technical Description</h3>
+                <p>The Sitemap page (<code>sitemap.html</code>) features an interactive visual representation of the
+                    AquaAction website hierarchy using an inline SVG element. The SVG uses a
+                    <code>viewBox="0 0 1300 900"</code> attribute to ensure the diagram remains responsive and scales
+                    proportionately across different viewport sizes.
+                </p>
+                <p><strong>SVG and CSS Interactivity:</strong> The hierarchy is hand-coded using
+                    <code>&lt;line&gt;</code> elements for branches and <code>&lt;rect&gt;</code> elements for page
+                    nodes. Each node is wrapped in an <code>&lt;a&gt;</code> tag to provide direct navigation to the
+                    respective page. CSS transitions are applied to the <code>.node-box</code> fill and stroke-width,
+                    creating a smooth hover effect when a user interacts with a link. Branch connections are clearly
+                    visualized through <code>.branch-line</code> paths that connect the primary navigation trunk to
+                    individual content and support pages.
+                </p>
+
+                <h3>Accessibility</h3>
+                <p>Each node link within the SVG includes a <code>&lt;title&gt;</code> element to provide an accessible
+                    name for screen readers. For keyboard accessibility, the <code>.sitemap-link:focus .node-box</code>
+                    CSS selector applies a high-visibility orange stroke (<code>#ff9900</code>) with increased width to
+                    clearly indicate focus as a user tabs through the diagram. The overall SVG is labeled with an
+                    <code>aria-label="Interactive Sitemap"</code>.
+                </p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST4.html#sitemapVal">View HTML validation result for Sitemap</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="sitemap.html" target="_blank">Open Sitemap (sitemap.html)</a></p>
+            </section>
+
+            <section id="content">
+                <h2>Future Innovation Content Page</h2>
+
+                <h3>Technical Description</h3>
+                <p>The Content Page (<code>content_ST4.html</code>) explores technological advancements in water
+                    security. It follows the group's content structure, featuring a <code>.content-hero</code> banner
+                    with a linear-gradient overlay for high text readability.</p>
+                <p><strong>Layout and Navigation:</strong> An internal navigation menu (<code>.internal-nav</code>)
+                    allows users to jump to specific sections such as "Smart Water Grids" or "Precision Agriculture"
+                    using anchor links. To handle the sticky header, <code>scroll-margin-top: 90px</code> is applied to
+                    each content section, ensuring headings are not obscured upon jumping. The "Go to Top" button is
+                    implemented with <code>position: fixed</code> in CSS and <code>scroll-behavior: smooth</code> at the
+                    HTML level for a seamless user experience. The layout uses a <code>.split-row</code> grid to align
+                    imagery with descriptive text, collapsing into a single column for mobile devices.</p>
+
+                <h3>Accessibility</h3>
+                <p>The page adheres to a strict heading hierarchy, beginning with <code>&lt;h1&gt;</code> in the hero
+                    and moving sequentially through <code>&lt;h2&gt;</code> and <code>&lt;h3&gt;</code>. The internal
+                    nav is identified with <code>aria-label="Page sections"</code>. All images, such as those depicting
+                    IoT sensors and agriculture, include descriptive <code>alt</code> text. The stat cards row is
+                    designated as a <code>role="region"</code> with an appropriate label for assistive technology.</p>
+
+                <h3>Link to the Validation Page</h3>
+                <p><a href="validation_ST4.html#contentVal">View HTML validation result for Content Page ST4</a></p>
+
+                <h3>Link to the Page</h3>
+                <p><a href="content_ST4.html" target="_blank">Open Content Page (content_ST4.html)</a></p>
+            </section>
+
+            <section id="challenge">
+                <h2>Challenges and Lessons Learned</h2>
+                <p><strong>Challenge 1 — Progressive Logic:</strong> Implementing the JavaScript for the profile builder
+                    required careful state management to ensure that steps were unlocked in the correct order and that
+                    the progress bar correctly reflected the user's journey. This taught me the importance of clear
+                    logic flow when using DOM manipulation.</p>
+                <p><strong>Challenge 2 — SVG Coordinate Systems:</strong> Hand-coding the visual sitemap in SVG was
+                    challenging, particularly positioning the nodes and branch lines correctly within the 1300x900
+                    coordinate space while maintaining responsiveness. I learned how to effectively use the
+                    <code>viewBox</code> property to solve this.
+                </p>
+                <p><strong>Challenge 3 — Sticky Header Overlaps:</strong> On the content page, internal anchor links
+                    initially scrolled the headings behind the sticky header. I resolved this by applying
+                    <code>scroll-margin-top</code> to the section targets, which is a modern CSS solution I hadn't used
+                    before.
+                </p>
+                <p><strong>Challenge 4 — Keyboard Focus in SVG:</strong> Ensuring the SVG sitemap was fully keyboard
+                    accessible required specific focus styling. I learned that default browser outlines don't always
+                    apply well to SVG elements, necessitating custom focus states for the node boxes.</p>
+            </section>
+
+            <section id="compliance">
+                <h2>Compliance</h2>
+                <p>All pages implemented for Student 4 comply with JANET (Joint Academic NETwork) regulations regarding
+                    the publication of web content on university systems. The following measures ensure ethical and
+                    responsible use:</p>
+                <p><strong>Appropriate Content:</strong> All information regarding the progressive user profile,
+                    sitemap, and water innovations is factual, educational, and strictly relevant to SDG 06. No content
+                    encourages illegal behavior or contains offensive material.</p>
+                <p><strong>Intellectual Property:</strong> No proprietary code or copyrighted templates were used. All
+                    HTML, CSS, and JavaScript was authored originally. External images were sourced from royalty-free or
+                    educational platforms and are correctly credited in the References section.</p>
+                <p><strong>Responsible Resource Use:</strong> External resources like Google Fonts were used responsibly
+                    under open licenses. Bandwidth-intensive elements like high-resolution images were optimized to
+                    ensure the site remains efficient and lightweight for the university network.</p>
+                <p><strong>Accessibility Compliance:</strong> The implementation follows WCAG 2.1 guidelines to ensure
+                    inclusivity, featuring semantic structure, ARIA landmarks, and keyboard-accessible interactive
+                    components.</p>
+            </section>
+
+            <section id="group">
+                <h2>Group Meetings and Individual Contribution Log</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th colspan="6">Group Meetings and Contribution Log</th>
+                        </tr>
+                        <tr>
+                            <th>Meeting</th>
+                            <th>Date &amp; Time</th>
+                            <th>Format</th>
+                            <th>Objective</th>
+                            <th>Attended</th>
+                            <th>Your Individual Contribution</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>22 Mar 2026</td>
+                            <td>Online</td>
+                            <td>Set up repository and conventions</td>
+                            <td>Yes</td>
+                            <td>I joined the online session and helped confirm the agreed folder structure. I set up my
+                                local development environment and ensured my assigned files — profile.html,
+                                sitemap.html, and content_ST4.html — followed the correct naming conventions.</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>23 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Shared template collaboration</td>
+                            <td>Yes</td>
+                            <td>I worked alongside the team to test the shared template. I confirmed the navigation bar
+                                links worked correctly from my assigned pages and provided feedback on the footer layout
+                                and profile circle icon styling.</td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>24 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Build User Profile Page</td>
+                            <td>Yes</td>
+                            <td>I built the User Profile Page (profile.html) implementing the JavaScript prompt-based
+                                data collection system with at least three steps and three prompts per step. I set up
+                                the profile output area that is hidden initially and reveals progressively as steps are
+                                completed, and built the progress bar indicator that updates dynamically using DOM
+                                manipulation.</td>
+                        </tr>
+                        <tr>
+                            <td>4</td>
+                            <td>25 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Build SVG Sitemap Page</td>
+                            <td>Yes</td>
+                            <td>I built the Sitemap Page (sitemap.html) creating a fully hand-coded inline SVG diagram
+                                showing the website hierarchy. I added clickable links on each SVG node using anchor
+                                tags, CSS hover colour changes on nodes, accessible title elements inside each SVG
+                                group, and ensured the SVG used a viewBox attribute for responsive scaling across screen
+                                sizes.</td>
+                        </tr>
+                        <tr>
+                            <td>5</td>
+                            <td>26 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Build Content Page ST4</td>
+                            <td>Yes</td>
+                            <td>I built content_ST4.html with multiple clearly structured sections using correct heading
+                                hierarchy, an internal navigation menu with anchor links at the top, scroll-margin-top
+                                to prevent sections hiding under the sticky header, a fixed Go to Top button using CSS
+                                only, and at least four relevant images with descriptive alt text and CSS styling.</td>
+                        </tr>
+                        <tr>
+                            <td>6</td>
+                            <td>27 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Image integration and validation</td>
+                            <td>Yes</td>
+                            <td>I sourced all images for my three pages from iStockPhoto and Unsplash, applied correct
+                                filenames, and added meaningful alt text. I recorded all reference links and ran the W3C
+                                HTML validator on profile.html, sitemap.html, and content_ST4.html, fixing any errors
+                                found.</td>
+                        </tr>
+                        <tr>
+                            <td>7</td>
+                            <td>28 Mar 2026</td>
+                            <td>Face-to-face</td>
+                            <td>Final submission preparation</td>
+                            <td>Yes</td>
+                            <td>I hosted the final group meeting and completed pageEditor_ST4.html with full technical
+                                descriptions, accessibility notes, challenges, compliance section, and references. I
+                                prepared validation screenshots for all three pages and finalised validation_ST4.html
+                                ready for submission.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <section id="ref">
+                <h2>References</h2>
+                <ul class="ref">
+                    <li>Aquanomix (2023) <i>IIoT Turns the Tide for Smart Water Management.</i> Available at: <a
+                            href="https://www.aquanomix.com/blog/iiot-turns-the-tide-for-smart-water-management"
+                            target="_blank">https://www.aquanomix.com/blog/iiot-turns-the-tide-for-smart-water-management</a>
+                        (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Apure Instrument (n.d.) <i>Agricultural Uses of Water.</i> Available at: <a
+                            href="https://apureinstrument.com/blogs/agricultural-uses-of-water/"
+                            target="_blank">https://apureinstrument.com/blogs/agricultural-uses-of-water/</a> (Last
+                        accessed: 27 Mar 2026).</li>
+
+                    <li>United Nations (n.d.) <i>SDG Goal 6: Clean Water and Sanitation.</i> Available at: <a
+                            href="https://sdgs.un.org/goals/goal6" target="_blank">https://sdgs.un.org/goals/goal6</a>
+                        (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Google Fonts (n.d.) <i>Google Fonts API.</i> Available at: <a href="https://fonts.google.com"
+                            target="_blank">https://fonts.google.com</a> (Last accessed: 23 Mar 2026).</li>
+
+                    <li>Unsplash (2026) <i>Unsplash Photography.</i> Available at: <a href="https://unsplash.com/"
+                            target="_blank">https://unsplash.com/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>iStock (2026) <i>iStock Photo.</i> Available at: <a href="https://www.istockphoto.com/"
+                            target="_blank">https://www.istockphoto.com/</a> (Last accessed: 27 Mar 2026).</li>
+
+                    <li>Duckett, J. (2011) <i>HTML and CSS: Design and Build Websites,</i> John Wiley &amp; Sons Inc.,
+                        Indianapolis.</li>
+                </ul>
+            </section>
+
+            <p class="top"><a href="#top">Go top</a></p>
+
+        </main>
+    </div>
+
+    <footer>
+        <p>AquaAction: Securing Every Drop for Everyone</p>
+        <p>
+            <a href="pageEditor_ST4.html">Page Editor</a> |
+            <a href="validation_ST4.html">Validation Report</a> |
+            <a href="#">Accessibility Compliance</a>
+        </p>
+        <p>T S Thewnuja Rajasinghe | 20240370 / W2182335 | Role: User Profile Page, Sitemap &amp; Content Page</p>
+    </footer>
+
+</body>
+
+</html>
