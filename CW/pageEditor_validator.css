@@ -1,173 +1,149 @@
-/* =========================
-   VALIDATION PAGE TEMPLATE
-   Makes the page look like the old validator template
-   ========================= */
+/* =========================================
+   PAGE EDITOR & VALIDATOR MASTER STYLES
+   ========================================= */
 
+/* 1. STUDENT BANNER - Fixing the "Yellow/Tan" Bar color */
 .validation-page .stud {
     text-align: center;
-    background-color: #d9e6ea;
-    color: var(--dark-abyss);
-    padding: 0.8rem 1rem;
+    background-color: #cbccc2; /* Matches the tan/yellow color in image_35ae79 */
+    color: #000;
+    padding: 0.5rem;
     margin: 0;
-    border-top: 1px solid #c7d8de;
-    border-bottom: 1px solid #c7d8de;
+    border-top: 1px solid #b5b6ac;
+    border-bottom: 1px solid #b5b6ac;
 }
 
 .validation-page .stud h2 {
     margin: 0;
-    color: var(--dark-abyss);
-    font-size: 1.1rem;
-    font-weight: 700;
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1.5;
 }
 
-/* MAIN TWO COLUMN LAYOUT */
+/* 2. MAIN LAYOUT - Fixing Alignment & Width */
 .validation-page .container {
     display: flex;
-    flex-direction: row;   /* sidebar LEFT, content RIGHT */
-    gap: 2rem;
-    max-width: 1400px;
+    flex-direction: row; /* Sidebar Left, Content Right */
+    gap: 20px;
+    max-width: 1400px; /* Increased to allow "Big" alignment */
     margin: 0 auto;
-    padding: 2rem 4%;
-    width: 100%;
+    padding: 20px 2%;
     align-items: flex-start;
 }
 
-/* SIDEBAR */
+/* 3. SIDEBAR STYLES - Fixing the "Stay there" scrolling issue */
 .validation-page aside {
     flex: 1;
-    background-color: #f5f5f5;
-    padding: 1.5rem 1.2rem;
-    border: 1px solid #d8d8d8;
-    border-radius: 0;
-    box-shadow: none;
-    margin-right: 0;
-    position: static;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border: 1px solid #ddd;
+    /* REMOVED position: sticky to make it scrollable with the page */
+    position: relative; 
+    min-width: 280px;
 }
 
 .validation-page aside h3 {
-    margin-top: 0;
     margin-bottom: 1rem;
-    color: var(--dark-abyss);
     font-size: 1.1rem;
+    color: #000;
+    font-weight: bold;
 }
 
+/* Sidebar Bullets & Links */
 .validation-page .top-level-ul {
+    list-style-type: disc;
+    padding-left: 20px;
     margin: 0;
-    padding-left: 1.2rem;
+}
+
+.validation-page .top-level-ul ul {
+    list-style-type: circle;
+    padding-left: 20px;
+    margin-top: 5px;
 }
 
 .validation-page .top-level-ul li {
-    margin-bottom: 0.8rem;
+    margin-bottom: 8px;
+    font-size: 0.9rem;
 }
 
 .validation-page aside a {
     text-decoration: none;
+    color: #551A8B; /* Template Purple */
 }
 
 .validation-page aside a:hover {
     text-decoration: underline;
 }
 
-/* MAIN CONTENT */
+/* 4. MAIN CONTENT AREA */
 .validation-page main {
-    flex: 3;
+    flex: 3.5; /* Larger ratio for the content area */
     width: 100%;
-    max-width: none;
-    margin: 0;
-    padding: 0;
 }
 
-/* RECTANGLE CONTENT BOXES */
-.validation-page main section {
-    background: #f8f8f8;
-    border: 1px solid #d8d8d8;
-    border-radius: 0;
-    box-shadow: none;
-    padding: 2rem;
-    margin-bottom: 2rem;
+.validation-page section {
+    background: #fafafa;
+    border: 1px solid #ddd;
+    padding: 30px;
+    margin-bottom: 25px;
 }
 
-/* HEADINGS */
-.validation-page main section h2 {
-    text-align: center;
-    color: #2f3b46;
+.validation-page main h2 {
+    color: #333;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
     margin-top: 0;
+}
+
+.validation-page main p {
+    text-align: left;
+    line-height: 1.6;
     margin-bottom: 1rem;
-    font-size: 1.35rem;
 }
 
-.validation-page main section h3 {
-    color: #2f3b46;
-    margin-top: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-/* PARAGRAPHS */
-.validation-page main section p {
-    text-align: center;
-    margin-bottom: 1rem;
-    line-height: 1.8;
-}
-
-/* SCREENSHOTS */
+/* 5. IMAGES & TABLES */
 .validation-page main section img {
     display: block;
-    width: 90%;
-    max-width: 950px;
+    width: auto;
+    max-width: 100%; /* Allows it to be "Big" but fit the section */
     height: auto;
-    margin: 1rem auto 0 auto;
-    border: 1px solid #cccccc;
-    border-radius: 0;
-    box-shadow: none;
+    margin: 20px 0;
+    border: 1px solid #ccc;
 }
 
-/* CODE STYLE */
-.validation-page code {
-    background-color: #eef3f5;
-    padding: 2px 5px;
-    border-radius: 4px;
-    font-size: 0.95em;
+.validation-page table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    background: white;
 }
 
-/* GO TOP BUTTON */
+.validation-page th, .validation-page td {
+    border: 1px solid #ccc;
+    padding: 12px;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.validation-page thead {
+    background-color: #1d5d6f;
+    color: white;
+}
+
+/* 6. GO TOP BUTTON */
 .validation-page .top {
     position: fixed;
-    right: 25px;
-    bottom: 25px;
-    margin: 0;
+    right: 30px;
+    bottom: 30px;
 }
 
 .validation-page .top a {
-    display: inline-block;
-    padding: 12px 20px;
-    background-color: #0d84ff;
-    color: #ffffff;
+    background-color: #1d5d6f;
+    color: white;
+    padding: 10px 20px;
     text-decoration: none;
-    border-radius: 24px;
-    font-weight: bold;
-    font-size: 14px;
-}
-
-.validation-page .top a:hover {
-    background-color: #0066cc;
-}
-
-/* FOOTER SMALL ADJUSTMENT */
-.validation-page footer {
-    margin-top: 1rem;
-}
-
-/* RESPONSIVE */
-@media (max-width: 992px) {
-    .validation-page .container {
-        flex-direction: column;
-    }
-
-    .validation-page aside {
-        width: 100%;
-    }
-
-    .validation-page main section img {
-        width: 100%;
-    }
+    border-radius: 5px;
+    font-size: 0.8rem;
 }
